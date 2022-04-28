@@ -1,1 +1,1 @@
-# srspool
+# srspool,m mn mn
