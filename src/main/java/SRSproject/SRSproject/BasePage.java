@@ -55,13 +55,13 @@ public class BasePage
       //to run your selenium’s tests in parallel, Webdriver object should be thread-safe, i.e. a single object can be used with multiple threads at the same time without causing problems. 
 	//thread local driver object for webdriver,
 	
-	//public static String configpath="C:\\Users\\DELL\\Documents\\SRSPool\\src\\main\\java\\config_staging2\\configuration_staging2_pcs.properties";
+	public static String configpath="C:\\Users\\DELL\\Documents\\SRSPool\\src\\main\\java\\config_staging2\\configuration_staging2_pcs.properties";
 	
 	//public static String configpath ="C:\\Users\\DELL\\Documents\\SRSPool\\src\\main\\java\\config_staging2\\configuration_staging2_pcs.properties";
 	
 	//public static String configpath ="C:\\Users\\DELL\\Documents\\SRSPool\\src\\main\\java\\config_staging2\\configuration_staging2_PEP.properties";
 	
-	public static String configpath ="C:\\Users\\DELL\\Documents\\SRSPool\\src\\main\\java\\config_staging2\\configuration_staging2_Aquagon.properties";
+	//public static String configpath ="C:\\Users\\DELL\\Documents\\SRSPool\\src\\main\\java\\config_staging2\\configuration_staging2_Aquagon.properties";
 	public static ThreadLocal<WebDriver> tdriver = new ThreadLocal<WebDriver>();
 	
 	//multithreading  
