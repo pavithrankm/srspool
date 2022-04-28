@@ -99,13 +99,13 @@ public class BulkOrderPadTest extends BaseTest {
 			
 			
 			@Test(priority=6)
-			public void ListofItem_Validation() throws InterruptedException, CsvValidationException, IOException 
+			public void ListofItem_Validation() throws Exception 
 			{
 				Thread.sleep(5000);
 				
 				
 						Bp.Fileupload();
-						Thread.sleep(8000);
+						Thread.sleep(5000);
 					ArrayList<String> List= Bp.ListOfItem();
 					BulkOrderPage_List = List;
 					

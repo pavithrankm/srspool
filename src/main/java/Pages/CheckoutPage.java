@@ -2,6 +2,7 @@ package Pages;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -24,9 +25,13 @@ public class CheckoutPage extends BasePage {
 	
 	@FindBy(xpath="//select[@id='shipto']") WebElement ShiptoAcc;
 	@FindBy(xpath="//select[@id='branch']") WebElement Branch;
-	@FindBy(xpath="/html/body/div[2]/main/div[2]/div/div[2]/div[4]/ol/li[1]/div[2]/form/div[3]/div/input") WebElement PO_field;
-	@FindBy(xpath="/html/body/div[2]/main/div[2]/div/div[2]/div[4]/ol/li[1]/div[2]/form/div[4]/div/input") WebElement OrderNotes;
-	@FindBy(xpath="/html/body/div[2]/main/div[2]/div/div[2]/div[4]/ol/li[1]/div[2]/form/div[6]/div/input") WebElement Date;
+	@FindBy(xpath="/html/body/div[1]/main/div[2]/div/div[2]/div[4]/ol/li[1]/div[2]/form/div[3]/div/input") WebElement PO_field;
+	@FindBy(xpath="/html/body/div[1]/main/div[2]/div/div[2]/div[4]/ol/li[1]/div[2]/form/div[4]/div/input") WebElement OrderNotes;
+	@FindBy(xpath="/html/body/div[1]/main/div[2]/div/div[2]/div[4]/ol/li[1]/div[2]/form/div[6]/div/input") WebElement Date;
+	
+//	@FindBy(xpath="/html/body/div[2]/main/div[2]/div/div[2]/div[4]/ol/li[1]/div[2]/form/div[3]/div/input") WebElement PO_field;
+//	@FindBy(xpath="/html/body/div[2]/main/div[2]/div/div[2]/div[4]/ol/li[1]/div[2]/form/div[4]/div/input") WebElement OrderNotes;
+//	@FindBy(xpath="/html/body/div[2]/main/div[2]/div/div[2]/div[4]/ol/li[1]/div[2]/form/div[6]/div/input") WebElement Date;
 	@FindBy(xpath = "(//span[text()='Next Step'])[1]") WebElement NextStep_Order;
 	
 	@FindBy(xpath="//span[@class='ui-icon ui-icon-circle-triangle-e']") WebElement calendarNextBtn;
@@ -145,6 +150,7 @@ public void RequestedDate()
 
 {
 		Date.click();
+	driver.findElement(By.xpath("//a[text()='28']")).click();
 }
 
 public void clickOnCalendarsNextBtn()

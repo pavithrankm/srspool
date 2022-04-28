@@ -110,7 +110,7 @@ public class BulkOrderPage extends BasePage {
 
 
 	listele1.size();
-	 Thread.sleep(900);
+	 Thread.sleep(3000);
 	
 
 	
@@ -177,17 +177,17 @@ public class BulkOrderPage extends BasePage {
 	
 	
 
-	public BulkOrderPage Fileupload() throws InterruptedException
+	public BulkOrderPage Fileupload() throws Exception
 	
 {
 		
-		Thread.sleep(5000);
+//		Thread.sleep(8000);
 		
 //		((JavascriptExecutor) driver)
 //	    .executeScript("window.scrollTo(0, -document.body.scrollHeight)");
-		
+		waitUntilElementVisibility(UploadCsv);
 		UploadCsv.click();
-//		 Thread.sleep(2000);
+		 Thread.sleep(2000);
 		
 		file.sendKeys(prop.getProperty("valid_csvfile"));
 

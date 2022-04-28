@@ -3,12 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="SRSproject.SRSproject.ProductListPageTest">
+      <class name="SRSproject.SRSproject.ReorderPage_Test">
         <methods>
+          <include name="View_Validation"/>
           <include name="setUp"/>
-          <include name="PLP_RegisterRedirection_GuestValidation"/>
+          <include name="InvalidFile_Validation"/>
+          <include name="CreateNew_ReorderPad_Validation"/>
         </methods>
-      </class> <!-- SRSproject.SRSproject.ProductListPageTest -->
+      </class> <!-- SRSproject.SRSproject.ReorderPage_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

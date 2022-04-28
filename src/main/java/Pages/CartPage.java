@@ -56,7 +56,7 @@ public class CartPage extends BasePage {
 	@FindBy(xpath="//button[@class='action primary add-to-reorder-pad']") WebElement AddToReorder;
 	@FindBy(xpath="//select[@id='select-reorder-pad']") WebElement ReorderList;
 	@FindBy(xpath="//span[text()='Keep Shopping']") WebElement Keepshopping_btn;
-	
+	@FindBy(xpath="//span[text()='View Reorder Pad']") WebElement viewcart ;
 	
 	
 	public CartPage(WebDriver driver)
@@ -79,7 +79,7 @@ public class CartPage extends BasePage {
 		
 		 js.executeScript("arguments[0].scrollIntoView();", MFGLabel);
 		 
-		 Thread.sleep(1000);
+		 Thread.sleep(5000);
 		 WebDriverWait wait= new WebDriverWait(driver, 80);
 		 wait.until(ExpectedConditions.visibilityOf(PDP_PriceofProduct));
 		
@@ -191,7 +191,12 @@ public class CartPage extends BasePage {
 		
 		
 		}
-	
+	public WebElement viewcart()
+	{
+		return  viewcart;
+		
+		
+		}
 	
 }
 

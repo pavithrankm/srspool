@@ -65,10 +65,10 @@ public class CartPageTest  extends BaseTest
 	
 		String price_pdp=	Cp.validatePriceOfItemInPDP();
 		
-		Thread.sleep(500);
+		Thread.sleep(5000);
 		driver.navigate().back();
 		
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		
 		Float price2=Float.parseFloat(price_pdp);
 		
@@ -180,7 +180,7 @@ float MultipliedPrice= ActualPrice * quantity;
 //		listele1.size();
 		
 		
-		 WebDriverWait wait= new WebDriverWait(driver, 80);
+		 WebDriverWait wait= new WebDriverWait(driver, 50);
 		 wait.until(ExpectedConditions.visibilityOf(listele1.get(1)));
 		listele1.get(1).click();
 		
@@ -199,11 +199,12 @@ float MultipliedPrice= ActualPrice * quantity;
 	{
 		Thread.sleep(9000);
 	Cp.ReOrderSelection();
-	Thread.sleep(3000);
+	Thread.sleep(8000);
 	String msg= Cp.Message();
 	System.out.println(msg);
 	String ReorderItemCount=msg.replaceAll("[^\\d]", "");
-	
+	 String items =  driver.findElement(By.xpath("//span[text()='27 Items']")).getText();
+	 System.out.println(items);
 	//System.out.println(ReorderItemCount);
 	
 	 Cp.ClickAddToReorder();
@@ -218,6 +219,10 @@ float MultipliedPrice= ActualPrice * quantity;
 		    	Reporter.log("Items are added from cart to Reorder List selected" , true);
 		    	Thread.sleep(3000);
 		    	Cp.KeepShopping().click();
+		    	
+//		    	Cp.viewcart().click();
+		    	
+		    	
 		    }
 		    else
 		    {

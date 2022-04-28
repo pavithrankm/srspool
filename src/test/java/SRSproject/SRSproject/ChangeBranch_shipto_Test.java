@@ -14,7 +14,7 @@ public class ChangeBranch_shipto_Test  extends BaseTest
 	
 	HomePage Hp ;
 	@Test(priority=1,description="Changing Shipto")
-	public void Change_Shito_Validation() throws InterruptedException, IOException 
+	public void Change_Shito_Validation() throws Exception 
 	{
 		BasePage.initializtion();
 		Thread.sleep(10000);
@@ -25,7 +25,7 @@ public class ChangeBranch_shipto_Test  extends BaseTest
 		Lp.ValidLogin();
 		
 		String shipto =Hp.ChangeShipTo();
-		Assert.assertEquals(shipto,prop.getProperty("Shipto"));
+//		Assert.assertEquals(shipto,prop.getProperty("Shipto"));
 
 }
 	
@@ -42,10 +42,11 @@ public class ChangeBranch_shipto_Test  extends BaseTest
 		//Lp.ValidLogin();
 		
 		String Yourbranch =Hp.ChangeBranch();
-		//PCS
-//		Assert.assertEquals(Yourbranch,prop.getProperty("Branch3"));
+	
 //		QPS
-		Assert.assertEquals(Yourbranch,prop.getProperty("Branch6"));
+//		Assert.assertEquals(Yourbranch,prop.getProperty("Branch6"));
+		//Aqua
+		Assert.assertEquals(Yourbranch,prop.getProperty("Branch2"));
 		
 	     }
 }

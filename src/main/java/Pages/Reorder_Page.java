@@ -147,9 +147,10 @@ public  void EnterProduct() throws InterruptedException
 {
 	 Product_input.sendKeys(prop.getProperty("KeywordSearch"));
 
-		Thread.sleep(8000);
-		WebElement Item=driver.findElement(By.xpath("/html/body/div[1]/main/div[2]/div/div[1]/div[2]/form/div[4]/fieldset/div[2]/div/ul[1]/li[1]/a"));
-		 WebDriverWait wait = new WebDriverWait(driver, 2000);
+		Thread.sleep(5000);
+//		WebElement Item=driver.findElement(By.xpath("/html/body/div[1]/main/div[2]/div/div[1]/div[2]/form/div[4]/fieldset/div[2]/div/ul[1]/li[1]/a"));
+		WebElement Item=driver.findElement(By.xpath("(//li[@class='ui-menu-item']//span)[1]"));	
+		WebDriverWait wait = new WebDriverWait(driver, 2000);
 			wait.until(ExpectedConditions.visibilityOf(Item));
 			Item.click();
 		Thread.sleep(1000);

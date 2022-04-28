@@ -442,135 +442,135 @@ public void RegistrationForm_Aqua_gon__BrandAndBranchValidation() throws Interru
 //PCS
 
 
-@Test(priority=17,enabled =false)
-
-public void RegistrationForm_DontKnowHertiageAccount_RegistrationValidation() throws InterruptedException, IOException
-{
-	BasePage.initializtion();
-	Thread.sleep(8000);
-rf= new RegistrationForm(driver);
-rf.ClickOnRegisternowOnGlobalSite();
-Thread.sleep(8000);
-	rf.FirstName_Entry();
-	rf.LastName_Entry();
-	rf.Email_Entry_Scenario1();
-	rf.Heritage_Brand_SelectionField();
-	rf.Hertiage_Brand_PCS_Selection();
-	rf.Branch_SelectionField();
-	rf.Branch_pcsSelection();
-	rf.CompanyField_click();
-	rf.Address1Field_click();
-	rf.Address2Field_click();
-	rf.CityField_click();
-	rf.State_Selection();
-	rf.ZipCode_click();
-	rf.Valid_PhoneNo_click();
-	rf.Fax_click();
-	rf.Dont_KnowMyHeritagePlusAccountclick();
-	rf.ValidPassword_Entry();
-	rf.Terms_Click();
-
-	rf.Submitclick();
-Thread.sleep(10000);
-	
-	String AccountCreatePage = rf.PageTitle();
-	Thread.sleep(100);
-	
-	
-	Assert.assertEquals(AccountCreatePage,prop.getProperty("HomePageTitle"));
-	
-	Thread.sleep(3000);
-	
-	
-	
-}
-
-
-
-
-@Test(priority=18)
-
-public void RegistrationForm_KnowHertiageAccount_RegistrationValidation() throws InterruptedException, IOException
-{
-	//BasePage Bp= new BasePage();
-	BasePage.initializtion();
-	Thread.sleep(8000);
-rf= new RegistrationForm(driver);
-	rf.ClickOnRegisternowOnGlobalSite();
-	rf.FirstName_Entry();
-	rf.LastName_Entry();
-	rf.Email_Entry_Scenario2();
-	rf.Heritage_Brand_SelectionField();
-	rf.Hertiage_Brand_PCS_Selection();
-	rf.Branch_SelectionField();
-	rf.Branch_pcsSelection();
-	rf.CompanyField_click();
-	rf.Address1Field_click();
-	rf.Address2Field_click();
-	rf.CityField_click();
-	rf.State_Selection();
-	rf.ZipCode_click();
-	rf.Valid_PhoneNo_click();
-	rf.Fax_click();
-	rf.KnowMyHeritagePlusAccountclick();
-	rf.company_Account_Entry();
-	rf.ValidPassword_Entry();
-	rf.Terms_Click();
-	rf.Submitclick();
-	
-Thread.sleep(10000);
-	
-	String AccountCreatePage = rf.PageTitle();
-	Thread.sleep(100);
-	
-	
-	Assert.assertEquals(AccountCreatePage,prop.getProperty("HomePageTitle"));
-	
-	Thread.sleep(3000);
-	
-}
-
-
-@Test(priority=19)
-
-public void RegistrationForm_QPSBranch_RegistrationValidation() throws InterruptedException, IOException
-{
-	BasePage.initializtion();
-	Thread.sleep(8000);
-	rf.ClickOnRegisternowOnGlobalSite();
-	rf.FirstName_Entry();
-	rf.LastName_Entry();
-	rf.Email_Entry_Scenario3();
-	rf.Heritage_Brand_SelectionField();
-	rf.Hertiage_Brand_QPS_Selection();
-	rf.Branch_SelectionField();
-	rf.Branch_qpsSelection();
-	rf.CompanyField_click();
-	rf.Address1Field_click();
-	rf.Address2Field_click();
-	rf.CityField_click();
-	rf.State_Selection();
-	rf.ZipCode_click();
-	rf.Valid_PhoneNo_click();
-	rf.Fax_click();
-	rf.KnowMyHeritagePlusAccountclick();
-	rf.company_Account_Entry();
-	rf.ValidPassword_Entry();
-	rf.Terms_Click();
-	rf.Submitclick();
-
-Thread.sleep(10000);
-	
-	String AccountCreatePage = rf.PageTitle();
-	Thread.sleep(100);
-	
-	
-	Assert.assertEquals(AccountCreatePage,prop.getProperty("HomePageTitle"));
-	
-	Thread.sleep(3000);
-	
-
-	
+//@Test(priority=17,enabled =false)
+//
+//public void RegistrationForm_DontKnowHertiageAccount_RegistrationValidation() throws InterruptedException, IOException
+//{
+//	BasePage.initializtion();
+//	Thread.sleep(8000);
+//rf= new RegistrationForm(driver);
+//rf.ClickOnRegisternowOnGlobalSite();
+//Thread.sleep(8000);
+//	rf.FirstName_Entry();
+//	rf.LastName_Entry();
+//	rf.Email_Entry_Scenario1();
+//	rf.Heritage_Brand_SelectionField();
+//	rf.Hertiage_Brand_PCS_Selection();
+//	rf.Branch_SelectionField();
+//	rf.Branch_pcsSelection();
+//	rf.CompanyField_click();
+//	rf.Address1Field_click();
+//	rf.Address2Field_click();
+//	rf.CityField_click();
+//	rf.State_Selection();
+//	rf.ZipCode_click();
+//	rf.Valid_PhoneNo_click();
+//	rf.Fax_click();
+//	rf.Dont_KnowMyHeritagePlusAccountclick();
+//	rf.ValidPassword_Entry();
+//	rf.Terms_Click();
+//
+//	rf.Submitclick();
+//Thread.sleep(10000);
+//	
+//	String AccountCreatePage = rf.PageTitle();
+//	Thread.sleep(100);
+//	
+//	
+//	Assert.assertEquals(AccountCreatePage,prop.getProperty("HomePageTitle"));
+//	
+//	Thread.sleep(3000);
+//	
+//	
+//	
+//}
+//
+//
+//
+//
+//@Test(priority=18)
+//
+//public void RegistrationForm_KnowHertiageAccount_RegistrationValidation() throws InterruptedException, IOException
+//{
+//	//BasePage Bp= new BasePage();
+//	BasePage.initializtion();
+//	Thread.sleep(8000);
+//rf= new RegistrationForm(driver);
+//	rf.ClickOnRegisternowOnGlobalSite();
+//	rf.FirstName_Entry();
+//	rf.LastName_Entry();
+//	rf.Email_Entry_Scenario2();
+//	rf.Heritage_Brand_SelectionField();
+//	rf.Hertiage_Brand_PCS_Selection();
+//	rf.Branch_SelectionField();
+//	rf.Branch_pcsSelection();
+//	rf.CompanyField_click();
+//	rf.Address1Field_click();
+//	rf.Address2Field_click();
+//	rf.CityField_click();
+//	rf.State_Selection();
+//	rf.ZipCode_click();
+//	rf.Valid_PhoneNo_click();
+//	rf.Fax_click();
+//	rf.KnowMyHeritagePlusAccountclick();
+//	rf.company_Account_Entry();
+//	rf.ValidPassword_Entry();
+//	rf.Terms_Click();
+//	rf.Submitclick();
+//	
+//Thread.sleep(10000);
+//	
+//	String AccountCreatePage = rf.PageTitle();
+//	Thread.sleep(100);
+//	
+//	
+//	Assert.assertEquals(AccountCreatePage,prop.getProperty("HomePageTitle"));
+//	
+//	Thread.sleep(3000);
+//	
+//}}
+//
+//
+//@Test(priority=19)
+//
+//public void RegistrationForm_QPSBranch_RegistrationValidation() throws InterruptedException, IOException
+//{
+//	BasePage.initializtion();
+//	Thread.sleep(8000);
+//	rf.ClickOnRegisternowOnGlobalSite();
+//	rf.FirstName_Entry();
+//	rf.LastName_Entry();
+//	rf.Email_Entry_Scenario3();
+//	rf.Heritage_Brand_SelectionField();
+//	rf.Hertiage_Brand_QPS_Selection();
+//	rf.Branch_SelectionField();
+//	rf.Branch_qpsSelection();
+//	rf.CompanyField_click();
+//	rf.Address1Field_click();
+//	rf.Address2Field_click();
+//	rf.CityField_click();
+//	rf.State_Selection();
+//	rf.ZipCode_click();
+//	rf.Valid_PhoneNo_click();
+//	rf.Fax_click();
+//	rf.KnowMyHeritagePlusAccountclick();
+//	rf.company_Account_Entry();
+//	rf.ValidPassword_Entry();
+//	rf.Terms_Click();
+//	rf.Submitclick();
+//
+//Thread.sleep(10000);
+//	
+//	String AccountCreatePage = rf.PageTitle();
+//	Thread.sleep(100);
+//	
+//	
+//	Assert.assertEquals(AccountCreatePage,prop.getProperty("HomePageTitle"));
+//	
+//	Thread.sleep(3000);
+//	
+//
+//}
 	
 
 
@@ -618,96 +618,94 @@ Thread.sleep(10000);
 //	
 //	//driver.navigate().back();
 //	
-//}
-//Aqua-gon
+//}}
+////Aqua-gon
+//
+@Test(priority=17,enabled = false)
 
-//@Test(priority=17)
-//
-//public void RegistrationForm_DontKnowHertiageAccount_RegistrationValidation() throws InterruptedException, IOException
-//{
-//	BasePage.initializtion();
-//	Thread.sleep(8000);
-//rf= new RegistrationForm(driver);
-//rf.ClickOnRegisternowOnGlobalSite();
-//Thread.sleep(8000);
-//	rf.FirstName_Entry();
-//	rf.LastName_Entry();
-//	rf.Email_Entry_Scenario1();
-//	rf.Heritage_Brand_SelectionField();
-//	rf.Hertiage_Brand_Aqua_gon_Selection();
-//   rf.Branch_SelectionField();
-//	rf.Branch_Aqua_gonSelection();
-//	rf.CompanyField_click();
-//	rf.Address1Field_click();
-//	rf.Address2Field_click();
-//	rf.CityField_click();
-//	rf.State_Selection();
-//	rf.ZipCode_click();
-//	rf.Valid_PhoneNo_click();
-//	rf.Fax_click();
-//	rf.Dont_KnowMyHeritagePlusAccountclick();
-//	rf.ValidPassword_Entry();
-//	rf.Terms_Click();
-//
-//	rf.Submitclick();
-//Thread.sleep(10000);
-//	
-//	String AccountCreatePage = rf.PageTitle();
-//	Thread.sleep(100);
-//	
-//	
-//	Assert.assertEquals(AccountCreatePage,prop.getProperty("HomePageTitle"));
-//	
-//	Thread.sleep(3000);
-//	
-//	
-//	
-//}
-//
-//
-//
-//@Test(priority=18)
-//
-//public void RegistrationForm_KnowHertiageAccount_RegistrationValidation() throws InterruptedException, IOException
-//{
-//	//BasePage Bp= new BasePage();
-//	BasePage.initializtion();
-//	Thread.sleep(8000);
-//rf= new RegistrationForm(driver);
-//	rf.ClickOnRegisternowOnGlobalSite();
-//	rf.FirstName_Entry();
-//	rf.LastName_Entry();
-//	rf.Email_Entry_Scenario2();
-//	rf.Heritage_Brand_SelectionField();
-//	rf.Hertiage_Brand_Aqua_gon_Selection();
-//	rf.Branch_SelectionField();
-//	rf.Branch_Aqua_gonSelection();
-//	rf.CompanyField_click();
-//	rf.Address1Field_click();
-//	rf.Address2Field_click();
-//	rf.CityField_click();
-//	rf.State_Selection();
-//	rf.ZipCode_click();
-//	rf.Valid_PhoneNo_click();
-//	rf.Fax_click();
-//	rf.KnowMyHeritagePlusAccountclick();
-//	rf.company_Account_Entry();
-//	rf.ValidPassword_Entry();
-//	rf.Terms_Click();
-//	rf.Submitclick();
-//	
-//Thread.sleep(10000);
-//	
-//	String AccountCreatePage = rf.PageTitle();
-//	Thread.sleep(100);
-//	
-//	
-//	Assert.assertEquals(AccountCreatePage,prop.getProperty("HomePageTitle"));
-//	
-//	Thread.sleep(3000);
-//	
-//}
+public void RegistrationForm_DontKnowHertiageAccount_RegistrationValidation() throws InterruptedException, IOException
+{
+	BasePage.initializtion();
+	Thread.sleep(8000);
+rf= new RegistrationForm(driver);
+rf.ClickOnRegisternowOnGlobalSite();
+Thread.sleep(8000);
+	rf.FirstName_Entry();
+	rf.LastName_Entry();
+	rf.Email_Entry_Scenario1();
+	rf.Heritage_Brand_SelectionField();
+	rf.Hertiage_Brand_Aqua_gon_Selection();
+   rf.Branch_SelectionField();
+	rf.Branch_Aqua_gonSelection();
+	rf.CompanyField_click();
+	rf.Address1Field_click();
+	rf.Address2Field_click();
+	rf.CityField_click();
+	rf.State_Selection();
+	rf.ZipCode_click();
+	rf.Valid_PhoneNo_click();
+	rf.Fax_click();
+	rf.Dont_KnowMyHeritagePlusAccountclick();
+	rf.ValidPassword_Entry();
+	rf.Terms_Click();
 
+	rf.Submitclick();
+Thread.sleep(10000);
+	
+	String AccountCreatePage = rf.PageTitle();
+	Thread.sleep(100);
+	
+	
+	Assert.assertEquals(AccountCreatePage,prop.getProperty("HomePageTitle"));
+	
+	Thread.sleep(3000);
+	
+	
+	
+}
+
+
+
+@Test(priority=18,enabled = false)
+
+public void RegistrationForm_KnowHertiageAccount_RegistrationValidation() throws InterruptedException, IOException
+{
+	//BasePage Bp= new BasePage();
+	BasePage.initializtion();
+	Thread.sleep(8000);
+rf= new RegistrationForm(driver);
+	rf.ClickOnRegisternowOnGlobalSite();
+	rf.FirstName_Entry();
+	rf.LastName_Entry();
+	rf.Email_Entry_Scenario2();
+	rf.Heritage_Brand_SelectionField();
+	rf.Hertiage_Brand_Aqua_gon_Selection();
+	rf.Branch_SelectionField();
+	rf.Branch_Aqua_gonSelection();
+	rf.CompanyField_click();
+	rf.Address1Field_click();
+	rf.Address2Field_click();
+	rf.CityField_click();
+	rf.State_Selection();
+	rf.ZipCode_click();
+	rf.Valid_PhoneNo_click();
+	rf.Fax_click();
+	rf.KnowMyHeritagePlusAccountclick();
+	rf.company_Account_Entry();
+	rf.ValidPassword_Entry();
+	rf.Terms_Click();
+	rf.Submitclick();
+	
+Thread.sleep(10000);
+	
+	String AccountCreatePage = rf.PageTitle();
+	Thread.sleep(100);
+	
+	
+	Assert.assertEquals(AccountCreatePage,prop.getProperty("HomePageTitle"));
+	
+	Thread.sleep(3000);
+	
 
 }}
 

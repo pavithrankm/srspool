@@ -47,13 +47,16 @@ public class HomePage extends BasePage {
 	@FindBy(className = "ambrands-letter letter-B" ) WebElement B_Aplhabet;
     
 	@FindBy(xpath="(//a[@class='ambrands-inner'])[1]") WebElement Brand;
-	
-	@FindBy(xpath="//a[@id='ui-id-6']") WebElement FirstLayerCategory;
+	//PCS and QPS
+//	@FindBy(xpath="//a[@id='ui-id-6']") WebElement FirstLayerCategory;
+	//Aqua,PEP
+	@FindBy(xpath="(//a[@role='menuitem'])[2]") WebElement FirstLayerCategory;
 //	QPS
 //	@FindBy(xpath="//span[text()='Water Tubes & Air Pillows']") WebElement SecondLayerCategory;
 //	PCS
-	@FindBy(xpath="//span[text()='Above Ground Pumps']") WebElement SecondLayerCategory;
-	
+//	@FindBy(xpath="//span[text()='Above Ground Pumps']") WebElement SecondLayerCategory;
+	//aqua,PEP
+	@FindBy(xpath="//span[text()='Bulk Chemicals']") WebElement SecondLayerCategory;
 	@FindBy(xpath="//button[text()='Change Branch']") WebElement ChangeBranch;
 	
 	@FindBy(xpath="//button [text()='Change Ship To']") WebElement ChangeShipTo;
@@ -65,23 +68,36 @@ public class HomePage extends BasePage {
 //	@FindBy(xpath="//*[@id='branches']/option[2]") WebElement YourBranch;
 	
 	//PCS
-	@FindBy(xpath="//span[text()='POOL CONTRACTORS SUPPLY  BATON ROUGE']") WebElement YourBranch;
+//	@FindBy(xpath="//span[text()='POOL CONTRACTORS SUPPLY  BATON ROUGE']") WebElement YourBranch;
 	
 	//QPS
 //	@FindBy(xpath="//span[text()='QUALITY POOL SUPPLY AKRON']") WebElement YourBranch;
 	//Aqua_gon
-//	@FindBy(xpath="//span[text()='AQUAGON - BROOKLYN PARK']") WebElement YourBranch;
+	@FindBy(xpath="//span[@class='customer-header-panel-item-value']") WebElement YourBranch;
+	
+	//PEP
+//		@FindBy(xpath="//span[text()='POOL & ELECTRICAL PRODUCTS PHOENIX']") WebElement YourBranch;
+	
 	
 //	"/html/body/div[2]/div[1]/div/div/div[1]/div[1]/ul/li[1]/span"
+//	@FindBy(xpath="//select[@name='shipto']") WebElement Shipto_opt;
+	
+	//PCS
 	@FindBy(xpath="//select[@name='shipto']") WebElement Shipto_opt;
 	
 //	@FindBy(xpath="/html/body/div[9]/aside[5]/div[2]/footer/button[1]/span") WebElement  shiptoConfirm;
 	
 //	@FindBy(xpath="//button[text()='Change Branch']") WebElement  shiptoConfirm;
-	@FindBy(xpath="(//button[@class='action primary'])[4]") WebElement  shiptoConfirm;
+	@FindBy(xpath="(//button[@class='action primary'])[5]") WebElement  shiptoConfirm;
 	
+//	@FindBy(xpath="(//span[@class='customer-header-panel-item-value'])[4]") WebElement YourShipto;
+	//pcs
+//		@FindBy(xpath="(//span[text()='MALONE CONSTRUCTION ENTERPRISE,9113 BELLE FLEURS COVE,CORDOVA,TN,38018']") WebElement YourShipto;
+	//Aqua
 	@FindBy(xpath="(//span[@class='customer-header-panel-item-value'])[4]") WebElement YourShipto;
-	
+	//PEP //div[@class='customer-header-panel-item']//span[1]
+//	@FindBy(xpath="(//span[text()='TRIBAL WATERS,2630 W. DEER VALLEY RD,PHOENIX,AZ,85027']") WebElement YourShipto;
+	//div[text()='']
     @FindBy(id = "search") WebElement SearchField; 
     
     @FindBy(xpath ="//strong[@class='product name product-item-name']") List<WebElement> lineItemList;
@@ -280,13 +296,17 @@ public class HomePage extends BasePage {
 		waitUntilElementVisibility(ChangeBranchSelection);
 		Select Brand= new Select(ChangeBranchSelection);
 		//for PCS
-		Brand.selectByValue("10178");
+//		Brand.selectByValue("10178");
 		//for QPS
-//				Brand.selectByValue("10171");
+				Brand.selectByValue(prop.getProperty("changebranch_value"));
+//		for PEP
+//		Brand.selectByValue("10242");
+		
 //		 for Aquagon
-//		Brand.selectByValue("10158");
-		 Thread.sleep(10000);
-		 
+//		Brand.selectByValue("10157");
+//		 Thread.sleep(10000);
+//		 fro FWP
+//				Brand.selectByValue("10248");	
 			//wait.until(ExpectedConditions.visibilityOf(Confirm));
 		 
 		
@@ -325,7 +345,7 @@ public String confirmpopupmsge() throws Exception {
 	String text = ConfirmChangeBranch.getText();
 	return text;
 	}
-	public String ChangeShipTo() throws InterruptedException
+	public String ChangeShipTo() throws Exception
 	{
 		Thread.sleep(2000);
 		WebDriverWait wait = new WebDriverWait(driver, 200);
@@ -333,23 +353,31 @@ public String confirmpopupmsge() throws Exception {
 		ChangeShipTo.click();
 		 Thread.sleep(1000);
 		
-		Select shipto= new Select(Shipto_opt);
-//		shipto.selectByValue("2");
+		 //pcs
+//		 driver.findElement(By.xpath("//div[@class='optionname']")).click();
+//		driver.findElement(By.xpath("(//div[text()='MALONE CONSTRUCTION ENTERPRISE'])[1]")).click();
+//		//Aqua
+//		 driver.findElement(By.xpath("//div[@class='optionname']")).click();
+//		driver.findElement(By.xpath("//div[text()='BAKER LANDSCAPING & CONCRETE']")).click();
+		//PEP
+		 driver.findElement(By.xpath("//div[text()='Choose an option']")).click();
+			driver.findElement(By.xpath("//div[@data-value='1']//div[1]")).click();
+//		
+		//		Select shipto= new Select(Shipto_opt);
+//		shipto.selectByValue("1");
 //		Aqugon
-		shipto.selectByValue("1");
+//		shipto.selectByValue("1");
 		 
-		 Thread.sleep(10000);
 		
 		 
 			wait.until(ExpectedConditions.visibilityOf(shiptoConfirm)); 
 	shiptoConfirm.click();
 	
-	JavascriptExecutor js = (JavascriptExecutor) driver;
-
-	js.executeScript("arguments[0].scrollIntoView();",YourShipto);
-
-	Thread.sleep(10000);
-	return YourShipto.getText();
+	
+waitUntilElementVisibility(YourShipto);
+String yourshipto = YourShipto.getText();
+System.out.println(yourshipto);
+	return yourshipto;
 	
 	 	
 		 

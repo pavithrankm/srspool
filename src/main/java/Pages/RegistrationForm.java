@@ -456,12 +456,13 @@ Select Brand= new Select(Heritage_Brand_Selection);
 Brand.selectByVisibleText("Pool Contractor Supply");
 
 }
-public void Hertiage_Brand_Aqua_gon_Selection()
+public void Hertiage_Brand_Aqua_gon_Selection() throws InterruptedException
 
 {
 
 Select Brand= new Select(Heritage_Brand_Selection);
-Brand.selectByVisibleText("AQUA-GON");
+Thread.sleep(3000);
+Brand.selectByVisibleText("Aqua-Gon");
 
 }
 

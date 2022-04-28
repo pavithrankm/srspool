@@ -68,7 +68,7 @@ public class CheckoutPageTest extends BaseTest {
 		
 		COp.Branch_Selection();
 		
-		Thread.sleep(1000);
+	
 		COp.PO_Number();
 		COp.Ordernotes();
 		COp.RequestedDate();

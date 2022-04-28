@@ -51,7 +51,7 @@ public class ProductDetailPage  {
 		
 	}
 	
-	public String AddingItem() 
+	public String AddingItem() throws InterruptedException 
 	{
 		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -62,7 +62,7 @@ public class ProductDetailPage  {
 		
 			wait.until(ExpectedConditions.visibilityOf(PartLabel));
 			 wait.until(ExpectedConditions.visibilityOf(AddToCart));
-	
+	      Thread.sleep(3000);
 			AddToCart.click();
 			
 				wait.until(ExpectedConditions.visibilityOf(text));

@@ -97,19 +97,19 @@ public class QuickOrderPadPage extends BasePage{
 
 	    listele.size();
 			 
-	    Thread.sleep(900);
+	    Thread.sleep(1000);
 			
 
 		listele.get(0).click();
 		listele.get(0).sendKeys(prop.getProperty("ValidProductSKU"));
 		QuickOrderPad.click();
-		Thread.sleep(11000);
+		Thread.sleep(3000);
 		
 		List <WebElement>  listele1= driver.findElements(By.xpath("//span[@class='amqorder-name']"));
 		 
 		listele1.size();
 		
-		Thread.sleep(11000);
+		Thread.sleep(5000);
 		listele1.get(0).click();
 		
 		 Thread.sleep(4000);
@@ -192,10 +192,7 @@ public class QuickOrderPadPage extends BasePage{
 	public  List<String> ReadfileData() throws InterruptedException, CsvValidationException, IOException
 	
 	{
-//	String file = "C:\\Users\\DELL\\Tester3.csv"; //qps
-//		String file ="C:\\Users\\DELL\\Downloads\\Tester2.csv"; // Aqua
-	 String file = "C:\\Users\\DELL\\Tester1.csv"; //pcs
-		
+	 String file =  prop.getProperty("valid_csvfile") ;
 		 
 		 
 	       String delimiter = ",";

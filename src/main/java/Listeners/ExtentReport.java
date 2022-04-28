@@ -36,7 +36,7 @@ public class ExtentReport extends BasePage implements ITestListener
 	public static ThreadLocal<ExtentTest> test = new ThreadLocal<ExtentTest>();
 
 	public static ExtentReports init() {
-
+		
 		Path path = Paths.get(OUTPUT_FOLDER);
 		// if directory exists?
 		if (!Files.exists(path)) {
@@ -47,9 +47,10 @@ public class ExtentReport extends BasePage implements ITestListener
 				e.printStackTrace();
 			}
 		}
+		
 		ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(OUTPUT_FOLDER + FILE_NAME);
 		htmlReporter.config().setDocumentTitle("TestExecutionReport");
-		htmlReporter.config().setReportName("Automation Test Results Of: "); // prop.getProperty("site")
+		htmlReporter.config().setReportName("Automation Test Results Of: PEP ");//String property = prop.getProperty("site");
 		htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);
 		htmlReporter.config().setTheme(Theme.STANDARD);
 

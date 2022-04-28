@@ -66,6 +66,7 @@ public class CompanyUserTest extends BaseTest {
 		Hp.ValidLogin();
 		Thread.sleep(5000);
 		Hp.Account_Hover();
+		Thread.sleep(2000);
 		Hp.ClickUserManagement();
 		Thread.sleep(5000);
 		CUpg = new CompanyUsersPage(driver);

@@ -6,7 +6,8 @@
 </listeners>
   <test thread-count="5" name="Test">
     <classes>
-      <class name="SRSproject.SRSproject.BulkOrderPadTest"/>
+       
+      <class name="SRSproject.SRSproject.CartPageTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
