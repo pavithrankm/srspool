@@ -57,7 +57,9 @@ public class BasePage
 	
 	//public static String configpath="C:\\Users\\DELL\\Documents\\SRSPool\\src\\main\\java\\config_staging2\\configuration_staging2_pcs.properties";
 	
-	public static String configpath ="C:\\Users\\DELL\\Documents\\SRSPool\\src\\main\\java\\config_staging2\\configuration_staging2_pcs.properties";
+	//public static String configpath ="C:\\Users\\DELL\\Documents\\SRSPool\\src\\main\\java\\config_staging2\\configuration_staging2_pcs.properties";
+	
+	public static String configpath ="C:\\Users\\DELL\\Documents\\SRSPool\\src\\main\\java\\config_staging2\\configuration_staging2_PEP.properties";
 	public static ThreadLocal<WebDriver> tdriver = new ThreadLocal<WebDriver>();
 	
 	//multithreading  
