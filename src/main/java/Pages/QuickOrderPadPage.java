@@ -90,7 +90,7 @@ public class QuickOrderPadPage extends BasePage{
 
 		 Thread.sleep(3000);
 		QuickOrderPad.click();
-		 Thread.sleep(1000);
+		 Thread.sleep(2000);
 
 		List <WebElement>  listele= driver.findElements(By.xpath("//input[@class='amqorder-input -search']"));
 			
@@ -103,13 +103,13 @@ public class QuickOrderPadPage extends BasePage{
 		listele.get(0).click();
 		listele.get(0).sendKeys(prop.getProperty("ValidProductSKU"));
 		QuickOrderPad.click();
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		
 		List <WebElement>  listele1= driver.findElements(By.xpath("//span[@class='amqorder-name']"));
 		 
 		listele1.size();
 		
-		Thread.sleep(5000);
+		Thread.sleep(8000);
 		listele1.get(0).click();
 		
 		 Thread.sleep(4000);

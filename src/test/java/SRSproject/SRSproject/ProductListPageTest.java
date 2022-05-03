@@ -27,7 +27,7 @@ public class ProductListPageTest extends BaseTest {
 	
 	ProductListPage plp;
 
-	@Test(priority=1, description= "Register now link redirection",enabled = false)
+	@Test(priority=1, description= "Register now link redirection",enabled =false)
 	public void PLP_RegisterRedirection_GuestValidation() throws InterruptedException, IOException 
 	{
 		BasePage.initializtion();

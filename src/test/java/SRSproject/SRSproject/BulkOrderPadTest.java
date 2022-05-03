@@ -32,6 +32,7 @@ public class BulkOrderPadTest extends BaseTest {
 		
 		LoginPage Lp = new LoginPage(driver);
 		Lp.ValidLogin();
+		Thread.sleep(5000);
 		Bp= new BulkOrderPage(driver);
 		String BulkOrderTitle= Bp.BulkOrderPadClick();
 		Assert.assertEquals(BulkOrderTitle, Constants.BulkOrderTitle);

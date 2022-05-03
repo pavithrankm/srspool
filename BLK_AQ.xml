@@ -8,7 +8,7 @@
     <classes>
 
    <class name="SRSproject.SRSproject.BulkOrderPadTest"/>
-<class name="SRSproject.SRSproject.QuickOrderPadTest"/>
+
     
     </classes>
   </test> <!-- Test -->

@@ -6,13 +6,12 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="SRSproject.SRSproject.BulkOrderPadTest">
+      <class name="SRSproject.SRSproject.QuickOrderPadTest">
         <methods>
-          <include name="InValid_FileUpload_Validation"/>
           <include name="setUp"/>
-          <include name="ListofItem_Validation"/>
+          <include name="Quick_OrderPad_Validation"/>
         </methods>
-      </class> <!-- SRSproject.SRSproject.BulkOrderPadTest -->
+      </class> <!-- SRSproject.SRSproject.QuickOrderPadTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
