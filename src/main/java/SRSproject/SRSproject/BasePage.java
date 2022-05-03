@@ -12,6 +12,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -76,8 +77,13 @@ public static String configpath="src/main/java/config_staging2/configuration_sta
 		
 		if(BrowserName.equalsIgnoreCase("chrome"))
 		{
+			ChromeOptions chromeoptions =new ChromeOptions();
+			chromeoptions.setHeadless(true)	;
+		
+		System.setProperty("webdriver.chrome.driver", "./SRSproject_Pool/chromedriver.exe");
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
+			driver.get("https://jenkin.dckap.co/");
 		}
 		else if(BrowserName.equalsIgnoreCase("Firefox"))
 		{
