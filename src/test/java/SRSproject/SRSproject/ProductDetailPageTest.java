@@ -27,7 +27,7 @@ public class ProductDetailPageTest extends BaseTest {
 
 	ProductDetailPage pdp;
 	
-@Test(priority=1, description= "Register now link redirection")
+@Test(priority=1, description= "Register now link redirection",enabled = false)
 	public void PDP_RegisterRedirection_GuestValidation() throws InterruptedException, IOException 
 	{
 		BasePage.initializtion();

@@ -7,7 +7,7 @@
   <test thread-count="5" name="Test">
     <classes>
        
-      <class name="SRSproject.SRSproject.CartPageTest"/>
+      <class name="SRSproject.SRSproject.BulkOrderPadTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

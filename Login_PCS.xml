@@ -6,10 +6,8 @@
 </listeners>
   <test thread-count="5" name="Test">
     <classes>
-      <class name="SRSproject.SRSproject.BrandLoginMultiBrandTest"/>
-      <class name="SRSproject.SRSproject.CompanyUserTest"/>
       <class name="SRSproject.SRSproject.LoginTest"/>
-      <class name="SRSproject.LoginTests.UnAuthorizedAccessToPCS"/>
+      <class name="SRSproject.LoginTests.UnAuthorizedAccessToEmsco"/>
       
     </classes>
   </test> <!-- Test -->

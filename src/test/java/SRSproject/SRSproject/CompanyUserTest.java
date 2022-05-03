@@ -60,7 +60,7 @@ public class CompanyUserTest extends BaseTest {
 
 	@Test(priority = 1)
 	public void AddNewUserRole() throws InterruptedException, IOException {
-// BasePage.initializtion();
+ BasePage.initializtion();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Hp = new HomePage(driver);
 		Hp.ValidLogin();

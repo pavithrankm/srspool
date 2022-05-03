@@ -1,127 +1,339 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="0" failed="0" skipped="2">
+<testng-results ignored="10" total="43" passed="31" failed="2" skipped="0">
   <reporter-output>
+    <line>
+      <![CDATA[Items price is same in PDP and Cart Page i.e Cart Price : 1.01 = PDP Price : 1.01]]>
+    </line>
+    <line>
+      <![CDATA[Able to Add items by searching them ]]>
+    </line>
+    <line>
+      <![CDATA[Items are added from cart to Reorder List selected]]>
+    </line>
+    <line>
+      <![CDATA[Checkout]]>
+    </line>
+    <line>
+      <![CDATA[Items in Cart are all added to Checkout Page successfully]]>
+    </line>
+    <line>
+      <![CDATA[Items added to bulk order as expected]]>
+    </line>
+    <line>
+      <![CDATA[Items added to bulk order as expected]]>
+    </line>
+    <line>
+      <![CDATA[Items added to bulk order as expected]]>
+    </line>
+    <line>
+      <![CDATA[Items added to cart]]>
+    </line>
+    <line>
+      <![CDATA[Able to create new reorder pad]]>
+    </line>
   </reporter-output>
-  <suite started-at="2022-04-29T10:46:44 IST" name="Default suite" finished-at="2022-04-29T10:46:44 IST" duration-ms="36">
+  <suite started-at="2022-05-03T09:34:35 IST" name="Suite" finished-at="2022-05-03T09:51:24 IST" duration-ms="1009188">
     <groups>
     </groups>
-    <test started-at="2022-04-29T10:46:44 IST" name="Default test" finished-at="2022-04-29T10:46:44 IST" duration-ms="36">
-      <class name="SRSproject.SRSproject.ChangeBranch_shipto_Test">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:SRSproject.SRSproject.ChangeBranch_shipto_Test@7d4f9aae]" started-at="2022-04-29T10:46:44 IST" name="setUp" finished-at="2022-04-29T10:46:44 IST" duration-ms="9" status="FAIL">
-          <exception class="java.io.FileNotFoundException">
-            <message>
-              <![CDATA[.\configuration_staging2_pcs.properties (The system cannot find the file specified)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.io.FileNotFoundException: .\configuration_staging2_pcs.properties (The system cannot find the file specified)
-at java.base/java.io.FileInputStream.open0(Native Method)
-at java.base/java.io.FileInputStream.open(FileInputStream.java:219)
-at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
-at java.base/java.io.FileInputStream.<init>(FileInputStream.java:112)
-at SRSproject.SRSproject.BasePage.initializtion(BasePage.java:78)
-at SRSproject.SRSproject.BaseTest.setUp(BaseTest.java:17)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:317)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.io.FileNotFoundException -->
+    <test started-at="2022-05-03T09:34:35 IST" name="Test" finished-at="2022-05-03T09:51:24 IST" duration-ms="1009188">
+      <class name="SRSproject.SRSproject.CompanyUserTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:SRSproject.SRSproject.CompanyUserTest@2205a05d]" started-at="2022-05-03T09:34:26 IST" name="setUp" finished-at="2022-05-03T09:34:35 IST" duration-ms="8620" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="Change_Shito_Validation()[pri:1, instance:SRSproject.SRSproject.ChangeBranch_shipto_Test@7d4f9aae]" started-at="2022-04-29T10:46:44 IST" name="Change_Shito_Validation" description="Changing Shipto" finished-at="2022-04-29T10:46:44 IST" duration-ms="0" status="SKIP">
-          <exception class="java.io.FileNotFoundException">
-            <message>
-              <![CDATA[.\configuration_staging2_pcs.properties (The system cannot find the file specified)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.io.FileNotFoundException: .\configuration_staging2_pcs.properties (The system cannot find the file specified)
-at java.base/java.io.FileInputStream.open0(Native Method)
-at java.base/java.io.FileInputStream.open(FileInputStream.java:219)
-at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
-at java.base/java.io.FileInputStream.<init>(FileInputStream.java:112)
-at SRSproject.SRSproject.BasePage.initializtion(BasePage.java:78)
-at SRSproject.SRSproject.BaseTest.setUp(BaseTest.java:17)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:317)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.io.FileNotFoundException -->
+        <test-method signature="CreateCompanyUser()[pri:0, instance:SRSproject.SRSproject.CompanyUserTest@2205a05d]" started-at="2022-05-03T09:34:35 IST" name="CreateCompanyUser" finished-at="2022-05-03T09:35:20 IST" duration-ms="45013" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreateCompanyUser -->
+        <test-method signature="AddNewUserRole()[pri:1, instance:SRSproject.SRSproject.CompanyUserTest@2205a05d]" started-at="2022-05-03T09:35:20 IST" name="AddNewUserRole" finished-at="2022-05-03T09:36:40 IST" duration-ms="79483" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddNewUserRole -->
+      </class> <!-- SRSproject.SRSproject.CompanyUserTest -->
+      <class name="SRSproject.SRSproject.CheckoutPageTest">
+        <test-method signature="CartToCheckout_Validation()[pri:1, instance:SRSproject.SRSproject.CheckoutPageTest@7b993c65]" started-at="2022-05-03T09:40:46 IST" name="CartToCheckout_Validation" description="Cart to Checkout Redirection " finished-at="2022-05-03T09:41:35 IST" duration-ms="49420" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Checkout]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- CartToCheckout_Validation -->
+        <test-method signature="Date_Validation()[pri:2, instance:SRSproject.SRSproject.CheckoutPageTest@7b993c65]" started-at="2022-05-03T09:41:35 IST" name="Date_Validation" description="Date Picker validation and other basic info updation " finished-at="2022-05-03T09:41:39 IST" duration-ms="4268" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Date_Validation -->
+        <test-method signature="ProductList_Validation()[pri:3, instance:SRSproject.SRSproject.CheckoutPageTest@7b993c65]" started-at="2022-05-03T09:41:39 IST" name="ProductList_Validation" description="Product Listing in checkout as per the list in cart" finished-at="2022-05-03T09:41:41 IST" duration-ms="1452" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Items in Cart are all added to Checkout Page successfully]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- ProductList_Validation -->
+      </class> <!-- SRSproject.SRSproject.CheckoutPageTest -->
+      <class name="SRSproject.SRSproject.ChangeBranch_shipto_Test">
+        <test-method signature="Change_Shito_Validation()[pri:1, instance:SRSproject.SRSproject.ChangeBranch_shipto_Test@7f284218]" started-at="2022-05-03T09:50:29 IST" name="Change_Shito_Validation" description="Changing Shipto" finished-at="2022-05-03T09:51:08 IST" duration-ms="38871" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Change_Shito_Validation -->
-        <test-method signature="ChangeBranch_Validation()[pri:2, instance:SRSproject.SRSproject.ChangeBranch_shipto_Test@7d4f9aae]" started-at="2022-04-29T10:46:44 IST" name="ChangeBranch_Validation" description="Changing Branch" finished-at="2022-04-29T10:46:44 IST" duration-ms="0" status="SKIP">
-          <exception class="java.io.FileNotFoundException">
-            <message>
-              <![CDATA[.\configuration_staging2_pcs.properties (The system cannot find the file specified)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.io.FileNotFoundException: .\configuration_staging2_pcs.properties (The system cannot find the file specified)
-at java.base/java.io.FileInputStream.open0(Native Method)
-at java.base/java.io.FileInputStream.open(FileInputStream.java:219)
-at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
-at java.base/java.io.FileInputStream.<init>(FileInputStream.java:112)
-at SRSproject.SRSproject.BasePage.initializtion(BasePage.java:78)
-at SRSproject.SRSproject.BaseTest.setUp(BaseTest.java:17)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:317)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.io.FileNotFoundException -->
+        <test-method signature="ChangeBranch_Validation()[pri:2, instance:SRSproject.SRSproject.ChangeBranch_shipto_Test@7f284218]" started-at="2022-05-03T09:51:08 IST" name="ChangeBranch_Validation" description="Changing Branch" finished-at="2022-05-03T09:51:24 IST" duration-ms="16344" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ChangeBranch_Validation -->
       </class> <!-- SRSproject.SRSproject.ChangeBranch_shipto_Test -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      <class name="SRSproject.SRSproject.CartPageTest">
+        <test-method signature="MiniCartToCartPage_Redirection()[pri:1, instance:SRSproject.SRSproject.CartPageTest@23202fce]" started-at="2022-05-03T09:38:50 IST" name="MiniCartToCartPage_Redirection" description="Minicart to cartpage redirection" finished-at="2022-05-03T09:39:43 IST" duration-ms="53342" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- MiniCartToCartPage_Redirection -->
+        <test-method signature="ProductInformationValidation()[pri:2, instance:SRSproject.SRSproject.CartPageTest@23202fce]" started-at="2022-05-03T09:39:43 IST" name="ProductInformationValidation" description="Pricing validaiton" finished-at="2022-05-03T09:40:04 IST" duration-ms="20598" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Items price is same in PDP and Cart Page i.e Cart Price : 1.01 = PDP Price : 1.01]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- ProductInformationValidation -->
+        <test-method signature="CartSubtotalValidationfn()[pri:3, instance:SRSproject.SRSproject.CartPageTest@23202fce]" started-at="2022-05-03T09:40:04 IST" name="CartSubtotalValidationfn" description="Subtotal validation" finished-at="2022-05-03T09:40:04 IST" duration-ms="193" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CartSubtotalValidationfn -->
+        <test-method signature="CartUpdateValidation()[pri:4, instance:SRSproject.SRSproject.CartPageTest@23202fce]" started-at="2022-05-03T09:40:04 IST" name="CartUpdateValidation" description="Updating cart Validation" finished-at="2022-05-03T09:40:12 IST" duration-ms="8279" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CartUpdateValidation -->
+        <test-method signature="AddItemToCart_Validation()[pri:5, instance:SRSproject.SRSproject.CartPageTest@23202fce]" started-at="2022-05-03T09:40:12 IST" name="AddItemToCart_Validation" description="Adding item to cart using search option in cart page" finished-at="2022-05-03T09:40:22 IST" duration-ms="10311" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Able to Add items by searching them ]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- AddItemToCart_Validation -->
+        <test-method signature="Reorder_Validation()[pri:6, instance:SRSproject.SRSproject.CartPageTest@23202fce]" started-at="2022-05-03T09:40:22 IST" name="Reorder_Validation" description="Adding items to an reorder list" finished-at="2022-05-03T09:40:46 IST" duration-ms="23355" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Items are added from cart to Reorder List selected]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Reorder_Validation -->
+      </class> <!-- SRSproject.SRSproject.CartPageTest -->
+      <class name="SRSproject.SRSproject.QuickOrderPadTest">
+        <test-method signature="Quick_OrderPad_Validation()[pri:1, instance:SRSproject.SRSproject.QuickOrderPadTest@37911f88]" started-at="2022-05-03T09:41:41 IST" name="Quick_OrderPad_Validation" description="Add item from Quick order to by searching item" finished-at="2022-05-03T09:42:46 IST" duration-ms="65542" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Quick_OrderPad_Validation -->
+        <test-method signature="Quick_OrderPad_FileUpload_Validation()[pri:2, instance:SRSproject.SRSproject.QuickOrderPadTest@37911f88]" started-at="2022-05-03T09:42:46 IST" name="Quick_OrderPad_FileUpload_Validation" description="Uploading a CSV file and validating" finished-at="2022-05-03T09:43:57 IST" duration-ms="70189" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Quick_OrderPad_FileUpload_Validation -->
+        <test-method signature="Quick_OrderPad_UploadedtoBulkOrder_Validation()[pri:3, instance:SRSproject.SRSproject.QuickOrderPadTest@37911f88]" started-at="2022-05-03T09:43:57 IST" name="Quick_OrderPad_UploadedtoBulkOrder_Validation" description="Validating item added from csv to the bulkorder page" finished-at="2022-05-03T09:44:13 IST" duration-ms="16075" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Quick_OrderPad_UploadedtoBulkOrder_Validation -->
+        <test-method signature="Quick_OrderPad_InvalidFileUpload_Validation()[pri:4, instance:SRSproject.SRSproject.QuickOrderPadTest@37911f88]" started-at="2022-05-03T09:44:13 IST" name="Quick_OrderPad_InvalidFileUpload_Validation" description="Uploading CSV file that has Invalid items" finished-at="2022-05-03T09:45:03 IST" duration-ms="49854" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Quick_OrderPad_InvalidFileUpload_Validation -->
+      </class> <!-- SRSproject.SRSproject.QuickOrderPadTest -->
+      <class name="SRSproject.SRSproject.ReorderPage_Test">
+        <test-method signature="ReorderPage_Redirection()[pri:1, instance:SRSproject.SRSproject.ReorderPage_Test@4d6025c5]" started-at="2022-05-03T09:46:53 IST" name="ReorderPage_Redirection" finished-at="2022-05-03T09:47:30 IST" duration-ms="37081" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReorderPage_Redirection -->
+        <test-method signature="UploadFile_Redirection()[pri:2, instance:SRSproject.SRSproject.ReorderPage_Test@4d6025c5]" started-at="2022-05-03T09:47:30 IST" name="UploadFile_Redirection" finished-at="2022-05-03T09:47:54 IST" duration-ms="24640" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UploadFile_Redirection -->
+        <test-method signature="SaveAnReorderList_Validation()[pri:3, instance:SRSproject.SRSproject.ReorderPage_Test@4d6025c5]" started-at="2022-05-03T09:47:54 IST" name="SaveAnReorderList_Validation" finished-at="2022-05-03T09:48:03 IST" duration-ms="8629" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SaveAnReorderList_Validation -->
+        <test-method signature="CreateNewReorder_Redirection()[pri:4, instance:SRSproject.SRSproject.ReorderPage_Test@4d6025c5]" started-at="2022-05-03T09:48:03 IST" name="CreateNewReorder_Redirection" finished-at="2022-05-03T09:48:21 IST" duration-ms="17833" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreateNewReorder_Redirection -->
+        <test-method signature="CreateNew_ReorderPad_Validation()[pri:5, instance:SRSproject.SRSproject.ReorderPage_Test@4d6025c5]" started-at="2022-05-03T09:48:21 IST" name="CreateNew_ReorderPad_Validation" finished-at="2022-05-03T09:48:35 IST" duration-ms="14077" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Able to create new reorder pad]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- CreateNew_ReorderPad_Validation -->
+        <test-method signature="View_Validation()[pri:6, instance:SRSproject.SRSproject.ReorderPage_Test@4d6025c5]" started-at="2022-05-03T09:48:35 IST" name="View_Validation" finished-at="2022-05-03T09:49:40 IST" duration-ms="65277" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- View_Validation -->
+        <test-method signature="InvalidFile_Validation()[pri:8, instance:SRSproject.SRSproject.ReorderPage_Test@4d6025c5]" started-at="2022-05-03T09:49:40 IST" name="InvalidFile_Validation" finished-at="2022-05-03T09:50:29 IST" duration-ms="48713" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- InvalidFile_Validation -->
+      </class> <!-- SRSproject.SRSproject.ReorderPage_Test -->
+      <class name="SRSproject.SRSproject.BulkOrderPadTest">
+        <test-method signature="BulOrder_Redirection()[pri:1, instance:SRSproject.SRSproject.BulkOrderPadTest@6f1c29b7]" started-at="2022-05-03T09:45:03 IST" name="BulOrder_Redirection" finished-at="2022-05-03T09:45:34 IST" duration-ms="31060" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BulOrder_Redirection -->
+        <test-method signature="AddItemtoBulkOrder_Validation()[pri:2, instance:SRSproject.SRSproject.BulkOrderPadTest@6f1c29b7]" started-at="2022-05-03T09:45:34 IST" name="AddItemtoBulkOrder_Validation" finished-at="2022-05-03T09:46:00 IST" duration-ms="26391" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Items added to bulk order as expected]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- AddItemtoBulkOrder_Validation -->
+        <test-method signature="AddNewLineItem_Validation()[pri:3, instance:SRSproject.SRSproject.BulkOrderPadTest@6f1c29b7]" started-at="2022-05-03T09:46:00 IST" name="AddNewLineItem_Validation" finished-at="2022-05-03T09:46:18 IST" duration-ms="18412" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Items added to bulk order as expected]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- AddNewLineItem_Validation -->
+        <test-method signature="UpdateQunatity_Validation()[pri:4, instance:SRSproject.SRSproject.BulkOrderPadTest@6f1c29b7]" started-at="2022-05-03T09:46:18 IST" name="UpdateQunatity_Validation" finished-at="2022-05-03T09:46:20 IST" duration-ms="1206" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Items added to bulk order as expected]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- UpdateQunatity_Validation -->
+        <test-method signature="AddAll_ItemToCart_Validation()[pri:5, instance:SRSproject.SRSproject.BulkOrderPadTest@6f1c29b7]" started-at="2022-05-03T09:46:20 IST" name="AddAll_ItemToCart_Validation" finished-at="2022-05-03T09:46:21 IST" duration-ms="1092" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Items added to cart]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- AddAll_ItemToCart_Validation -->
+        <test-method signature="ListofItem_Validation()[pri:6, instance:SRSproject.SRSproject.BulkOrderPadTest@6f1c29b7]" started-at="2022-05-03T09:46:21 IST" name="ListofItem_Validation" finished-at="2022-05-03T09:46:46 IST" duration-ms="25255" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[lists don't have the same size expected [31] but found [0]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: lists don't have the same size expected [31] but found [0]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+at org.testng.Assert.assertEquals(Assert.java:122)
+at org.testng.Assert.assertEquals(Assert.java:907)
+at org.testng.Assert.assertEquals(Assert.java:1089)
+at org.testng.Assert.assertEquals(Assert.java:1065)
+at SRSproject.SRSproject.BulkOrderPadTest.ListofItem_Validation(BulkOrderPadTest.java:118)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ListofItem_Validation -->
+        <test-method signature="InValid_FileUpload_Validation()[pri:7, instance:SRSproject.SRSproject.BulkOrderPadTest@6f1c29b7]" started-at="2022-05-03T09:46:46 IST" name="InValid_FileUpload_Validation" finished-at="2022-05-03T09:46:52 IST" duration-ms="6172" status="FAIL">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <button class="amasty-action-file" data-bind="i18n: '...'" data-trigger="trigger-amasty-upload-modal">Upload CSV</button> is not clickable at point (111, 415). Other element would receive the click: <div class="loading-mask" data-role="loader" style="display: block;">...</div>
+  (Session info: chrome=100.0.4896.127)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'L295-W-MARIRAJP', ip: '192.168.1.4', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 100.0.4896.127, chrome: {chromedriverVersion: 100.0.4896.60 (6a5d10861ce8..., userDataDir: C:\Users\DELL\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:62544}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 3e75add16ecf0ab542e7024146629956]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <button class="amasty-action-file" data-bind="i18n: '...'" data-trigger="trigger-amasty-upload-modal">Upload CSV</button> is not clickable at point (111, 415). Other element would receive the click: <div class="loading-mask" data-role="loader" style="display: block;">...</div>
+  (Session info: chrome=100.0.4896.127)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'L295-W-MARIRAJP', ip: '192.168.1.4', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 100.0.4896.127, chrome: {chromedriverVersion: 100.0.4896.60 (6a5d10861ce8..., userDataDir: C:\Users\DELL\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:62544}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 3e75add16ecf0ab542e7024146629956
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at jdk.proxy2/jdk.proxy2.$Proxy11.click(Unknown Source)
+at Pages.BulkOrderPage.InvalidFileupload(BulkOrderPage.java:230)
+at SRSproject.SRSproject.BulkOrderPadTest.InValid_FileUpload_Validation(BulkOrderPadTest.java:131)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- InValid_FileUpload_Validation -->
+      </class> <!-- SRSproject.SRSproject.BulkOrderPadTest -->
+      <class name="SRSproject.SRSproject.ProductDetailPageTest">
+        <test-method signature="AddingItemToCart()[pri:2, instance:SRSproject.SRSproject.ProductDetailPageTest@7d94beb9]" started-at="2022-05-03T09:37:41 IST" name="AddingItemToCart" description="Adding Item to Cart" finished-at="2022-05-03T09:38:50 IST" duration-ms="68337" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddingItemToCart -->
+      </class> <!-- SRSproject.SRSproject.ProductDetailPageTest -->
+      <class name="SRSproject.SRSproject.ProductListPageTest">
+        <test-method signature="AddToCart_Validation()[pri:2, instance:SRSproject.SRSproject.ProductListPageTest@609bcfb6]" started-at="2022-05-03T09:36:40 IST" name="AddToCart_Validation" description="Adding Item to Cart" finished-at="2022-05-03T09:37:41 IST" duration-ms="61822" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddToCart_Validation -->
+      </class> <!-- SRSproject.SRSproject.ProductListPageTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

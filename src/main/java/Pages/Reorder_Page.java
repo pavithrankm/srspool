@@ -37,7 +37,7 @@ public class Reorder_Page extends BasePage {
 	
 	@FindBy(xpath="(//input[@id='id-items0sku'])[1]") WebElement Product_input;
 	
-	@FindBy(xpath="(//div[@class='action'])[1]") WebElement First_List_View;
+	@FindBy(xpath="(//a[text()[normalize-space()='View']])[1]") WebElement First_List_View;
 	
 	@FindBy(xpath="(//button[@title='Add All Items To Cart'])[1]") WebElement Add_All_Items_btn;
 	
@@ -157,10 +157,11 @@ public  void EnterProduct() throws InterruptedException
 	
 }
 
-public  void View_Click() 
+public  WebElement  View_Click() 
 
 {
 	First_List_View.click();
+	return First_List_View;
 }
 
 public  WebElement Add_All_Items() 

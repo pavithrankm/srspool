@@ -181,11 +181,11 @@ public class BulkOrderPage extends BasePage {
 	
 {
 		
-//		Thread.sleep(8000);
+		Thread.sleep(5000);
 		
 //		((JavascriptExecutor) driver)
 //	    .executeScript("window.scrollTo(0, -document.body.scrollHeight)");
-		waitUntilElementVisibility(UploadCsv);
+//		waitUntilElementVisibility(UploadCsv);
 		UploadCsv.click();
 		 Thread.sleep(2000);
 		
@@ -239,7 +239,7 @@ public class BulkOrderPage extends BasePage {
 		UploadNow.click();
 		Thread.sleep(5000);
  String No_of_itemsimported= ItemsImported.getText();
-	
+	Thread.sleep(5000);
 			Accept.click();
 			
 			return No_of_itemsimported;

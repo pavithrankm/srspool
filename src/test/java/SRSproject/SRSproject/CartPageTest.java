@@ -203,8 +203,8 @@ float MultipliedPrice= ActualPrice * quantity;
 	String msg= Cp.Message();
 	System.out.println(msg);
 	String ReorderItemCount=msg.replaceAll("[^\\d]", "");
-	 String items =  driver.findElement(By.xpath("//span[text()='27 Items']")).getText();
-	 System.out.println(items);
+//	 String items =  driver.findElement(By.xpath("//span[text()='27 Items']")).getText();
+//	 System.out.println(items);
 	//System.out.println(ReorderItemCount);
 	
 	 Cp.ClickAddToReorder();
