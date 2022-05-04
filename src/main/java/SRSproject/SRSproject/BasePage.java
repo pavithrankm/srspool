@@ -31,7 +31,7 @@ public class BasePage
 //	public static String configpath ="E:\\SRSPool\\src\\main\\java\\config_prod\\config_prod_pcs.properties";
 //	public static String configpath ="E:\\SRSPool\\src\\main\\java\\config\\configuration_pcs.properties";//QA
 	//QPS
-	public static String configpath ="E:\\SRSPool\\src\\main\\java\\config_prod\\config_prod_qps.properties";
+//	public static String configpath ="E:\\SRSPool\\src\\main\\java\\config_prod\\config_prod_qps.properties";
 //	public static String configpath ="C:\\Users\\DCKAP\\eclipse-workspace\\SRSproject_Pool\\src\\main\\java\\config_staging\\configuration_staging_qps.properties";
 //	public static String configpath ="E:\\SRSPool\\src\\main\\java\\config_staging\\configuration_staging_qps.properties";
      //glb
@@ -51,7 +51,7 @@ public class BasePage
 //      public static String configpath="E:\\SRSPool\\src\\main\\java\\config_prod\\config_prod_Aquagon.properties";
 //      public static String configpath="E:\\SRSPool\\src\\main\\java\\config_prod\\config_prod_PEP.properties";
 //        public static String configpath = "src/main/java/config_prod/config_prod_Aps.properties";
-//	 public static String configpath ="src/main/java/config_prod/config_prod_Tps.properties";
+	 public static String configpath ="src/main/java/config_prod/config_prod_Tps.properties";
 //        public static String configpath = "src/main/java/config_prod/config_prod_Conely.properties";
 //	    src/main/resources/app.properties
 	//to run your selenium’s tests in parallel, Webdriver object should be thread-safe, i.e. a single object can be used with multiple threads at the same time without causing problems. 
