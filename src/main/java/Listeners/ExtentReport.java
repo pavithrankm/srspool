@@ -50,7 +50,7 @@ public class ExtentReport extends BasePage implements ITestListener
 		
 		ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(OUTPUT_FOLDER + FILE_NAME);
 		htmlReporter.config().setDocumentTitle("TestExecutionReport");
-		htmlReporter.config().setReportName("Automation Test Results Of: TPS");//String property = prop.getProperty("site");
+		htmlReporter.config().setReportName("Automation Test Results Of: PCS");//String property = prop.getProperty("site");
 		htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);
 		htmlReporter.config().setTheme(Theme.STANDARD);
 
