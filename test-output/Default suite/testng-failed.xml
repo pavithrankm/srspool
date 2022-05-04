@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="SRSproject.SRSproject.QuickOrderPadTest">
+      <class name="SRSproject.SRSproject.ProductDetailPageTest">
         <methods>
-          <include name="Quick_OrderPad_InvalidFileUpload_Validation"/>
           <include name="setUp"/>
+          <include name="PDP_RegisterRedirection_GuestValidation"/>
+          <include name="AddingItemToCart"/>
         </methods>
-      </class> <!-- SRSproject.SRSproject.QuickOrderPadTest -->
+      </class> <!-- SRSproject.SRSproject.ProductDetailPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

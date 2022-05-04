@@ -34,14 +34,23 @@ public class ProductListPageTest extends BaseTest {
 		Thread.sleep(5000);
 		HomePage hp= new HomePage(driver);
 		 Thread.sleep(2000);
-		hp.mouseHoverSelectCategory();
+	//	hp.mouseHoverSelectCategory();
+		 
+
+		
+			
+			
+			hp.SearchByKeyword();
+			Thread.sleep(10000);
+
 
 	  Thread.sleep(500);
 		
 		plp = new ProductListPage(driver);
 		
 		String title=plp.GuestUser_ClickRegister();
-		Assert.assertEquals(title, Constants.REGISTRATIONFORM_URL);
+		Assert.assertEquals(title, prop.getProperty("Homepage_url"));
+		
 		
 		
 	}

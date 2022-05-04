@@ -27,31 +27,28 @@ public class ProductDetailPageTest extends BaseTest {
 
 	ProductDetailPage pdp;
 	
-@Test(priority=1, description= "Register now link redirection",enabled = false)
+@Test(priority=1, description= "Register now link redirection")
 	public void PDP_RegisterRedirection_GuestValidation() throws InterruptedException, IOException 
 	{
-		BasePage.initializtion();
-		Thread.sleep(5000);
-		
-		
-		HomePage hp= new HomePage(driver);
-		 Thread.sleep(2000);
-		
-		hp.mouseHoverSelectCategory();
+	BasePage.initializtion();
+	Thread.sleep(5000);
+	
+	
+	HomePage hp= new HomePage(driver);
+	 Thread.sleep(2000);
+	 
+	 hp.SearchByKeyword();
+		Thread.sleep(10000);
 		
 		
 	ProductListPage	plp = new ProductListPage(driver);
 	pdp=plp.GuestUser_ClickItem();
-	Thread.sleep(600);
-	
-	//pdp = new ProductDetailPage(driver);
-	String title=pdp. Guest_clickProductRegister();
-	Assert.assertEquals(title, Constants.REGISTRATIONFORM_URL);
-	Thread.sleep(600);
-	
-	
-	
-		
+	Thread.sleep(4000);
+
+//pdp = new ProductDetailPage(driver);
+String title=pdp. Guest_clickProductRegister();
+Assert.assertEquals(title, prop.getProperty("Homepage_url"));
+Thread.sleep(600);
 				
 	}
 	
