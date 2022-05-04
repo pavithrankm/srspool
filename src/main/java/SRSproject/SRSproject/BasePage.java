@@ -90,13 +90,11 @@ public class BasePage
 		if(BrowserName.equalsIgnoreCase("chrome"))
 		{
 			
-				System.setProperty("webdriver.chrome.driver",
-						System.getProperty("user.dir") + "\\Driver\\chromedriver.exe");
-				driver = new ChromeDriver();
+				
 				
 
-//			WebDriverManager.chromedriver().setup();
-//			driver = new ChromeDriver();
+			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver();
 		}
 		else if(BrowserName.equalsIgnoreCase("Firefox"))
 		{
