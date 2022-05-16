@@ -36,8 +36,8 @@ public class ProductListPage {
 	
 	@FindBy(css="ol.products>li:nth-of-type(1)>div>a") WebElement firstProduct;
 	@FindBy(xpath="(//input[@name='qty'])[1]") WebElement FirstItem_Qty;
-    @FindBy(xpath="(//button[@title='Add to Cart'])[1]") WebElement AddToCart;
-    @FindBy(xpath="//p[text()='has been added to your cart']") WebElement text;
+  //  @FindBy(xpath="(//button[@title='Add to Cart'])[1]") WebElement AddToCart;
+  //  @FindBy(xpath="//p[text()='has been added to your cart']") WebElement text;
 
 	
 	public ProductListPage(WebDriver driver)
@@ -77,26 +77,26 @@ public class ProductListPage {
 		
 	}
 	
-	public String AddItem() throws InterruptedException
-	{
+	//public String AddItem() throws InterruptedException
+//	{
 		
 		
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+//		JavascriptExecutor js = (JavascriptExecutor) driver;
 		
-		 js.executeScript("arguments[0].scrollIntoView();", List);
-		 Thread.sleep(1000);
-		FirstItem_Qty.sendKeys("2");
+//		 js.executeScript("arguments[0].scrollIntoView();", List);
+//		 Thread.sleep(1000);
+//		FirstItem_Qty.sendKeys("2");
 		 
-		 WebDriverWait wait= new WebDriverWait(driver, 50);
-		 wait.until(ExpectedConditions.visibilityOf(AddToCart));
-	AddToCart.click();
+//		 WebDriverWait wait= new WebDriverWait(driver, 50);
+//		 wait.until(ExpectedConditions.visibilityOf(AddToCart));
+	//AddToCart.click();
 	 
-	wait.until(ExpectedConditions.visibilityOf(text));
-System.out.println(	text.getText());
-return text.getText();
+	//wait.until(ExpectedConditions.visibilityOf(text));
+//System.out.println(	text.getText());
+//return text.getText();
 
 	
-	}
+	//}
 	
 	
 	
