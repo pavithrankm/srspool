@@ -7,7 +7,8 @@
   <test thread-count="5" name="Test">
     <classes>
       <class name="SRSproject.SRSproject.LoginTest"/>
-      <class name="SRSproject.LoginTests.UnAuthorizedAccessToEmsco"/>
+      <class name="SRSproject.LoginTests.UnAuthorizedAccessToTPS"/>
+      <class name="SRSproject.SRSproject.CompanyUserTest"/>
       
     </classes>
   </test> <!-- Test -->
