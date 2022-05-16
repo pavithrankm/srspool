@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -24,17 +25,19 @@ public class BasePage
 	public static Properties prop;
 	public static WebDriver driver;
 	
+	
+	
 
 	//PCS
 	//	public static String configpath ="src/main/java/config_staging/configuration_staging_pcs.properties";
 	//	public static String configpath="src/main/java/config_staging2/configuration_staging2_pcs.properties";
-		public static String configpath ="src/main/java/config_prod/config_prod_pcs.properties";
+	//	public static String configpath ="src/main/java/config_prod/config_prod_pcs.properties";
 	//	public static String configpath ="src/main/java/config/configuration_pcs.properties"; //QA
 	
 	
 	//QPS
 	//	public static String configpath ="src/main/java/config_staging/configuration_staging_qps.properties";
-	//	public static String configpath ="src/main/java/config_staging2/configuration_staging2_qps.properties";
+		public static String configpath ="src/main/java/config_staging2/configuration_staging2_qps.properties";
 	//  public static String configpath ="src/main/java/config_prod/config_prod_qps.properties";
     
 	//glb
@@ -55,13 +58,13 @@ public class BasePage
 
 		
 	//APS 
-//	public static String configpath = "src/main/java/config_prod/config_prod_Aps.properties";
+	//public static String configpath = "src/main/java/config_prod/config_prod_Aps.properties";
     
 	//TPS 
-//	public static String configpath ="src/main/java/config_prod/config_prod_Tps.properties";
+	//public static String configpath ="src/main/java/config_prod/config_prod_Tps.properties";
 	
 	//Conely
-	//public static String configpath = "src/main/java/config_prod/configuration_pro_conley.properties;
+	//public static String configpath = "src/main/java/config_prod/configuration_pro_conley.properties";
 
 	//Emsco
 	//public static String configpath ="src/main/java/config_prod/configuration_pro_emscp.properties";
@@ -90,11 +93,13 @@ public class BasePage
 		if(BrowserName.equalsIgnoreCase("chrome"))
 		{
 			
-				
+				System.setProperty("webdriver.chrome.driver",
+						System.getProperty("user.dir") + "\\Driver\\chromedriver.exe");
+				driver = new ChromeDriver();
 				
 
-			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+//			WebDriverManager.chromedriver().setup();
+//			driver = new ChromeDriver();
 		}
 		else if(BrowserName.equalsIgnoreCase("Firefox"))
 		{
@@ -145,6 +150,23 @@ public class BasePage
 
 		return path;
 	}
+	public static String   Reportname() {
+		prop = new Properties();
+		return prop.getProperty("site");
+	}
+	
+	//javascript click
+	
+	public static void jsClick(WebElement element) throws Exception {
+		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+	
+		
+	        js.executeScript("arguments[0].focus();", element);
+
+	        js.executeScript("arguments[0].scrollIntoView(true);", element);
+	       js.executeScript("arguments[0].click()", element);
+	    }
 	
 
 }

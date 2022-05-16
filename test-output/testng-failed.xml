@@ -8,10 +8,16 @@
     <classes>
       <class name="SRSproject.SRSproject.ReorderPage_Test">
         <methods>
-          <include name="View_Validation"/>
           <include name="setUp"/>
+          <include name="InvalidFile_Validation"/>
         </methods>
       </class> <!-- SRSproject.SRSproject.ReorderPage_Test -->
+      <class name="SRSproject.SRSproject.BulkOrderPadTest">
+        <methods>
+          <include name="InValid_FileUpload_Validation"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- SRSproject.SRSproject.BulkOrderPadTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
