@@ -9,15 +9,33 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">Test</a></td><td class="num">6</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">143,501</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Test</a></td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">217,164</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="6">SRSproject.SRSproject.CartPageTest</td><td><a href="#m0">AddItemToCart_Validation</a></td><td rowspan="1">1652701253240</td><td rowspan="1">28401</td></tr><tr class="passedeven"><td><a href="#m1">CartSubtotalValidationfn</a></td><td rowspan="1">1652701244657</td><td rowspan="1">264</td></tr><tr class="passedeven"><td><a href="#m2">CartUpdateValidation</a></td><td rowspan="1">1652701244922</td><td rowspan="1">8317</td></tr><tr class="passedeven"><td><a href="#m3">MiniCartToCartPage_Redirection</a></td><td rowspan="1">1652701161584</td><td rowspan="1">57270</td></tr><tr class="passedeven"><td><a href="#m4">ProductInformationValidation</a></td><td rowspan="1">1652701218861</td><td rowspan="1">25793</td></tr><tr class="passedeven"><td><a href="#m5">Reorder_Validation</a></td><td rowspan="1">1652701281642</td><td rowspan="1">23423</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">SRSproject.SRSproject.ProductListPageTest</td><td><a href="#m0">AddToCart_Validation</a></td><td rowspan="1">1652706695650</td><td rowspan="1">59790</td></tr><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">SRSproject.SRSproject.ProductDetailPageTest</td><td><a href="#m1">AddingItemToCart</a></td><td rowspan="1">1652706808072</td><td rowspan="1">67072</td></tr><tr class="passedeven"><td><a href="#m2">PDP_RegisterRedirection_GuestValidation</a></td><td rowspan="1">1652706755910</td><td rowspan="1">52160</td></tr><tr class="passedodd"><td rowspan="1">SRSproject.SRSproject.ProductListPageTest</td><td><a href="#m3">PLP_RegisterRedirection_GuestValidation</a></td><td rowspan="1">1652706657999</td><td rowspan="1">37643</td></tr></tbody>
 </table>
-<h2>Test</h2><h3 id="m0">SRSproject.SRSproject.CartPageTest#AddItemToCart_Validation</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">SRSproject.SRSproject.CartPageTest#CartSubtotalValidationfn</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">SRSproject.SRSproject.CartPageTest#CartUpdateValidation</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">SRSproject.SRSproject.CartPageTest#MiniCartToCartPage_Redirection</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">SRSproject.SRSproject.CartPageTest#ProductInformationValidation</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">Items price is same in PDP and Cart Page i.e Cart Price : 10.2 = PDP Price : 10.2</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m5">SRSproject.SRSproject.CartPageTest#Reorder_Validation</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">Items are added from cart to Reorder List selected</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Test</h2><h3 id="m0">SRSproject.SRSproject.ProductListPageTest#AddToCart_Validation</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;button type=&quot;submit&quot; title=&quot;Add to Cart&quot; class=&quot;action tocart primary disabled&quot; disabled=&quot;disabled&quot;&gt;...&lt;/button&gt; is not clickable at point (524, 133). Other element would receive the click: &lt;div class=&quot;loading-mask&quot; data-role=&quot;loader&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=101.0.4951.67)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-MMCCJ5V&apos;, ip: &apos;192.168.1.9&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_151&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 101.0.4951.67, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\DELL\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:52180}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: b5f97abe4049d78fb0ae2df1ff3c779c
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy8.click(Unknown Source)
+	at Pages.ProductListPage.AddItem(ProductListPage.java:92)
+	at SRSproject.SRSproject.ProductListPageTest.AddToCart_Validation(ProductListPageTest.java:82)
+	at java.util.ArrayList.forEach(ArrayList.java:1255)
+... Removed 35 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">SRSproject.SRSproject.ProductDetailPageTest#AddingItemToCart</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">SRSproject.SRSproject.ProductDetailPageTest#PDP_RegisterRedirection_GuestValidation</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">SRSproject.SRSproject.ProductListPageTest#PLP_RegisterRedirection_GuestValidation</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
