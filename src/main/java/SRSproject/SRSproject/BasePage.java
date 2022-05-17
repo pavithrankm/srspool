@@ -104,7 +104,7 @@ public class BasePage
 			WebDriverManager.chromedriver().setup();
 			
 			ChromeOptions chromeOptions = new ChromeOptions();
-			chromeOptions.addArguments("window-size=1936,1056");
+			chromeOptions.addArguments("window-size=2558,1378");
 			 driver = new ChromeDriver(chromeOptions);
 			//	driver = new ChromeDriver();
 			//	DesiredCapabilities caps = new DesiredCapabilities();
