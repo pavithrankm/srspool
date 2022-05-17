@@ -16,7 +16,7 @@ import SRSproject.SRSproject.BasePage;
 import SRSproject.SRSproject.BaseTest;
 import Utils.Constants;
 
-public class LoginTest extends BaseTest {
+public class LoginTest extends BasePage {
 	//Run brand website prop file
 	ProductListPage plp;
 	ProductDetailPage pdp;
