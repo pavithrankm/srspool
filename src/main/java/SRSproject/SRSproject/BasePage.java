@@ -14,6 +14,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -98,9 +99,14 @@ public class BasePage
 		if(BrowserName.equalsIgnoreCase("chrome"))
 		{
 			
-				System.setProperty("webdriver.chrome.driver",
-						System.getProperty("user.dir") + "\\Driver\\chromedriver.exe");
-				driver = new ChromeDriver();
+				//System.setProperty("webdriver.chrome.driver",
+				//		System.getProperty("user.dir") + "\\Driver\\chromedriver.exe");
+			WebDriverManager.chromedriver().setup();
+			
+			ChromeOptions chromeOptions = new ChromeOptions();
+			chromeOptions.addArguments("window-size=1936,1056");
+			 driver = new ChromeDriver(chromeOptions);
+			//	driver = new ChromeDriver();
 			//	DesiredCapabilities caps = new DesiredCapabilities();
 			//	caps.setCapability("resolution", "2048x1536");
 				
@@ -124,10 +130,10 @@ public class BasePage
 	//	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.manage().deleteAllCookies();
 		
-		Dimension dimension = new Dimension(2048, 1536);
-		 driver.manage().window().setSize(dimension);
+	//	Dimension dimension = new Dimension(2048, 1536);
+	//	 driver.manage().window().setSize(dimension);
 		
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 		//DesiredCapabilities caps = new DesiredCapabilities();
 		//caps.setCapability("resolution", "2048x1536");
 		driver.get(prop.getProperty("url"));
