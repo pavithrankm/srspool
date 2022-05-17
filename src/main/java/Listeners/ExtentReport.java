@@ -11,6 +11,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Properties;
 
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -110,26 +112,46 @@ public class ExtentReport extends BasePage implements ITestListener
 		Markup m = MarkupHelper.createLabel(logText, ExtentColor.GREEN);
 		test.get().log(Status.PASS, m);
 	}
-
-	public synchronized void onTestFailure(ITestResult result) {
+	//@Override
+	//public synchronized void onTestFailure(ITestResult result) {
 	//	System.out.println((result.getMethod().getMethodName() + " failed!"));
 		
-		String logText = "<b>Test Method " +  result.getMethod().getMethodName()  + " Failed</b>";
-		Markup m = MarkupHelper.createLabel(logText, ExtentColor.RED);
-		test.get().log(Status.FAIL, m);
-		String exceptionMessage = Arrays.toString(result.getThrowable().getStackTrace());
-		test.get().fail("<details><summary><b><font color=red>" +
-						"Exception Occured, click to see details:"+ "</font></b></summary>" +
-						exceptionMessage.replaceAll(",", "<br>") + "</details> \n");
+		//String logText = "<b>Test Method " +  result.getMethod().getMethodName()  + " Failed</b>";
+//		Markup m = MarkupHelper.createLabel(logText, ExtentColor.RED);
+	//	test.get().log(Status.FAIL, m);
+		//String exceptionMessage = Arrays.toString(result.getThrowable().getStackTrace());
+	//	test.get().fail("<details><summary><b><font color=red>" +
+	//					"Exception Occured, click to see details:"+ "</font></b></summary>" +
+	//					exceptionMessage.replaceAll(",", "<br>") + "</details> \n");
+	//	try {
+	//	test.get().fail("<b><font color=red>" + "Screenshot of failure" + "</font></b>",
+	//				MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
+
+	//		test.get().log(Status.INFO,result.getThrowable());
+	//		test.get().log(Status.INFO,result.getThrowable());
+
+	//	} catch (IOException | InterruptedException e) {
+	//		test.get().fail("Test Failed, cannot attach screenshot");
+	//	}
+		
+//	}
+	
+	@Override
+	public synchronized void onTestFailure(ITestResult result) {
+		WebDriver driver= null; 
+		String filename =result.getName();
+		
 		try {
-			test.get().fail("<b><font color=red>" + "Screenshot of failure" + "</font></b>",
-					MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
-
-			test.get().log(Status.INFO,result.getThrowable());
-			test.get().log(Status.INFO,result.getThrowable());
-
-		} catch (IOException | InterruptedException e) {
-			test.get().fail("Test Failed, cannot attach screenshot");
+			driver = (WebDriver)result.getTestClass().getRealClass().getDeclaredField("driver").get(result.getInstance());
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
+		try {
+			takeScreenshot(filename,driver);
+		} catch (IOException e) {
+			
+			e.printStackTrace();
 		}
 		
 	}

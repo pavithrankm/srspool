@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.Reporter;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import Pages.HomePage;
@@ -25,6 +26,9 @@ import Utils.Constants;
 
 public class ProductListPageTest extends BaseTest {
 	
+	
+
+	
 	ProductListPage plp;
 
 	@Test(priority=1, description= "Register now link redirection")
@@ -35,11 +39,7 @@ public class ProductListPageTest extends BaseTest {
 		HomePage hp= new HomePage(driver);
 		 Thread.sleep(2000);
 	//	hp.mouseHoverSelectCategory();
-		 
-
-		
-			
-			
+		 	
 			hp.SearchByKeyword();
 			Thread.sleep(10000);
 
