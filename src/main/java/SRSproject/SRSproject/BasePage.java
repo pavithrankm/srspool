@@ -100,7 +100,7 @@ public class BasePage
 						System.getProperty("user.dir") + "\\Driver\\chromedriver.exe");
 				driver = new ChromeDriver();
 				DesiredCapabilities caps = new DesiredCapabilities();
-				caps.setCapability("resolution", "1024x768");
+				caps.setCapability("resolution", "2048x1536");
 				
 
 //			WebDriverManager.chromedriver().setup();
@@ -114,7 +114,7 @@ public class BasePage
 			WebDriverManager.edgedriver().browserVersion("10.0.18362.1139").setup();
 			driver = new EdgeDriver();
 			DesiredCapabilities caps = new DesiredCapabilities();
-			caps.setCapability("resolution", "1024x768");
+			caps.setCapability("resolution", "2048x1536");
 //			EdgeDriver driver = new EdgeDriver();
 //			System.out.println(driver.getCapabilities().toString());
 		}
@@ -122,6 +122,8 @@ public class BasePage
 	//	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.manage().deleteAllCookies();
 		//driver.manage().window().maximize();
+		DesiredCapabilities caps = new DesiredCapabilities();
+			caps.setCapability("resolution", "2048x1536");
 		driver.get(prop.getProperty("url"));
 		tdriver.set(driver);
 		return getDriver();
