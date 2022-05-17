@@ -1,6 +1,7 @@
 package SRSproject.SRSproject;
 
 
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -17,6 +18,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.Dimension;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -99,8 +101,8 @@ public class BasePage
 				System.setProperty("webdriver.chrome.driver",
 						System.getProperty("user.dir") + "\\Driver\\chromedriver.exe");
 				driver = new ChromeDriver();
-				DesiredCapabilities caps = new DesiredCapabilities();
-				caps.setCapability("resolution", "2048x1536");
+			//	DesiredCapabilities caps = new DesiredCapabilities();
+			//	caps.setCapability("resolution", "2048x1536");
 				
 
 //			WebDriverManager.chromedriver().setup();
@@ -113,17 +115,21 @@ public class BasePage
 		else {
 			WebDriverManager.edgedriver().browserVersion("10.0.18362.1139").setup();
 			driver = new EdgeDriver();
-			DesiredCapabilities caps = new DesiredCapabilities();
-			caps.setCapability("resolution", "2048x1536");
+		//	DesiredCapabilities caps = new DesiredCapabilities();
+		//	caps.setCapability("resolution", "2048x1536");
 //			EdgeDriver driver = new EdgeDriver();
 //			System.out.println(driver.getCapabilities().toString());
 		}
 		
 	//	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.manage().deleteAllCookies();
-		//driver.manage().window().maximize();
-		DesiredCapabilities caps = new DesiredCapabilities();
-			caps.setCapability("resolution", "2048x1536");
+		
+		Dimension dimension = new Dimension(2048, 1536);
+		 driver.manage().window().setSize(dimension);
+		
+		driver.manage().window().maximize();
+		//DesiredCapabilities caps = new DesiredCapabilities();
+		//caps.setCapability("resolution", "2048x1536");
 		driver.get(prop.getProperty("url"));
 		tdriver.set(driver);
 		return getDriver();
