@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="118257" started-at="2022-05-17T13:39:26 IST" finished-at="2022-05-17T13:41:24 IST">
+  <suite name="Default suite" duration-ms="106194" started-at="2022-05-17T16:51:02 IST" finished-at="2022-05-17T16:52:49 IST">
     <groups>
     </groups>
-    <test name="Test" duration-ms="118257" started-at="2022-05-17T13:39:26 IST" finished-at="2022-05-17T13:41:24 IST">
+    <test name="Default test" duration-ms="106194" started-at="2022-05-17T16:51:02 IST" finished-at="2022-05-17T16:52:49 IST">
       <class name="SRSproject.SRSproject.ProductListPageTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:SRSproject.SRSproject.ProductListPageTest@3ec300f1]" name="setUp" is-config="true" duration-ms="13634" started-at="2022-05-17T13:39:12 IST" finished-at="2022-05-17T13:39:26 IST">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:SRSproject.SRSproject.ProductListPageTest@16f7c8c1]" name="setUp" is-config="true" duration-ms="7156" started-at="2022-05-17T16:50:55 IST" finished-at="2022-05-17T16:51:02 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="PLP_RegisterRedirection_GuestValidation()[pri:1, instance:SRSproject.SRSproject.ProductListPageTest@3ec300f1]" name="PLP_RegisterRedirection_GuestValidation" duration-ms="47938" started-at="2022-05-17T13:39:26 IST" description="Register now link redirection" finished-at="2022-05-17T13:40:14 IST">
+        <test-method status="PASS" signature="PLP_RegisterRedirection_GuestValidation()[pri:1, instance:SRSproject.SRSproject.ProductListPageTest@16f7c8c1]" name="PLP_RegisterRedirection_GuestValidation" duration-ms="33901" started-at="2022-05-17T16:51:02 IST" description="Register now link redirection" finished-at="2022-05-17T16:51:36 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- PLP_RegisterRedirection_GuestValidation -->
-        <test-method status="PASS" signature="AddToCart_Validation()[pri:2, instance:SRSproject.SRSproject.ProductListPageTest@3ec300f1]" name="AddToCart_Validation" duration-ms="70291" started-at="2022-05-17T13:40:14 IST" description="Adding Item to Cart" finished-at="2022-05-17T13:41:24 IST">
+        <test-method status="PASS" signature="AddToCart_Validation()[pri:2, instance:SRSproject.SRSproject.ProductListPageTest@16f7c8c1]" name="AddToCart_Validation" duration-ms="72268" started-at="2022-05-17T16:51:36 IST" description="Adding Item to Cart" finished-at="2022-05-17T16:52:49 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AddToCart_Validation -->
       </class> <!-- SRSproject.SRSproject.ProductListPageTest -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

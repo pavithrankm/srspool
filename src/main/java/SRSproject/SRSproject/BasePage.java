@@ -14,6 +14,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -90,12 +91,16 @@ public class BasePage
 
 		String BrowserName= prop.getProperty("browser");
 		
+		
+		
 		if(BrowserName.equalsIgnoreCase("chrome"))
 		{
 			
 				System.setProperty("webdriver.chrome.driver",
 						System.getProperty("user.dir") + "\\Driver\\chromedriver.exe");
 				driver = new ChromeDriver();
+				DesiredCapabilities caps = new DesiredCapabilities();
+				caps.setCapability("resolution", "1024x768");
 				
 
 //			WebDriverManager.chromedriver().setup();
@@ -108,13 +113,15 @@ public class BasePage
 		else {
 			WebDriverManager.edgedriver().browserVersion("10.0.18362.1139").setup();
 			driver = new EdgeDriver();
+			DesiredCapabilities caps = new DesiredCapabilities();
+			caps.setCapability("resolution", "1024x768");
 //			EdgeDriver driver = new EdgeDriver();
 //			System.out.println(driver.getCapabilities().toString());
 		}
 		
 	//	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.manage().deleteAllCookies();
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 		driver.get(prop.getProperty("url"));
 		tdriver.set(driver);
 		return getDriver();
@@ -139,7 +146,7 @@ public class BasePage
 	{
 		
 		File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		String path = System.getProperty("user.dir") + "/screenshots/" + System.currentTimeMillis()+ ".png";
+		String path = System.getProperty("user.dir") + "./screenshots/" + System.currentTimeMillis()+ ".png";
 		File destination = new File(path);
 
 		try {

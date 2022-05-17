@@ -9,6 +9,7 @@ import org.apache.tools.ant.taskdefs.condition.Contains;
 import org.jsoup.select.Evaluator.ContainsData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -34,6 +35,9 @@ public class ProductListPageTest extends BaseTest {
 	@Test(priority=1, description= "Register now link redirection")
 	public void PLP_RegisterRedirection_GuestValidation() throws InterruptedException, IOException 
 	{
+		
+		DesiredCapabilities caps = new DesiredCapabilities();
+		caps.setCapability("resolution", "1024x768");
 		BasePage.initializtion();
 		Thread.sleep(5000);
 		HomePage hp= new HomePage(driver);
