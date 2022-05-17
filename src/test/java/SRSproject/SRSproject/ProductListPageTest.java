@@ -55,34 +55,34 @@ public class ProductListPageTest extends BaseTest {
 		
 	}
 	
-	//@Test(priority=2, description= "Adding Item to Cart")
-	//public void AddToCart_Validation() throws InterruptedException, IOException 
-	//{
-		//BasePage.initializtion();
-		//Thread.sleep(8000);
+	@Test(priority=2, description= "Adding Item to Cart")
+	public void AddToCart_Validation() throws InterruptedException, IOException 
+{
+	BasePage.initializtion();
+	Thread.sleep(8000);
 		
 		
-	//	Thread.sleep(1000);
-			//LoginPage Lp = new LoginPage(driver);
-		//Lp.ValidLogin();
-		//Thread.sleep(8000);
+	Thread.sleep(1000);
+			LoginPage Lp = new LoginPage(driver);
+		Lp.ValidLogin();
+		Thread.sleep(8000);
 		
-	//	HomePage hp= new HomePage(driver);
+	HomePage hp= new HomePage(driver);
 		
 		
-		//hp.SearchByKeyword();
-	//	Thread.sleep(10000);
+		hp.SearchByKeyword();
+		Thread.sleep(10000);
 
 
 	
 		
-		//plp = new ProductListPage(driver);
-		  //Thread.sleep(3000);
-//String successmsg= plp.AddItem();
-	//Assert.assertEquals(successmsg.contains(Constants.Success_Msg_Reorder), true);
+		plp = new ProductListPage(driver);
+		  Thread.sleep(3000);
+String successmsg= plp.AddItem();
+	Assert.assertEquals(successmsg.contains(Constants.Success_Msg_Reorder), true);
 
 
 
 		
-	//}
+	}
 }
