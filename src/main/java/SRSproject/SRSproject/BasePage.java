@@ -135,28 +135,28 @@ public class BasePage
 	 *
 	 */
 	
-	//public String getScreenshot() throws IOException, InterruptedException
-//	{
-//		
-//		File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-//		String path = System.getProperty("user.dir") + "/screenshots/" + System.currentTimeMillis() + ".png";
-//		File destination = new File(path);
-
-	//	try {
-//			FileUtils.copyFile(src, destination);
-//		} catch (IOException e) {
-	//		System.out.println("screenshot captured failed...");
-	//	}
-//
-		//return path;
-	//}
-	
-	public void takeScreenshot(String filename,WebDriver driver) throws IOException {
+	public String getScreenshot( ) throws IOException, InterruptedException
+	{
 		
-		File SourceFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		String destinationFilePath = System.getProperty("user.dir")+"/screenshots/"+filename+".png";
-		FileUtils.copyFile(SourceFile,new File(destinationFilePath));
-}
+		File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		String path = System.getProperty("user.dir") + "/screenshots/" + System.currentTimeMillis()+ ".png";
+		File destination = new File(path);
+
+		try {
+			FileUtils.copyFile(src, destination);
+		} catch (IOException e) {
+			System.out.println("screenshot captured failed...");
+		}
+
+		return path;
+	}
+	
+//	public void takeScreenshot(String filename,WebDriver driver) throws IOException {
+		
+//		File SourceFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+//		String destinationFilePath = System.getProperty("user.dir")+"/screenshots/"+filename+".png";
+//		FileUtils.copyFile(SourceFile,new File(destinationFilePath));
+//}
 	public static String   Reportname() {
 		prop = new Properties();
 		return prop.getProperty("site");

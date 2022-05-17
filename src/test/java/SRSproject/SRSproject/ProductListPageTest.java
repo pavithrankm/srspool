@@ -59,13 +59,13 @@ public class ProductListPageTest extends BaseTest {
 	public void AddToCart_Validation() throws InterruptedException, IOException 
 {
 	BasePage.initializtion();
-	Thread.sleep(8000);
+	Thread.sleep(10000);
 		
 		
-	Thread.sleep(1000);
+
 			LoginPage Lp = new LoginPage(driver);
 		Lp.ValidLogin();
-		Thread.sleep(8000);
+		Thread.sleep(10000);
 		
 	HomePage hp= new HomePage(driver);
 		
