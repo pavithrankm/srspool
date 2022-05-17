@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="900.431" tests="23" errors="0" skipped="0" failures="1">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="127.412" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -19,7 +19,7 @@
     <property name="user.country" value="IN"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_151\jre\bin"/>
-    <property name="sun.java.command" value="C:\Users\DELL\AppData\Local\Temp\surefire3926743273171326314\surefirebooter6111696296799707790.jar C:\Users\DELL\AppData\Local\Temp\surefire3926743273171326314 2022-05-11T18-39-02_966-jvmRun1 surefire4467101754786872211tmp surefire_026201402430193616tmp"/>
+    <property name="sun.java.command" value="C:\Users\DELL\AppData\Local\Temp\surefire7551901070689737190\surefirebooter6006769159108563885.jar C:\Users\DELL\AppData\Local\Temp\surefire7551901070689737190 2022-05-17T13-14-56_534-jvmRun1 surefire2646350086473237859tmp surefire_0466876715134591687tmp"/>
     <property name="surefire.test.class.path" value="D:\project\Apps\srsheritagepool\target\test-classes;D:\project\Apps\srsheritagepool\target\classes;C:\Users\DELL\.m2\repository\org\seleniumhq\selenium\selenium-java\3.141.59\selenium-java-3.141.59.jar;C:\Users\DELL\.m2\repository\org\seleniumhq\selenium\selenium-api\3.141.59\selenium-api-3.141.59.jar;C:\Users\DELL\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\3.141.59\selenium-chrome-driver-3.141.59.jar;C:\Users\DELL\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\3.141.59\selenium-edge-driver-3.141.59.jar;C:\Users\DELL\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\3.141.59\selenium-firefox-driver-3.141.59.jar;C:\Users\DELL\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\3.141.59\selenium-ie-driver-3.141.59.jar;C:\Users\DELL\.m2\repository\org\seleniumhq\selenium\selenium-opera-driver\3.141.59\selenium-opera-driver-3.141.59.jar;C:\Users\DELL\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\3.141.59\selenium-remote-driver-3.141.59.jar;C:\Users\DELL\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\3.141.59\selenium-safari-driver-3.141.59.jar;C:\Users\DELL\.m2\repository\org\seleniumhq\selenium\selenium-support\3.141.59\selenium-support-3.141.59.jar;C:\Users\DELL\.m2\repository\net\bytebuddy\byte-buddy\1.8.15\byte-buddy-1.8.15.jar;C:\Users\DELL\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\DELL\.m2\repository\com\google\guava\guava\25.0-jre\guava-25.0-jre.jar;C:\Users\DELL\.m2\repository\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar;C:\Users\DELL\.m2\repository\org\checkerframework\checker-compat-qual\2.0.0\checker-compat-qual-2.0.0.jar;C:\Users\DELL\.m2\repository\com\google\errorprone\error_prone_annotations\2.1.3\error_prone_annotations-2.1.3.jar;C:\Users\DELL\.m2\repository\com\google\j2objc\j2objc-annotations\1.1\j2objc-annotations-1.1.jar;C:\Users\DELL\.m2\repository\org\codehaus\mojo\animal-sniffer-annotations\1.14\animal-sniffer-annotations-1.14.jar;C:\Users\DELL\.m2\repository\com\squareup\okhttp3\okhttp\3.11.0\okhttp-3.11.0.jar;C:\Users\DELL\.m2\repository\com\squareup\okio\okio\1.14.0\okio-1.14.0.jar;C:\Users\DELL\.m2\repository\org\testng\testng\7.3.0\testng-7.3.0.jar;C:\Users\DELL\.m2\repository\com\beust\jcommander\1.78\jcommander-1.78.jar;C:\Users\DELL\.m2\repository\org\apache\ant\ant\1.10.3\ant-1.10.3.jar;C:\Users\DELL\.m2\repository\org\apache\ant\ant-launcher\1.10.3\ant-launcher-1.10.3.jar;C:\Users\DELL\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\DELL\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\DELL\.m2\repository\com\google\inject\guice\4.2.2\guice-4.2.2-no_aop.jar;C:\Users\DELL\.m2\repository\javax\inject\javax.inject\1\javax.inject-1.jar;C:\Users\DELL\.m2\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;C:\Users\DELL\.m2\repository\org\yaml\snakeyaml\1.21\snakeyaml-1.21.jar;C:\Users\DELL\.m2\repository\io\github\bonigarcia\webdrivermanager\4.0.0\webdrivermanager-4.0.0.jar;C:\Users\DELL\.m2\repository\org\slf4j\slf4j-api\1.7.30\slf4j-api-1.7.30.jar;C:\Users\DELL\.m2\repository\commons-io\commons-io\2.6\commons-io-2.6.jar;C:\Users\DELL\.m2\repository\com\google\code\gson\gson\2.8.6\gson-2.8.6.jar;C:\Users\DELL\.m2\repository\org\apache\commons\commons-lang3\3.10\commons-lang3-3.10.jar;C:\Users\DELL\.m2\repository\org\apache\httpcomponents\client5\httpclient5\5.0\httpclient5-5.0.jar;C:\Users\DELL\.m2\repository\org\apache\httpcomponents\core5\httpcore5\5.0\httpcore5-5.0.jar;C:\Users\DELL\.m2\repository\org\apache\httpcomponents\core5\httpcore5-h2\5.0\httpcore5-h2-5.0.jar;C:\Users\DELL\.m2\repository\org\rauschig\jarchivelib\1.0.0\jarchivelib-1.0.0.jar;C:\Users\DELL\.m2\repository\org\jsoup\jsoup\1.13.1\jsoup-1.13.1.jar;C:\Users\DELL\.m2\repository\com\aventstack\extentreports\3.1.5\extentreports-3.1.5.jar;C:\Users\DELL\.m2\repository\org\freemarker\freemarker\2.3.23\freemarker-2.3.23.jar;C:\Users\DELL\.m2\repository\org\mongodb\mongodb-driver\3.3.0\mongodb-driver-3.3.0.jar;C:\Users\DELL\.m2\repository\org\mongodb\bson\3.3.0\bson-3.3.0.jar;C:\Users\DELL\.m2\repository\org\mongodb\mongodb-driver-core\3.3.0\mongodb-driver-core-3.3.0.jar;C:\Users\DELL\.m2\repository\org\apache\httpcomponents\httpclient\4.5.2\httpclient-4.5.2.jar;C:\Users\DELL\.m2\repository\org\apache\httpcomponents\httpcore\4.4.4\httpcore-4.4.4.jar;C:\Users\DELL\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\DELL\.m2\repository\org\apache\httpcomponents\httpmime\4.5.2\httpmime-4.5.2.jar;C:\Users\DELL\.m2\repository\com\opencsv\opencsv\5.1\opencsv-5.1.jar;C:\Users\DELL\.m2\repository\org\apache\commons\commons-text\1.8\commons-text-1.8.jar;C:\Users\DELL\.m2\repository\commons-beanutils\commons-beanutils\1.9.4\commons-beanutils-1.9.4.jar;C:\Users\DELL\.m2\repository\commons-collections\commons-collections\3.2.2\commons-collections-3.2.2.jar;C:\Users\DELL\.m2\repository\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar;C:\Users\DELL\.m2\repository\org\apache\commons\commons-csv\1.6\commons-csv-1.6.jar;C:\Users\DELL\.m2\repository\org\apache\poi\poi\4.1.2\poi-4.1.2.jar;C:\Users\DELL\.m2\repository\commons-codec\commons-codec\1.13\commons-codec-1.13.jar;C:\Users\DELL\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar;C:\Users\DELL\.m2\repository\com\zaxxer\SparseBitSet\1.2\SparseBitSet-1.2.jar;C:\Users\DELL\.m2\repository\org\apache\poi\poi-ooxml\4.1.2\poi-ooxml-4.1.2.jar;C:\Users\DELL\.m2\repository\org\apache\poi\poi-ooxml-schemas\4.1.2\poi-ooxml-schemas-4.1.2.jar;C:\Users\DELL\.m2\repository\org\apache\xmlbeans\xmlbeans\3.1.0\xmlbeans-3.1.0.jar;C:\Users\DELL\.m2\repository\org\apache\commons\commons-compress\1.19\commons-compress-1.19.jar;C:\Users\DELL\.m2\repository\com\github\virtuald\curvesapi\1.06\curvesapi-1.06.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\DELL"/>
@@ -32,7 +32,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\DELL\AppData\Local\Temp\surefire3926743273171326314\surefirebooter6111696296799707790.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\DELL\AppData\Local\Temp\surefire7551901070689737190\surefirebooter6006769159108563885.jar"/>
     <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_151\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_151\jre\classes"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -61,276 +61,36 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="PLP_RegisterRedirection_GuestValidation" classname="SRSproject.SRSproject.ProductListPageTest" time="31.689">
-    <failure message="expected [https://mcstaging2.heritagepoolplus.com/company/account/create] but found [https://qps-stg2.heritagepoolplus.com/catalogsearch/result/?q=pentair]" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected [https://mcstaging2.heritagepoolplus.com/company/account/create] but found [https://qps-stg2.heritagepoolplus.com/catalogsearch/result/?q=pentair]
-	at org.testng.Assert.fail(Assert.java:99)
-	at org.testng.Assert.failNotEquals(Assert.java:1037)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
-	at org.testng.Assert.assertEquals(Assert.java:122)
-	at org.testng.Assert.assertEquals(Assert.java:629)
-	at org.testng.Assert.assertEquals(Assert.java:639)
-	at SRSproject.SRSproject.ProductListPageTest.PLP_RegisterRedirection_GuestValidation(ProductListPageTest.java:52)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.util.ArrayList.forEach(ArrayList.java:1255)
-	at org.testng.TestRunner.privateRun(TestRunner.java:764)
-	at org.testng.TestRunner.run(TestRunner.java:585)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-	at org.testng.TestNG.runSuites(TestNG.java:1069)
-	at org.testng.TestNG.run(TestNG.java:1037)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:324)
-	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:74)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:123)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
-	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
-	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
-]]></failure>
+  <testcase name="PLP_RegisterRedirection_GuestValidation" classname="SRSproject.SRSproject.ProductListPageTest" time="35.194">
     <system-out><![CDATA[Test Suite started!
 PLP_RegisterRedirection_GuestValidation started!
+PLP_RegisterRedirection_GuestValidation passed!
 ]]></system-out>
-    <system-err><![CDATA[Starting ChromeDriver 101.0.4951.41 (93c720db8323b3ec10d056025ab95c23a31997c9-refs/branch-heads/4951@{#904}) on port 14434
+    <system-err><![CDATA[Starting ChromeDriver 101.0.4951.41 (93c720db8323b3ec10d056025ab95c23a31997c9-refs/branch-heads/4951@{#904}) on port 41502
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-May 11, 2022 6:39:05 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+May 17, 2022 1:14:59 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
-Starting ChromeDriver 101.0.4951.41 (93c720db8323b3ec10d056025ab95c23a31997c9-refs/branch-heads/4951@{#904}) on port 15326
+Starting ChromeDriver 101.0.4951.41 (93c720db8323b3ec10d056025ab95c23a31997c9-refs/branch-heads/4951@{#904}) on port 31876
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-May 11, 2022 6:39:11 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+May 17, 2022 1:15:05 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
 ]]></system-err>
   </testcase>
-  <testcase name="AddToCart_Validation" classname="SRSproject.SRSproject.ProductListPageTest" time="77.608">
+  <testcase name="AddToCart_Validation" classname="SRSproject.SRSproject.ProductListPageTest" time="67.926">
     <system-out><![CDATA[AddToCart_Validation started!
 has been added to your cart
+AddToCart_Validation passed!
 ]]></system-out>
-    <system-err><![CDATA[Starting ChromeDriver 101.0.4951.41 (93c720db8323b3ec10d056025ab95c23a31997c9-refs/branch-heads/4951@{#904}) on port 35954
+    <system-err><![CDATA[Starting ChromeDriver 101.0.4951.41 (93c720db8323b3ec10d056025ab95c23a31997c9-refs/branch-heads/4951@{#904}) on port 15440
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-May 11, 2022 6:39:42 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+May 17, 2022 1:15:40 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
 ]]></system-err>
-  </testcase>
-  <testcase name="PDP_RegisterRedirection_GuestValidation" classname="SRSproject.SRSproject.ProductDetailPageTest" time="46.895">
-    <system-out><![CDATA[PDP_RegisterRedirection_GuestValidation started!
-]]></system-out>
-    <system-err><![CDATA[Starting ChromeDriver 101.0.4951.41 (93c720db8323b3ec10d056025ab95c23a31997c9-refs/branch-heads/4951@{#904}) on port 32300
-Only local connections are allowed.
-Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-May 11, 2022 6:41:00 PM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: W3C
-]]></system-err>
-  </testcase>
-  <testcase name="AddingItemToCart" classname="SRSproject.SRSproject.ProductDetailPageTest" time="69.567">
-    <system-out><![CDATA[AddingItemToCart started!
-has been added to your cart
-]]></system-out>
-    <system-err><![CDATA[Starting ChromeDriver 101.0.4951.41 (93c720db8323b3ec10d056025ab95c23a31997c9-refs/branch-heads/4951@{#904}) on port 24623
-Only local connections are allowed.
-Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-May 11, 2022 6:41:47 PM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: W3C
-]]></system-err>
-  </testcase>
-  <testcase name="MiniCartToCartPage_Redirection" classname="SRSproject.SRSproject.CartPageTest" time="50.555">
-    <system-out><![CDATA[MiniCartToCartPage_Redirection started!
-]]></system-out>
-    <system-err><![CDATA[Starting ChromeDriver 101.0.4951.41 (93c720db8323b3ec10d056025ab95c23a31997c9-refs/branch-heads/4951@{#904}) on port 29827
-Only local connections are allowed.
-Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-May 11, 2022 6:42:56 PM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: W3C
-]]></system-err>
-  </testcase>
-  <testcase name="ProductInformationValidation" classname="SRSproject.SRSproject.CartPageTest" time="22.651">
-    <system-out><![CDATA[ProductInformationValidation started!
-Items price is same in PDP and Cart Page i.e Cart Price : 10.2 = PDP Price : 10.2
-]]></system-out>
-  </testcase>
-  <testcase name="CartSubtotalValidationfn" classname="SRSproject.SRSproject.CartPageTest" time="0.278">
-    <system-out><![CDATA[CartSubtotalValidationfn started!
-30.6
-69.32
-747.52
-751.4
-780.36005
-783.46
-5329.26
-5991.03
-9230.83
-9244.93
-9830.649
-10386.529
-10655.109
-11106.989
-12427.409
-12427.799
-12755.849
-13004.349
-13761.698
-14427.908
-14427.908 The subtotal after adding line item
-48386.71
-]]></system-out>
-  </testcase>
-  <testcase name="CartUpdateValidation" classname="SRSproject.SRSproject.CartPageTest" time="8.277">
-    <system-out><![CDATA[CartUpdateValidation started!
-Actual Price is10.2
-Extended Price30.6
-]]></system-out>
-  </testcase>
-  <testcase name="AddItemToCart_Validation" classname="SRSproject.SRSproject.CartPageTest" time="28.421">
-    <system-out><![CDATA[AddItemToCart_Validation started!
-]]></system-out>
-  </testcase>
-  <testcase name="Reorder_Validation" classname="SRSproject.SRSproject.CartPageTest" time="23.394">
-    <system-out><![CDATA[Reorder_Validation started!
-You're adding 20 Products
-to test a
-You're adding 20 Products
-to test a
-Items are added from cart to Reorder List selected
-]]></system-out>
-  </testcase>
-  <testcase name="CartToCheckout_Validation" classname="SRSproject.SRSproject.CheckoutPageTest" time="47.179">
-    <system-out><![CDATA[CartToCheckout_Validation started!
-Checkout
-]]></system-out>
-    <system-err><![CDATA[Starting ChromeDriver 101.0.4951.41 (93c720db8323b3ec10d056025ab95c23a31997c9-refs/branch-heads/4951@{#904}) on port 24104
-Only local connections are allowed.
-Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-May 11, 2022 6:45:10 PM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: W3C
-]]></system-err>
-  </testcase>
-  <testcase name="Date_Validation" classname="SRSproject.SRSproject.CheckoutPageTest" time="4.086">
-    <system-out><![CDATA[Date_Validation started!
-]]></system-out>
-  </testcase>
-  <testcase name="ProductList_Validation" classname="SRSproject.SRSproject.CheckoutPageTest" time="1.659">
-    <system-out><![CDATA[ProductList_Validation started!
-Item in Cart Page[Taylor 2000 Series Comparator Bromine & Chlorine | 9056, Pentair Pole , 8' | R500070, Pentair Ameriquartz 250W 120V 100' , 100' | 77360300, Hayward Fiber Washer | SPX1023Z3, Hayward Adjustable Collar | WG1051X, Waterway Selfthreading Drain Screen | 602-5310, Pentair Colorsync Controller | 618031, Pentair Sta-Rite Pxcrp 150 Posi-Clear Cartridge Filter | 160352, Pentair Ameriquartz 75W 12V 100' , 100' | 77182500, Aqp O-Ringhayward Spx1600S | APCO2036, Hayward 1-1/2 HP LX Pump W/Twist-Lok | SP1580X15TL, Hayward 1 HP Power-Flo Pump W/Twist Lok | SP1580TL, Hayward 1 HP Power-Flo LX Pump W/Cord | SP1580, Pentair Unions Rplcmnt Intlchlor | 520595, Pentair Xcvr Assy Hpw 900Mhz | 523557, Aqp O-Ring For Ball Valve (Spx0722G) | APCO2406, Pentair Valve Check 1.5In | 08655-0007, Pentair Colorcascade Led Bubbler Rplcmnt | 590048, Pentair Tee Air Bleed Asy | 154689Z, Pentair Lamp Ambrt Wht 120V 500W | 602077]
-Item in Checkout Page[Taylor 2000 Series Comparator Bromine & Chlorine | 9056, Pentair Pole , 8' | R500070, Pentair Ameriquartz 250W 120V 100' , 100' | 77360300, Hayward Fiber Washer | SPX1023Z3, Hayward Adjustable Collar | WG1051X, Waterway Selfthreading Drain Screen | 602-5310, Pentair Colorsync Controller | 618031, Pentair Sta-Rite Pxcrp 150 Posi-Clear Cartridge Filter | 160352, Pentair Ameriquartz 75W 12V 100' , 100' | 77182500, Aqp O-Ringhayward Spx1600S | APCO2036, Hayward 1-1/2 HP LX Pump W/Twist-Lok | SP1580X15TL, Hayward 1 HP Power-Flo Pump W/Twist Lok | SP1580TL, Hayward 1 HP Power-Flo LX Pump W/Cord | SP1580, Pentair Unions Rplcmnt Intlchlor | 520595, Pentair Xcvr Assy Hpw 900Mhz | 523557, Aqp O-Ring For Ball Valve (Spx0722G) | APCO2406, Pentair Valve Check 1.5In | 08655-0007, Pentair Colorcascade Led Bubbler Rplcmnt | 590048, Pentair Tee Air Bleed Asy | 154689Z, Pentair Lamp Ambrt Wht 120V 500W | 602077, Pentair Cyanuric Acid, 1 Gallon | R161626, Jet Pump, 1 hp 115/230 V 21.4 gpm Self-Priming Shallow Well SN-Series, Centrifugal Pump, 1-1/2 hp 115/230 V 75 gpm Self-Priming DS3, Pentair Stud 1/2-13X11/2 Lg 303Ss | 30747-0152]
-Not all item from cart are added to checkout page 
-]]></system-out>
-  </testcase>
-  <testcase name="Quick_OrderPad_Validation" classname="SRSproject.SRSproject.QuickOrderPadTest" time="67.084">
-    <system-out><![CDATA[Quick_OrderPad_Validation started!
-]]></system-out>
-    <system-err><![CDATA[Starting ChromeDriver 101.0.4951.41 (93c720db8323b3ec10d056025ab95c23a31997c9-refs/branch-heads/4951@{#904}) on port 1876
-Only local connections are allowed.
-Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-May 11, 2022 6:46:03 PM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: W3C
-]]></system-err>
-  </testcase>
-  <testcase name="Quick_OrderPad_UploadedtoBulkOrder_Validation" classname="SRSproject.SRSproject.QuickOrderPadTest" time="14.454">
-    <system-out><![CDATA[Quick_OrderPad_FileUpload_Validation started!
-Quick_OrderPad_UploadedtoBulkOrder_Validation started!
-java.io.FileNotFoundException: D:\project\Apps\srsheritagepool\CSV\Tester3.csv (The system cannot find the file specified)
-final[]
-[]
-All the Items are Uploaded to Buld Order Page
-]]></system-out>
-    <system-err><![CDATA[Starting ChromeDriver 101.0.4951.41 (93c720db8323b3ec10d056025ab95c23a31997c9-refs/branch-heads/4951@{#904}) on port 36017
-Only local connections are allowed.
-Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-May 11, 2022 6:47:10 PM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: W3C
-]]></system-err>
-  </testcase>
-  <testcase name="BulOrder_Redirection" classname="SRSproject.SRSproject.BulkOrderPadTest" time="37.138">
-    <system-out><![CDATA[Quick_OrderPad_InvalidFileUpload_Validation started!
-BulOrder_Redirection started!
-]]></system-out>
-    <system-err><![CDATA[Starting ChromeDriver 101.0.4951.41 (93c720db8323b3ec10d056025ab95c23a31997c9-refs/branch-heads/4951@{#904}) on port 23468
-Only local connections are allowed.
-Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-May 11, 2022 6:48:50 PM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: W3C
-]]></system-err>
-  </testcase>
-  <testcase name="AddItemtoBulkOrder_Validation" classname="SRSproject.SRSproject.BulkOrderPadTest" time="26.478">
-    <system-out><![CDATA[AddItemtoBulkOrder_Validation started!
-Items added to bulk order as expected
-]]></system-out>
-  </testcase>
-  <testcase name="AddNewLineItem_Validation" classname="SRSproject.SRSproject.BulkOrderPadTest" time="18.373">
-    <system-out><![CDATA[AddNewLineItem_Validation started!
-Items added to bulk order as expected
-]]></system-out>
-  </testcase>
-  <testcase name="UpdateQunatity_Validation" classname="SRSproject.SRSproject.BulkOrderPadTest" time="1.172">
-    <system-out><![CDATA[UpdateQunatity_Validation started!
-Items added to bulk order as expected
-]]></system-out>
-  </testcase>
-  <testcase name="AddAll_ItemToCart_Validation" classname="SRSproject.SRSproject.BulkOrderPadTest" time="1.075">
-    <system-out><![CDATA[AddAll_ItemToCart_Validation started!
-Items added to cart
-]]></system-out>
-  </testcase>
-  <testcase name="ReorderPage_Redirection" classname="SRSproject.SRSproject.ReorderPage_Test" time="39.922">
-    <system-out><![CDATA[ListofItem_Validation started!
-InValid_FileUpload_Validation started!
-ReorderPage_Redirection started!
-]]></system-out>
-    <system-err><![CDATA[Starting ChromeDriver 101.0.4951.41 (93c720db8323b3ec10d056025ab95c23a31997c9-refs/branch-heads/4951@{#904}) on port 5265
-Only local connections are allowed.
-Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-May 11, 2022 6:50:36 PM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: W3C
-]]></system-err>
-  </testcase>
-  <testcase name="Change_Shito_Validation" classname="SRSproject.SRSproject.ChangeBranch_shipto_Test" time="62.557">
-    <system-out><![CDATA[UploadFile_Redirection started!
-SaveAnReorderList_Validation started!
-CreateNewReorder_Redirection started!
-CreateNew_ReorderPad_Validation started!
-View_Validation started!
-InvalidFile_Validation started!
-Change_Shito_Validation started!
-CUSTOM BACKYARD VACATIONS INC,4690 W WALTON BLVD,WATERFORD,MI,48329
-]]></system-out>
-    <system-err><![CDATA[Starting ChromeDriver 101.0.4951.41 (93c720db8323b3ec10d056025ab95c23a31997c9-refs/branch-heads/4951@{#904}) on port 19691
-Only local connections are allowed.
-Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-May 11, 2022 6:52:35 PM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: W3C
-]]></system-err>
-  </testcase>
-  <testcase name="ChangeBranch_Validation" classname="SRSproject.SRSproject.ChangeBranch_shipto_Test" time="25.881">
-    <system-out><![CDATA[ChangeBranch_Validation started!
-]]></system-out>
   </testcase>
 </testsuite>

@@ -21,9 +21,12 @@ public class LoginTest extends BaseTest {
 	ProductListPage plp;
 	ProductDetailPage pdp;
 	HomePage Hp;
+	
+	
 
 	@Test(priority = 0)
 	public void LoginValidation() throws InterruptedException {
+		
 		Thread.sleep(3000);
 		Hp = new HomePage(driver);
 		Hp.ValidLogin();

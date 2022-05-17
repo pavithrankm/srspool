@@ -6,12 +6,13 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="SRSproject.SRSproject.ProductListPageTest">
+      <class name="SRSproject.SRSproject.LoginTest">
         <methods>
-          <include name="AddToCart_Validation"/>
+          <include name="LoginValidation"/>
           <include name="setUp"/>
+          <include name="UnApprovedLoginValidation"/>
         </methods>
-      </class> <!-- SRSproject.SRSproject.ProductListPageTest -->
+      </class> <!-- SRSproject.SRSproject.LoginTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -317,7 +317,7 @@ public class BaseClass {
 			}
 		}
 		
-		public static File takeScreenShot(String filename) throws IOException  {
+		public static File takeScreenShot(String filename,WebDriver driver) throws IOException  {
 			try {
 				File f = new File(System.getProperty("user.dir")+"\\Library\\"+filename+".png");
 				TakesScreenshot ts = (TakesScreenshot) driver;
@@ -327,7 +327,13 @@ public class BaseClass {
 			} catch (WebDriverException e) {
 				e.printStackTrace();
 				throw new RuntimeException();
-			} 
+			} }
+			
+			public void takeScreenshot(String filename,WebDriver driver) throws IOException {
+				
+				File SourceFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+				String destinationFilePath = System.getProperty("user.dir")+"\\screenshots\\"+filename+".png";
+				FileUtils.copyFile(SourceFile,new File(destinationFilePath));
 		}
 
 		 public static void scrolltoBottomPage() {
