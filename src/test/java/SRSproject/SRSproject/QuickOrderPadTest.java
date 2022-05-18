@@ -83,9 +83,9 @@ public class QuickOrderPadTest extends BaseTest {
 		Thread.sleep(5000);
 	
 		qp = new QuickOrderPadPage(driver);
-		Thread.sleep(11000);
+		Thread.sleep(15000);
 		qp.Fileupload();
-		Thread.sleep(5000);
+		Thread.sleep(25000);
 		String QuickOrder_Redirection=  driver.getCurrentUrl();
 		Assert.assertEquals(QuickOrder_Redirection, prop.getProperty("QuickOrderPage_URL"));
 	
@@ -161,10 +161,10 @@ System.out.println("final"+arr);
 	{
 	
 	
-		Thread.sleep(5000);
+		Thread.sleep(15000);
 	
 		qp = new QuickOrderPadPage(driver);
-		Thread.sleep(11000);
+		Thread.sleep(15000);
 		//qp.InvalidFileupload();
 		String ProductNotExistMessage=qp.InvalidFileupload();
 		Assert.assertEquals(ProductNotExistMessage.endsWith("Successfully Passed Validation"),true);
