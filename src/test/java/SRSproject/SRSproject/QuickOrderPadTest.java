@@ -82,7 +82,7 @@ public class QuickOrderPadTest extends BaseTest {
 	Lp.ValidLogin();
 		Thread.sleep(5000);
 	
-		qp = new QuickOrderPadPage(driver);
+		QuickOrderPadPage qp = new QuickOrderPadPage(driver);
 		Thread.sleep(15000);
 		qp.Fileupload();
 		Thread.sleep(25000);
@@ -163,7 +163,7 @@ System.out.println("final"+arr);
 	
 		Thread.sleep(15000);
 	
-		qp = new QuickOrderPadPage(driver);
+		QuickOrderPadPage qp = new QuickOrderPadPage(driver);
 		Thread.sleep(15000);
 		//qp.InvalidFileupload();
 		String ProductNotExistMessage=qp.InvalidFileupload();
