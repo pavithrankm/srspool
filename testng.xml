@@ -14,6 +14,7 @@
 	      <class name="SRSproject.SRSproject.ProductDetailPageTest"/>
 	     <class name="SRSproject.SRSproject.CartPageTest"/>
 	    <class name="SRSproject.SRSproject.CheckoutPageTest"/>
+	    <class name="SRSproject.SRSproject.QuickOrderPadTest"/>
 	    
 
 
