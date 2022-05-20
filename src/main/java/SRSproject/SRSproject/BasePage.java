@@ -99,13 +99,12 @@ public class BasePage
 		if(BrowserName.equalsIgnoreCase("chrome"))
 		{
 			
-				//System.setProperty("webdriver.chrome.driver",
-				//		System.getProperty("user.dir") + "\\Driver\\chromedriver.exe");
-			WebDriverManager.chromedriver().setup();
+				System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir") + "\\Driver\\chromedriver.exe");
+			//WebDriverManager.chromedriver().setup();
 			
-			ChromeOptions chromeOptions = new ChromeOptions();
-			chromeOptions.addArguments("window-size=2558,1536");
-			 driver = new ChromeDriver(chromeOptions);
+			//ChromeOptions chromeOptions = new ChromeOptions();
+			//chromeOptions.addArguments("window-size=2558,1536");
+			// driver = new ChromeDriver(chromeOptions);
 			//	driver = new ChromeDriver();
 			//	DesiredCapabilities caps = new DesiredCapabilities();
 			//	caps.setCapability("resolution", "2048x1536");
@@ -136,6 +135,14 @@ public class BasePage
 		//driver.manage().window().maximize();
 		//DesiredCapabilities caps = new DesiredCapabilities();
 		//caps.setCapability("resolution", "2048x1536");
+		
+		
+		((JavascriptExecutor)driver).executeScript("window.resizeTo(screen.width, screen.height)");
+		driver.manage().window().setPosition(new Point(0, 0));
+		driver.manage().window().setSize(new Dimension(2558,1378)); 
+		driver.findElement(By.tagName("body")).sendKeys(Keys.F11);
+		
+		
 		driver.get(prop.getProperty("url"));
 		tdriver.set(driver);
 		return getDriver();
