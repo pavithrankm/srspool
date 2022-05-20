@@ -8,19 +8,20 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.Dimension;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BasePage
@@ -99,12 +100,13 @@ public class BasePage
 		if(BrowserName.equalsIgnoreCase("chrome"))
 		{
 			
-				System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir") + "\\Driver\\chromedriver.exe");
-			//WebDriverManager.chromedriver().setup();
+				//System.setProperty("webdriver.chrome.driver",
+				//		System.getProperty("user.dir") + "\\Driver\\chromedriver.exe");
+			WebDriverManager.chromedriver().setup();
 			
-			//ChromeOptions chromeOptions = new ChromeOptions();
-			//chromeOptions.addArguments("window-size=2558,1536");
-			// driver = new ChromeDriver(chromeOptions);
+			ChromeOptions chromeOptions = new ChromeOptions();
+			chromeOptions.addArguments("window-size=2558,1378");
+			 driver = new ChromeDriver(chromeOptions);
 			//	driver = new ChromeDriver();
 			//	DesiredCapabilities caps = new DesiredCapabilities();
 			//	caps.setCapability("resolution", "2048x1536");
@@ -136,13 +138,10 @@ public class BasePage
 		//DesiredCapabilities caps = new DesiredCapabilities();
 		//caps.setCapability("resolution", "2048x1536");
 		
-		
 		((JavascriptExecutor)driver).executeScript("window.resizeTo(screen.width, screen.height)");
 		driver.manage().window().setPosition(new Point(0, 0));
 		driver.manage().window().setSize(new Dimension(2558,1378)); 
 		driver.findElement(By.tagName("body")).sendKeys(Keys.F11);
-		
-		
 		driver.get(prop.getProperty("url"));
 		tdriver.set(driver);
 		return getDriver();
