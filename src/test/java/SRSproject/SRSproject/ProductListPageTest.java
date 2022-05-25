@@ -53,7 +53,7 @@ public class ProductListPageTest extends BaseTest {
 		plp = new ProductListPage(driver);
 		
 		String title=plp.GuestUser_ClickRegister();
-		Assert.assertEquals(title, prop.getProperty("Homepage_url"));
+		Assert.assertEquals(title, prop.getProperty("Homepage_logurl"));
 		
 		
 		

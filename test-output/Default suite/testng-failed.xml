@@ -3,12 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="SRSproject.SRSproject.ProductListPageTest">
+      <class name="SRSproject.SRSproject.LoginTest">
         <methods>
-          <include name="AddToCart_Validation"/>
+          <include name="tearDown"/>
           <include name="setUp"/>
+          <include name="UnApprovedLoginValidation"/>
         </methods>
-      </class> <!-- SRSproject.SRSproject.ProductListPageTest -->
+      </class> <!-- SRSproject.SRSproject.LoginTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

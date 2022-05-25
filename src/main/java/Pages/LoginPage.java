@@ -38,6 +38,7 @@ public class LoginPage extends BasePage {
 	@FindBy(xpath="//a[@title='Change Ship-to/Job Account']") WebElement ReorderPad;
 	@FindBy(xpath="//span[text()='I Accept']") WebElement Accept;
 	@FindBy(xpath="//div[@class='swal2-content']") WebElement errorPopupMsg;
+	//@FindBy(xpath="//div[@class='swal2-popup swal2-modal swal2-show']") WebElement errorPopupMsg;
 	@FindBy(xpath="//button[@class='swal2-close']") WebElement popupClose;
 	
 	

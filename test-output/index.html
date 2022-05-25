@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button class="button" id="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
+                    <span class="method-stats">8 methods, 2 failed,   6 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -105,6 +105,11 @@
                       <span>
                         <img width="3%" src="failed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="SRSproject.SRSproject.ProductListPageTest" hash-for-method="PLP_RegisterRedirection_GuestValidation">PLP_RegisterRedirection_GuestValidation</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="SRSproject.SRSproject.LoginTest" hash-for-method="UnApprovedLoginValidation">UnApprovedLoginValidation</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Suite -->
@@ -119,6 +124,31 @@
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="SRSproject.SRSproject.ProductListPageTest" hash-for-method="AddToCart_Validation">AddToCart_Validation</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="SRSproject.SRSproject.ProductDetailPageTest" hash-for-method="AddingItemToCart">AddingItemToCart</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="SRSproject.SRSproject.LoginTest" hash-for-method="LoginFromPDP">LoginFromPDP</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="SRSproject.SRSproject.LoginTest" hash-for-method="LoginFromPLP">LoginFromPLP</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="SRSproject.SRSproject.LoginTest" hash-for-method="LoginValidation">LoginValidation</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="SRSproject.SRSproject.ProductDetailPageTest" hash-for-method="PDP_RegisterRedirection_GuestValidation">PDP_RegisterRedirection_GuestValidation</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -144,13 +174,50 @@
                   <a name="PLP_RegisterRedirection_GuestValidation">
                   </a> <!-- PLP_RegisterRedirection_GuestValidation -->
                   <span class="method-name">PLP_RegisterRedirection_GuestValidation</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [https://mcstaging2.heritagepoolplus.com/company/account/create] but found [https://qps-stg2.heritagepoolplus.com/catalogsearch/result/?q=pentair]
+                  <div class="stack-trace">java.lang.AssertionError: expected [https://aquagon-stg2.heritagepoolplus.com/customer/account/] but found [https://mcstaging2.heritagepoolplus.com/company/account/create]
 	at SRSproject.SRSproject.ProductListPageTest.PLP_RegisterRedirection_GuestValidation(ProductListPageTest.java:56)
 	at java.util.ArrayList.forEach(ArrayList.java:1255)
 ... Removed 33 stack frames
 </div> <!-- stack-trace -->
                   <em>
 (Register now link redirection)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">SRSproject.SRSproject.LoginTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="UnApprovedLoginValidation">
+                  </a> <!-- UnApprovedLoginValidation -->
+                  <span class="method-name">UnApprovedLoginValidation</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=101.0.4951.67)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-MMCCJ5V&apos;, ip: &apos;192.168.1.9&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_151&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 101.0.4951.67, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\DELL\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:64358}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 8f61c8305a1b130532e375f6c2900954
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:106)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy9.sendKeys(Unknown Source)
+	at Pages.HomePage.UnApprovedLogin(HomePage.java:547)
+	at SRSproject.SRSproject.LoginTest.UnApprovedLoginValidation(LoginTest.java:67)
+	at java.util.ArrayList.forEach(ArrayList.java:1255)
+... Removed 35 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -172,6 +239,61 @@
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">SRSproject.SRSproject.LoginTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="LoginFromPDP">
+                  </a> <!-- LoginFromPDP -->
+                  <span class="method-name">LoginFromPDP</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="LoginFromPLP">
+                  </a> <!-- LoginFromPLP -->
+                  <span class="method-name">LoginFromPLP</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="LoginValidation">
+                  </a> <!-- LoginValidation -->
+                  <span class="method-name">LoginValidation</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">SRSproject.SRSproject.ProductDetailPageTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="AddingItemToCart">
+                  </a> <!-- AddingItemToCart -->
+                  <span class="method-name">AddingItemToCart</span>
+                  <em>
+(Adding Item to Cart)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="PDP_RegisterRedirection_GuestValidation">
+                  </a> <!-- PDP_RegisterRedirection_GuestValidation -->
+                  <span class="method-name">PDP_RegisterRedirection_GuestValidation</span>
+                  <em>
+(Register now link redirection)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -187,7 +309,9 @@
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
+      &lt;class name=&quot;SRSproject.SRSproject.LoginTest&quot;/&gt;
       &lt;class name=&quot;SRSproject.SRSproject.ProductListPageTest&quot;/&gt;
+      &lt;class name=&quot;SRSproject.SRSproject.ProductDetailPageTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -201,7 +325,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test (1 class)</span>
+                <span class="test-name">Test (3 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -227,20 +351,44 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(8);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'AddToCart_Validation')
 data.setCell(0, 2, 'SRSproject.SRSproject.ProductListPageTest')
-data.setCell(0, 3, 73390);
+data.setCell(0, 3, 81547);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'PLP_RegisterRedirection_GuestValidation')
-data.setCell(1, 2, 'SRSproject.SRSproject.ProductListPageTest')
-data.setCell(1, 3, 31892);
+data.setCell(1, 1, 'AddingItemToCart')
+data.setCell(1, 2, 'SRSproject.SRSproject.ProductDetailPageTest')
+data.setCell(1, 3, 70234);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'LoginValidation')
+data.setCell(2, 2, 'SRSproject.SRSproject.LoginTest')
+data.setCell(2, 3, 70069);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'LoginFromPLP')
+data.setCell(3, 2, 'SRSproject.SRSproject.LoginTest')
+data.setCell(3, 3, 65511);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'LoginFromPDP')
+data.setCell(4, 2, 'SRSproject.SRSproject.LoginTest')
+data.setCell(4, 3, 58589);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'PLP_RegisterRedirection_GuestValidation')
+data.setCell(5, 2, 'SRSproject.SRSproject.ProductListPageTest')
+data.setCell(5, 3, 42630);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'PDP_RegisterRedirection_GuestValidation')
+data.setCell(6, 2, 'SRSproject.SRSproject.ProductDetailPageTest')
+data.setCell(6, 3, 42600);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'UnApprovedLoginValidation')
+data.setCell(7, 2, 'SRSproject.SRSproject.LoginTest')
+data.setCell(7, 3, 16253);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 7 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -255,9 +403,27 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">4 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">SRSproject.SRSproject.ProductListPageTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">tearDown</span>
+                <br/>
+                <span class="ignored-method-name">setUp</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">SRSproject.SRSproject.ProductDetailPageTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">tearDown</span>
+                <br/>
+                <span class="ignored-method-name">setUp</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Suite" class="panel">
@@ -266,21 +432,60 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">SRSproject.SRSproject.ProductListPageTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">SRSproject.SRSproject.LoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">setUp</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="test-method">
+                <span class="method-name">LoginValidation</span>
+                <span class="method-start">5729 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">LoginFromPLP</span>
+                <span class="method-start">75809 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">LoginFromPDP</span>
+                <span class="method-start">141321 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">UnApprovedLoginValidation</span>
+                <span class="method-start">199911 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">SRSproject.SRSproject.ProductListPageTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">PLP_RegisterRedirection_GuestValidation</span>
-                <span class="method-start">8331 ms</span>
+                <span class="method-start">217046 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">AddToCart_Validation</span>
-                <span class="method-start">40367 ms</span>
+                <span class="method-start">260097 ms</span>
               </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">SRSproject.SRSproject.ProductDetailPageTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">PDP_RegisterRedirection_GuestValidation</span>
+                <span class="method-start">341646 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">AddingItemToCart</span>
+                <span class="method-start">384248 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">SRSproject.SRSproject.LoginTest</div> <!-- chronological-class-name -->
+              <div class="configuration-suite after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">454734 ms</span>
+              </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

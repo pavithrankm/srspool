@@ -203,9 +203,9 @@ float MultipliedPrice= ActualPrice * quantity;
 	public void Reorder_Validation() throws InterruptedException
 
 	{
-		Thread.sleep(10000);
+		Thread.sleep(9000);
 	Cp.ReOrderSelection();
-	Thread.sleep(10000);
+	Thread.sleep(8000);
 	String msg= Cp.Message();
 	System.out.println(msg);
 	String ReorderItemCount=msg.replaceAll("[^\\d]", "");
@@ -223,7 +223,7 @@ float MultipliedPrice= ActualPrice * quantity;
 		    {
 		    	Assert.assertTrue(true);
 		    	Reporter.log("Items are added from cart to Reorder List selected" , true);
-		    	Thread.sleep(15000);
+		    	Thread.sleep(000);
 		    	Cp.KeepShopping().click();
 		    	
 //		    	Cp.viewcart().click();

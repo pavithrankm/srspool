@@ -9,14 +9,40 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">Test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">105,482</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Test</a></td><td class="num">6</td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">448,770</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">SRSproject.SRSproject.ProductListPageTest</td><td><a href="#m0">PLP_RegisterRedirection_GuestValidation</a></td><td rowspan="1">1652793870439</td><td rowspan="1">31892</td></tr><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">SRSproject.SRSproject.ProductListPageTest</td><td><a href="#m1">AddToCart_Validation</a></td><td rowspan="1">1652793902475</td><td rowspan="1">73390</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">SRSproject.SRSproject.LoginTest</td><td><a href="#m0">UnApprovedLoginValidation</a></td><td rowspan="1">1653376408835</td><td rowspan="1">16253</td></tr><tr class="failedodd"><td rowspan="1">SRSproject.SRSproject.ProductListPageTest</td><td><a href="#m1">PLP_RegisterRedirection_GuestValidation</a></td><td rowspan="1">1653376425970</td><td rowspan="1">42630</td></tr><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="3">SRSproject.SRSproject.LoginTest</td><td><a href="#m2">LoginFromPDP</a></td><td rowspan="1">1653376350245</td><td rowspan="1">58589</td></tr><tr class="passedeven"><td><a href="#m3">LoginFromPLP</a></td><td rowspan="1">1653376284733</td><td rowspan="1">65511</td></tr><tr class="passedeven"><td><a href="#m4">LoginValidation</a></td><td rowspan="1">1653376214653</td><td rowspan="1">70069</td></tr><tr class="passedodd"><td rowspan="2">SRSproject.SRSproject.ProductDetailPageTest</td><td><a href="#m5">AddingItemToCart</a></td><td rowspan="1">1653376593172</td><td rowspan="1">70234</td></tr><tr class="passedodd"><td><a href="#m6">PDP_RegisterRedirection_GuestValidation</a></td><td rowspan="1">1653376550570</td><td rowspan="1">42600</td></tr><tr class="passedeven"><td rowspan="1">SRSproject.SRSproject.ProductListPageTest</td><td><a href="#m7">AddToCart_Validation</a></td><td rowspan="1">1653376469021</td><td rowspan="1">81547</td></tr></tbody>
 </table>
-<h2>Test</h2><h3 id="m0">SRSproject.SRSproject.ProductListPageTest#PLP_RegisterRedirection_GuestValidation</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [https://mcstaging2.heritagepoolplus.com/company/account/create] but found [https://qps-stg2.heritagepoolplus.com/catalogsearch/result/?q=pentair]
+<h2>Test</h2><h3 id="m0">SRSproject.SRSproject.LoginTest#UnApprovedLoginValidation</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=101.0.4951.67)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-MMCCJ5V&apos;, ip: &apos;192.168.1.9&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_151&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 101.0.4951.67, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\DELL\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:64358}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 8f61c8305a1b130532e375f6c2900954
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:106)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy9.sendKeys(Unknown Source)
+	at Pages.HomePage.UnApprovedLogin(HomePage.java:547)
+	at SRSproject.SRSproject.LoginTest.UnApprovedLoginValidation(LoginTest.java:67)
+	at java.util.ArrayList.forEach(ArrayList.java:1255)
+... Removed 35 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">SRSproject.SRSproject.ProductListPageTest#PLP_RegisterRedirection_GuestValidation</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [https://aquagon-stg2.heritagepoolplus.com/customer/account/] but found [https://mcstaging2.heritagepoolplus.com/company/account/create]
 	at SRSproject.SRSproject.ProductListPageTest.PLP_RegisterRedirection_GuestValidation(ProductListPageTest.java:56)
 	at java.util.ArrayList.forEach(ArrayList.java:1255)
 ... Removed 33 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">SRSproject.SRSproject.ProductListPageTest#AddToCart_Validation</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">SRSproject.SRSproject.LoginTest#LoginFromPDP</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">SRSproject.SRSproject.LoginTest#LoginFromPLP</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">SRSproject.SRSproject.LoginTest#LoginValidation</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">SRSproject.SRSproject.ProductDetailPageTest#AddingItemToCart</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">SRSproject.SRSproject.ProductDetailPageTest#PDP_RegisterRedirection_GuestValidation</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">SRSproject.SRSproject.ProductListPageTest#AddToCart_Validation</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

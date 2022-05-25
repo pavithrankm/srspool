@@ -24,18 +24,24 @@ public class LoginTest extends BaseTest {
 	
 	
 
-	@Test(priority = 0)
-	public void LoginValidation() throws InterruptedException {
+	@Test(priority = 0,enabled = true)
+	public void LoginValidation() throws Exception {
 		
-		Thread.sleep(3000);
-		Hp = new HomePage(driver);
+		BasePage.initializtion();
+		Thread.sleep(5000);
+		HomePage Hp = new HomePage(driver);
+		Thread.sleep(5000);
 		Hp.ValidLogin();
-		Thread.sleep(8000);
+		Thread.sleep(4000);
+		
+	
+		
+		
 		String URL = driver.getCurrentUrl();
 		String Title = driver.getTitle();
 		System.out.println(Title + "-> " + URL);
 
-		if (URL.equals(prop.get("Homepage_url"))) {
+		if (URL.equals(prop.get("Homepage_logurl"))) {
 			System.out.println("The User is navigated to the Brand Website");
 
 		} else {
@@ -48,27 +54,32 @@ public class LoginTest extends BaseTest {
 		Hp.confirmLogin(); 
 		// assertTrue(FIS_URL.equals(exp1) || FIS_URL.equals(exp2));
 
+		Hp.SignOut();
+		Thread.sleep(5000);
+		
 	}
 	
-	@Test(priority = 1)
+	@Test(priority = 3,enabled = true)
 	public void UnApprovedLoginValidation() throws InterruptedException {
 
 		HomePage Hp = new HomePage(driver);
+		Thread.sleep(5000);
 		Hp.UnApprovedLogin();
 		LoginPage Lp = new LoginPage(driver);
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		String errorMsg = Lp.handlePopup();
+		Thread.sleep(8000);
 		if (errorMsg.equals(Constants.NotApprovedErrorMessage)) {
 			System.out.println("The user is not approved and shows appropriate error message");
 
 		} else {
 			System.out.println("Incorrect error message displayed");
 		}
-		Assert.assertEquals(errorMsg, Constants.NotApprovedErrorMessage);
+	Assert.assertEquals(errorMsg, Constants.NotApprovedErrorMessage);
 
-		//driver.close();
+		driver.close();
 	}
-	@Test(priority = 1,enabled = false)
+	@Test(priority = 1,enabled = true)
 	public void LoginFromPLP() throws Exception {
 //		
 		BasePage.initializtion();
@@ -78,7 +89,8 @@ public class LoginTest extends BaseTest {
 		
 		HomePage hp= new HomePage(driver);
 		 Thread.sleep(2000);
-		hp.mouseHoverSelectCategory();
+		 hp.SearchByKeyword();
+		//hp.mouseHoverSelectCategory();
 
 	  Thread.sleep(500);
 		
@@ -90,9 +102,9 @@ public class LoginTest extends BaseTest {
 		hp.SignOut();
 		}
 		}
-	@Test(priority = 2,enabled = false)
+	@Test(priority = 2,enabled = true)
 	public void LoginFromPDP() throws Exception {
-//		
+	
 		BasePage.initializtion();
 		Thread.sleep(5000);
 		for (int i = 0; i < 1; i++) {
@@ -100,7 +112,8 @@ public class LoginTest extends BaseTest {
 		
 		HomePage hp= new HomePage(driver);
 		 Thread.sleep(2000);
-		hp.mouseHoverSelectCategory();
+		 hp.SearchByKeyword();
+	//	hp.mouseHoverSelectCategory();
 
 	  Thread.sleep(5000);
 		
@@ -112,4 +125,6 @@ public class LoginTest extends BaseTest {
 		hp.SignOut();
 		}
 	}}
+	
+	
 	

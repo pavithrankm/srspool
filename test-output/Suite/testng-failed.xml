@@ -8,10 +8,18 @@
     <classes>
       <class name="SRSproject.SRSproject.ProductListPageTest">
         <methods>
+          <include name="tearDown"/>
           <include name="setUp"/>
           <include name="PLP_RegisterRedirection_GuestValidation"/>
         </methods>
       </class> <!-- SRSproject.SRSproject.ProductListPageTest -->
+      <class name="SRSproject.SRSproject.LoginTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="UnApprovedLoginValidation"/>
+        </methods>
+      </class> <!-- SRSproject.SRSproject.LoginTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

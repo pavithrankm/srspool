@@ -16,19 +16,19 @@ public class BaseTest extends BasePage {
 	public void setUp() throws IOException {
 		initializtion();
 	}
-//	@BeforeMethod
-//	public void setUp() throws IOException {
-//		initializtion();
-//	}
+	//@BeforeMethod
+	//public void setUp1() throws IOException {
+	//	initializtion();
+	//}
 
 //	@AfterMethod
-//	public void tearDown() {
+//	public void tearDown1() {
 //		driver.close(); 
 //	}
 
-//	@AfterSuite
-//	public void tearDown() {
-//		driver.quit();
-//	}
+	@AfterSuite
+	public void tearDown() {
+		driver.quit();
+	}
 
 }

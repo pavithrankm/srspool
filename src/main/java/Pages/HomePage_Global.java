@@ -574,8 +574,8 @@ public String ValidLoginQPS() throws InterruptedException
 
 {
 
-	String QPS_Username = prop.getProperty("ValidLoginQPS_email");
-	String QPS_Password = prop.getProperty("ValidLoginQPS_Pswd");
+
+	
 
 	Thread.sleep(5000);
 
@@ -585,8 +585,8 @@ public String ValidLoginQPS() throws InterruptedException
 	wait.until(ExpectedConditions.visibilityOf(Account));
 	act.moveToElement(Account).build().perform();
 
-	LoginEmail.sendKeys(QPS_Username);
-	Password.sendKeys(QPS_Password);
+	LoginEmail.sendKeys(prop.getProperty("ValidLogin_email"));
+	Password.sendKeys(prop.getProperty("ValidLogin_Pswd"));
 
 	Signin.click();
 	return driver.getTitle();

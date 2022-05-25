@@ -536,12 +536,12 @@ public LoginPage UnApprovedLogin() throws InterruptedException
 	String Username = prop.getProperty("UnApprovedLogin_email");
 	String Passwords = prop.getProperty("UnApprovedLogin_Pswd");
 
-	Thread.sleep(5000);
+	Thread.sleep(6000);
 
 	act = new Actions(driver);
 
-	wait = new WebDriverWait(driver, 30);
-	wait.until(ExpectedConditions.visibilityOf(Account));
+	//wait = new WebDriverWait(driver, 30);
+	//wait.until(ExpectedConditions.visibilityOf(Account));
 	act.moveToElement(Account).build().perform();
 
 	LoginEmail.sendKeys(Username);
