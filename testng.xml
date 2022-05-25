@@ -9,6 +9,7 @@
     <classes>
     
  <class name="SRSproject.SRSproject.LoginTest"/>
+	    <class name="SRSproject.SRSproject.ProductListPageTest"/>
 
  
  
