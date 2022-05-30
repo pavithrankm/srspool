@@ -39,7 +39,7 @@ pipeline
 		{
 			always
 		    {
-			  emailext (to: 'abc@gmail.com', replyTo: 'abc@gmail.com', subject: "Email Report from - '${env.JOB_NAME}' ", body: readFile("target/surefire-reports/emailable-report.html"), mimeType: 'text/html');
+			  emailext (to: 'pavithrankm@dckap.com', replyTo: 'pavithrankm@dckap.com', subject: "Email Report from - '${env.JOB_NAME}' ", body: readFile("target/surefire-reports/emailable-report.html"), mimeType: 'text/html');
 			}
         }
     
