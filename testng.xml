@@ -10,6 +10,7 @@
     
 
 	    <class name="SRSproject.SRSproject.ProductListPageTest"/>
+	    <class name="SRSproject.SRSproject.ProductDetailPageTest"/>
 
  
  
