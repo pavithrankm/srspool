@@ -44,13 +44,5 @@ pipeline
 	}
 
 	
-		post
-		{
-			always
-		    {
-			  emailext body: 'Summary', subject: 'Pipeline status', to: 'pavithrankm@dckap.com'
-			}
-        }
-    
+		
 }
-
