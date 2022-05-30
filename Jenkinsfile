@@ -34,14 +34,12 @@ pipeline
                 echo 'Deploy App'
             }
         }
-	
-	 
-	
+	}	
 		post
 		{
 			always
 		    {
-			  emailext body: 'Summary', subject: 'Pipeline status', to: 'pavithrankm@dckap.com'
+			  emailext body: 'Summary', subject: 'Pipeline status', to: 'apoorvcreate@gmail.com'
 			}
         }
     
