@@ -35,14 +35,14 @@ pipeline
             }
         }
 	
-	       stage('Email')
-		{
-		steps
-			{
-			 emailext (to: 'pavithrankm@dckap.com', replyTo: 'kmpavithran94@gmail.com', subject: "Email Report from - '${env.JOB_NAME}' ", body: readFile("target/surefire-reports/emailable-report.html"), mimeType: 'text/html');
-		}
-	}
-
+	 
 	
-		
+		post
+		{
+			always
+		    {
+			  emailext body: 'Summary', subject: 'Pipeline status', to: 'pavithrankm@dckap.com'
+			}
+        }
+    
 }
