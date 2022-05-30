@@ -34,12 +34,15 @@ pipeline
                 echo 'Deploy App'
             }
         }
-	}
-	stage("Email"){
-		steps{
+	
+	       stage('Email')
+		{
+		steps
+			{
 			 emailext (to: 'pavithrankm@dckap.com', replyTo: 'kmpavithran94@gmail.com', subject: "Email Report from - '${env.JOB_NAME}' ", body: readFile("target/surefire-reports/emailable-report.html"), mimeType: 'text/html');
 		}
 	}
+
 	
 		post
 		{
@@ -49,4 +52,5 @@ pipeline
 			}
         }
     
+}
 }
