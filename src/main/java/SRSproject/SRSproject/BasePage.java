@@ -35,14 +35,14 @@ public class BasePage
 
 	//PCS
 	//	public static String configpath ="src/main/java/config_staging/configuration_staging_pcs.properties";
-	//public static String configpath="src/main/java/config_staging2/configuration_staging2_pcs.properties";
+	public static String configpath="src/main/java/config_staging2/configuration_staging2_pcs.properties";
 	//	public static String configpath ="src/main/java/config_prod/config_prod_pcs.properties";
 	//	public static String configpath ="src/main/java/config/configuration_pcs.properties"; //QA
 	
 	
 	//QPS
 	//	public static String configpath ="src/main/java/config_staging/configuration_staging_qps.properties";
-		public static String configpath ="src/main/java/config_staging2/configuration_staging2_qps.properties";
+	//	public static String configpath ="src/main/java/config_staging2/configuration_staging2_qps.properties";
 	//  public static String configpath ="src/main/java/config_prod/config_prod_qps.properties";
     
 	//glb
