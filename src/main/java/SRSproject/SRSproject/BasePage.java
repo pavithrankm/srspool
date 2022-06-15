@@ -181,8 +181,10 @@ public class BasePage
 	{
 		
 		File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		String path =  "./build/screenshots/" + System.currentTimeMillis() + ".png";
-		File destination = new File(path);
+		//String path =  "./build/screenshots/" + System.currentTimeMillis() + ".png";
+		String path1 = System.getProperty("./build/screenshots/") + File.separator + "build" +  File.separator +"Screenshots" +".png";
+		File destination = new File(path1);
+		//File destination = new File(path);
 		String absolutePath = destination.getAbsolutePath();
 		
 		
