@@ -238,26 +238,22 @@ public class BasePage
 	}
 	
 	public void onTestFailure(ITestResult result) {
-	      //  Object testMap;
-			//testMap.get().fail(result.getThrowable());
-	        //add screenshot for failed test.
-	     //   WebDriver driver= WebDriverFactory.getDriver();
-	        //experimental to get screenshot
-	        driver = new Augmenter().augment(driver);
-	        String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
-	        TakesScreenshot ts = (TakesScreenshot) driver;
-	        File source = ts.getScreenshotAs(OutputType.FILE);
-	    //    String destination = System.getProperty("user.dir") + "/ExtentReport/" + "/Screenshots/" + result.getMethod().getMethodName() + dateName + ".png";
-	        String destination = System.getProperty("user.dir") + File.separator + "ExtentReport" +  File.separator +"Screenshots" + File.separator + result.getMethod().getMethodName() + dateName + ".png";
-	        File finalDestination = new File(destination);
-	        try {
-	            FileUtils.copyFile(source, finalDestination);
-	        } catch (IOException e) {
-	            e.printStackTrace();
-	        }
-	    //    testMap.get().addScreenCaptureFromPath(destination,result.getMethod().getMethodName());
+	    
+	      driver = new Augmenter().augment(driver);
+	      String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+	      TakesScreenshot ts = (TakesScreenshot) driver;
+	      File source = ts.getScreenshotAs(OutputType.FILE);
+	  
+	      String destination = System.getProperty("user.dir") + File.separator + "ExtentReport" +  File.separator +"Screenshots" + File.separator + result.getMethod().getMethodName() + dateName + ".png";
+	      File finalDestination = new File(destination);
+	      try {
+	          FileUtils.copyFile(source, finalDestination);
+	      } catch (IOException e) {
+	          e.printStackTrace();
+	      }
+	 
 
-	    }
+	  }
 
 	public static String   Reportname() {
 		prop = new Properties();
