@@ -4,9 +4,7 @@ package SRSproject.SRSproject;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -31,11 +29,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.io.FileHandler;
-import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.ITestResult;
 
 import com.aventstack.extentreports.ExtentTest;
 
@@ -47,6 +43,7 @@ public class BasePage
 
 	public static Properties prop;
 	public static WebDriver driver;
+	String concatenate=".";
 	
 	
 	
@@ -184,7 +181,7 @@ public class BasePage
 	{
 		
 		File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		String path = System.getProperty("user.dir") + "/build/screenshots/" + System.currentTimeMillis() + ".png";
+		String path =  "./build/screenshots/" + System.currentTimeMillis() + ".png";
 		File destination = new File(path);
 		String absolutePath = destination.getAbsolutePath();
 		
@@ -223,7 +220,7 @@ public class BasePage
 	    do{
 
 	        File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-	        String path = System.getProperty("user.dir") + "/build/screenshots/" + System.currentTimeMillis() + ".png";
+	        String path = "./build/screenshots/" + System.currentTimeMillis() + ".png";
 	        //Unique File Name For Each Screenshot
 	        File destination = new File(path);
 
@@ -236,24 +233,6 @@ public class BasePage
 	    }while(scrollHeight >= innerHeight);
 		return null;
 	}
-	
-	public void onTestFailure(ITestResult result) {
-	    
-	      driver = new Augmenter().augment(driver);
-	      String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
-	      TakesScreenshot ts = (TakesScreenshot) driver;
-	      File source = ts.getScreenshotAs(OutputType.FILE);
-	  
-	      String destination = System.getProperty("user.dir") + File.separator + "ExtentReport" +  File.separator +"Screenshots" + File.separator + result.getMethod().getMethodName() + dateName + ".png";
-	      File finalDestination = new File(destination);
-	      try {
-	          FileUtils.copyFile(source, finalDestination);
-	      } catch (IOException e) {
-	          e.printStackTrace();
-	      }
-	 
-
-	  }
 
 	public static String   Reportname() {
 		prop = new Properties();
