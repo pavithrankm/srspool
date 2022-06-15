@@ -21,21 +21,14 @@ public class LoginTest extends BaseTest {
 	ProductListPage plp;
 	ProductDetailPage pdp;
 	HomePage Hp;
-	
-	
 
-	@Test(priority = 0,enabled = true)
-	public void LoginValidation() throws Exception {
-		
+	@Test(priority = 0)
+	public void LoginValidation() throws InterruptedException, IOException {
 		BasePage.initializtion();
-		Thread.sleep(5000);
-		HomePage Hp = new HomePage(driver);
-		Thread.sleep(5000);
+		Thread.sleep(3000);
+		Hp = new HomePage(driver);
 		Hp.ValidLogin();
-		Thread.sleep(4000);
-		
-	
-		
+		Thread.sleep(8000);
 		
 		String URL = driver.getCurrentUrl();
 		String Title = driver.getTitle();
@@ -48,38 +41,58 @@ public class LoginTest extends BaseTest {
 			System.out.println("The User is navigated incorrectly");
 		}
 
-		// Object exp1 = prop.get("PCSLoginPageURL");
-		// Object exp2 = prop.get("PCSLoginPagePoolURL");
+		
 		Assert.assertEquals(URL, prop.get("Homepage_logurl"));
 		Hp.confirmLogin(); 
-		// assertTrue(FIS_URL.equals(exp1) || FIS_URL.equals(exp2));
+		driver.close();
 
-		Hp.SignOut();
-		Thread.sleep(5000);
-		
 	}
-	
-	@Test(priority = 3,enabled = true)
-	public void UnApprovedLoginValidation() throws InterruptedException {
+	@Test(priority = 0)
+	public void invalidLoginValidation() throws InterruptedException, IOException {
+		Thread.sleep(3000);
+		BasePage.initializtion();
+		Hp = new HomePage(driver);
+		Hp.InValidLogin();
+		Thread.sleep(8000);
+		String URL = driver.getCurrentUrl();
+		String Title = driver.getTitle();
+		System.out.println(Title + "-> " + URL);
+		LoginPage Lp = new LoginPage(driver);
+		String errorMsg = Lp.handlePopup();
+		
+		if(errorMsg.equals(Constants.InvalidErrormsge))  {
+			System.out.println("Invalid login or password.");
 
+		} else {
+			System.out.println("Incorrect error message displayed");
+		}
+		Assert.assertEquals(errorMsg, Constants.InvalidErrormsge);
+
+		driver.close();
+	}
+		
+
+	
+	
+	@Test(priority = 1)
+	public void UnApprovedLoginValidation() throws InterruptedException, IOException {
+BasePage.initializtion();
 		HomePage Hp = new HomePage(driver);
-		Thread.sleep(5000);
 		Hp.UnApprovedLogin();
 		LoginPage Lp = new LoginPage(driver);
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		String errorMsg = Lp.handlePopup();
-		Thread.sleep(8000);
 		if (errorMsg.equals(Constants.NotApprovedErrorMessage)) {
 			System.out.println("The user is not approved and shows appropriate error message");
 
 		} else {
 			System.out.println("Incorrect error message displayed");
 		}
-	Assert.assertEquals(errorMsg, Constants.NotApprovedErrorMessage);
+		Assert.assertEquals(errorMsg, Constants.NotApprovedErrorMessage);
 
 		driver.close();
 	}
-	@Test(priority = 1,enabled = true)
+	@Test(priority = 2)
 	public void LoginFromPLP() throws Exception {
 //		
 		BasePage.initializtion();
@@ -90,7 +103,6 @@ public class LoginTest extends BaseTest {
 		HomePage hp= new HomePage(driver);
 		 Thread.sleep(2000);
 		 hp.SearchByKeyword();
-		//hp.mouseHoverSelectCategory();
 
 	  Thread.sleep(500);
 		
@@ -100,11 +112,12 @@ public class LoginTest extends BaseTest {
 		
 		Thread.sleep(5000);
 		hp.SignOut();
+		driver.close();
 		}
 		}
-	@Test(priority = 2,enabled = true)
+	@Test(priority = 3)
 	public void LoginFromPDP() throws Exception {
-	
+//		
 		BasePage.initializtion();
 		Thread.sleep(5000);
 		for (int i = 0; i < 1; i++) {
@@ -113,18 +126,54 @@ public class LoginTest extends BaseTest {
 		HomePage hp= new HomePage(driver);
 		 Thread.sleep(2000);
 		 hp.SearchByKeyword();
-	//	hp.mouseHoverSelectCategory();
+		 
 
 	  Thread.sleep(5000);
 		
-		plp = new ProductListPage(driver);
-		pdp = plp.GuestUser_ClickItem();
-		Thread.sleep(2000);
+	  ProductListPage	plp = new ProductListPage(driver);
+		pdp=plp.GuestUser_ClickItem();
+		Thread.sleep(4000);
 		hp.ValidLogin();
 		Thread.sleep(5000);
 		hp.SignOut();
+		Thread.sleep(3000);
+		driver.close();
 		}
-	}}
+	}
+	@Test(priority = 5, description = "validLogin with differsites",enabled = false)
+	public void UnAuthorisedLogin() throws InterruptedException, IOException {
+		Thread.sleep(3000);
+		BasePage.initializtion();
+		Hp = new HomePage(driver);
+		Hp.UnAuthorisedLogin();
+		Thread.sleep(8000);
+		
+		
+		String errorMsg = Hp.Errorpopupmsg().getText();
+		System.out.println(errorMsg);
+		if(errorMsg.equals(Constants.Error_Popup))  {
+			System.out.println("Popup shown site redirected .");
+            Hp.TPS_redirected_link().click();
+            Thread.sleep(5000);
+          String currentUrl = driver.getCurrentUrl(); 
+          String TPS_Link = prop.getProperty("TPS_link");
+         Assert.assertEquals(currentUrl,TPS_Link);
+         Thread.sleep(5000);
+         Hp.TPS_Login();
+         
+         
+           
+		} else {
+			System.out.println("Incorrect error message displayed");
+		}
+		Assert.assertEquals(errorMsg, Constants.Error_Popup);
+
+		Thread.sleep(3000);
+		driver.quit();
+	}
 	
 	
+}
+
+
 	

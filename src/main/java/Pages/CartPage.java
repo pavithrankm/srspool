@@ -1,8 +1,13 @@
 package Pages;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.math3.fraction.ProperBigFractionFormat;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,8 +17,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-
+import org.testng.annotations.Factory;
 
 import SRSproject.SRSproject.BasePage;
 
@@ -57,9 +61,21 @@ public class CartPage extends BasePage {
 	@FindBy(xpath="//select[@id='select-reorder-pad']") WebElement ReorderList;
 	@FindBy(xpath="//span[text()='Keep Shopping']") WebElement Keepshopping_btn;
 	@FindBy(xpath="//span[text()='View Reorder Pad']") WebElement viewcart ;
+	@FindBy(xpath="//span[text()[normalize-space()='Use these Reorder Pads to save items and quantities for fast reordering in the future.']]/following::input") WebElement createreordername ;
+	@FindBy(xpath ="//span[text()='Create Reorder Pad']") WebElement Clickbtn_createReorder;
+	@FindBy(xpath="//span[@class='item-no']") WebElement Total_No_Items;
 	
+	
+	@FindBy(xpath ="//span[text()='View Reorder Pad']") WebElement View_Reorder_Pad ;
+	
+	@FindBy(xpath="(//button[@class='action primary add-to-reorder-pad'])[1]") WebElement ClkAddToReorder ;
+	
+	@FindBy(xpath="(//div[@class='pad-items']//span)[1]") WebElement Totalitems_in_Reorderpad ;
+	
+@FindBy(xpath="(//h1[@class='modal-title'])[2]")WebElement	Msg ;
 	
 	public CartPage(WebDriver driver)
+
 	{
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
@@ -89,13 +105,14 @@ public class CartPage extends BasePage {
 	}
 	
 	
-	public String validateCartSubtotal()
+	public String validateCartSubtotal() throws InterruptedException
 	{
 		//JavascriptExecutor js = (JavascriptExecutor) driver;
 		
 		// js.executeScript("arguments[0].scrollIntoView();", NeedHelpmsg);
 		//wait = new WebDriverWait(driver,30);
 		//wait.until(ExpectedConditions.visibilityOf(cartSubtotal));
+		Thread.sleep(8000);
 		String subtotal=cartSubtotal.getText();
 		return subtotal.replaceAll("[$,]", "");
 	}
@@ -174,6 +191,32 @@ public class CartPage extends BasePage {
 		reorderlist.selectByValue(prop.getProperty("Reorder_List_Value"));
 	}
 	
+	public void  CreatenewReOrder() throws InterruptedException
+	{
+		Select reorderlist = new Select(ReorderList);
+		reorderlist.selectByVisibleText("Create New Reorder Pad");
+		
+		
+		
+		
+		
+		
+	}
+	public WebElement  createreordername() {
+		createreordername.click();
+		return createreordername ;	
+			
+	}
+	public WebElement Clickbtn_createReorder() {
+		Clickbtn_createReorder.click();
+		return Clickbtn_createReorder;
+	}
+	
+	public void ReOrderSelectionaftercreate_NewReorderpad()
+	{
+		Select reorderlist = new Select(ReorderList);
+		reorderlist.selectByVisibleText(prop.getProperty("New_Reorder_Pad"));
+	}
 	public String Message()
 	{
 		
@@ -189,12 +232,40 @@ public class CartPage extends BasePage {
 		
 		}
 	
+	public void ClkAddToReorder() {
+		ClkAddToReorder.click();
+		
+	}
 	public WebElement KeepShopping()
 	{
 		return  Keepshopping_btn;
 		
 		
 		}
+	
+	public WebElement ViewReorderPad() throws Exception {
+		
+		jsClick(View_Reorder_Pad);
+		return View_Reorder_Pad;
+		
+	}
+	
+	public WebElement Totalitems_in_Reorderpad() {
+		
+		
+		
+		return Totalitems_in_Reorderpad;
+		
+		
+	}
+	public WebElement Msg() {
+		
+		
+		
+		return Msg;
+		
+		
+	}
 	public WebElement viewcart()
 	{
 		return  viewcart;
@@ -208,6 +279,54 @@ public class CartPage extends BasePage {
 				
 		
 		}
+
+	public int PageSize() throws IOException {
 	
+	
+		int PaginationSize = driver.findElements (By.xpath("//*[@id=\"form-validate\"]/div[2]/div[1]/div/div/ul/li")).size();
+		List <String> names = new ArrayList<String>() ;
+		System.out.println(PaginationSize);
+	
+		
+		for(int i = 1; i<=PaginationSize-1;i++) {
+			String PagenationSelctor="//*[@id=\"form-validate\"]/div[2]/div[1]/div/div/ul/li["+i+"]" ;
+			driver.findElement(By.xpath(PagenationSelctor)).click();
+			
+			List<WebElement>listofNames=     driver.findElements(By.xpath("//td[@data-th='Item']"));
+			for ( WebElement name : listofNames){
+	 			names.add(name.getText());
+			
+		}
+		}
+		for (String  naame : names) {
+			System.out.println(naame);
+			
+			 String file = "C:\\Users\\DELL\\OneDrive\\Documents\\namesps.txt"; 
+			FileWriter f = new FileWriter(file);
+		     BufferedWriter b = new BufferedWriter(f);
+		   
+		    	 b.write(names + "n");
+		    
+		     b.newLine();
+		     //b.write("Sunil n");// n moves cursor to new line
+		    
+		     b.flush();
+		     System.out.println("Done");
+		}
+		int size = names.size();
+		
+		System.out.println(size);
+		
+		return size;
+		
+		
+	}
+	public String TotalNo_Items()
+	{ 
+		String total_items= Total_No_Items.getText();
+	
+		return total_items.replaceAll(" .*", "");
+
+	}
 }
 

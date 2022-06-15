@@ -49,7 +49,7 @@ public class QuickOrderPadTest extends BaseTest {
 		 
 	
 		HomePage hp= new HomePage(driver);
-		hp.clickOnHomeLink();
+	//	hp.clickOnHomeLink();
 	//	Thread.sleep(8000);
 		//driver.navigate().refresh();
 		Thread.sleep(10000);
@@ -67,7 +67,7 @@ public class QuickOrderPadTest extends BaseTest {
 //
 //	Reporter.log("Item did not get added to cart ",true);
 //}
-	
+	driver.close();
 
   }
 	
@@ -83,9 +83,9 @@ public class QuickOrderPadTest extends BaseTest {
 		Thread.sleep(5000);
 	
 		qp = new QuickOrderPadPage(driver);
-		Thread.sleep(15000);
+		Thread.sleep(11000);
 		qp.Fileupload();
-		Thread.sleep(25000);
+		Thread.sleep(5000);
 		String QuickOrder_Redirection=  driver.getCurrentUrl();
 		Assert.assertEquals(QuickOrder_Redirection, prop.getProperty("QuickOrderPage_URL"));
 	
@@ -161,9 +161,9 @@ System.out.println("final"+arr);
 	{
 	
 	
-		Thread.sleep(5000);
+		Thread.sleep(10000);
 	
-		QuickOrderPadPage qp = new QuickOrderPadPage(driver);
+		qp = new QuickOrderPadPage(driver);
 		Thread.sleep(11000);
 		//qp.InvalidFileupload();
 		String ProductNotExistMessage=qp.InvalidFileupload();
@@ -171,7 +171,8 @@ System.out.println("final"+arr);
 		if (ProductNotExistMessage.endsWith("Successfully Passed Validation"));
 		{
 			System.out.println(ProductNotExistMessage);
-			
+			Thread.sleep(3000);
+			driver.close();
 		}
 		
 	}

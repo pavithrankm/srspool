@@ -1,6 +1,7 @@
 package Pages;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -139,6 +140,8 @@ public class QuickOrderPadPage extends BasePage{
 		 Thread.sleep(1000);
 //		file.sendKeys("C:\\Users\\DELL\\Downloads\\Tester2.csv");
 //		file.sendKeys(prop.getProperty("valid_csvfile"));
+		
+	
 		file .sendKeys(System.getProperty("user.dir") + prop.getProperty("valid_csvfile"));
 
 		
@@ -162,6 +165,7 @@ public class QuickOrderPadPage extends BasePage{
 			 Thread.sleep(5000);
 			QuickOrderPad.click();
 			Thread.sleep(3000);
+			scrolltoTopPage();
 			uploadfile.click();
 			 Thread.sleep(1000);
 			//file.sendKeys("C:\\Users\\DCKAP\\Downloads\\Invalidfile1.csv");

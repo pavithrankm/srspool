@@ -2,6 +2,8 @@ package SRSproject.SRSproject;
 
 import java.io.IOException;
 
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
@@ -10,25 +12,31 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class BaseTest extends BasePage {
+import Utils.BaseClass;
 
+public class BaseTest extends BasePage {
+	
+	
 	@BeforeSuite
 	public void setUp() throws IOException {
 		initializtion();
-	}
-	//@BeforeMethod
-	//public void setUp1() throws IOException {
-	//	initializtion();
-	//}
-
-//	@AfterMethod
-//	public void tearDown1() {
-//		driver.close(); 
-//	}
-
-	@AfterSuite
-	public void tearDown() {
 		driver.quit();
 	}
+	
+//	@BeforeMethod
+//	public void setUp() throws IOException {
+//		initializtion();
+//	}
+
+//	@AfterClass
+//	public void tearDown() {
+//		driver.quit(); 
+//	}
+
+//	@AfterClass
+//	public void tearDown() {
+//		BasePage.driver.quit();
+//	}
+	
 
 }

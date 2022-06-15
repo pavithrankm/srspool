@@ -25,7 +25,7 @@ public class ChangeBranch_shipto_Test  extends BaseTest
 		Lp.ValidLogin();
 		
 		String shipto =Hp.ChangeShipTo();
-//		Assert.assertEquals(shipto,prop.getProperty("Shipto"));
+		Assert.assertEquals(shipto,prop.getProperty("Shipto"));
 
 }
 	
@@ -48,5 +48,6 @@ public class ChangeBranch_shipto_Test  extends BaseTest
 		//Aqua
 		Assert.assertEquals(Yourbranch,prop.getProperty("Branch2"));
 		
+		driver.close();
 	     }
 }

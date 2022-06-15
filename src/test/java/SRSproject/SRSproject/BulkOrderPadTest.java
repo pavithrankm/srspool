@@ -59,7 +59,7 @@ public class BulkOrderPadTest extends BaseTest {
 	
 		
 		
-			Thread.sleep(1000);
+			Thread.sleep(3000);
 			
 		Bp.AddNewLineItem();
 		
@@ -90,7 +90,7 @@ public class BulkOrderPadTest extends BaseTest {
 		{
 			
 			
-				Thread.sleep(1000);
+				Thread.sleep(3000);
 				
 					
 		Bp.AddAllItem_TOCart().click();
@@ -106,7 +106,7 @@ public class BulkOrderPadTest extends BaseTest {
 				
 				
 						Bp.Fileupload();
-						Thread.sleep(8000);
+						Thread.sleep(15000);
 					ArrayList<String> List= Bp.ListOfItem();
 					BulkOrderPage_List = List;
 					
@@ -126,7 +126,7 @@ public class BulkOrderPadTest extends BaseTest {
 			@Test(priority=7)
 			public void InValid_FileUpload_Validation() throws InterruptedException 
 			{
-				Thread.sleep(5000);
+				Thread.sleep(8000);
 				
 				
 						System.out.println(Bp.InvalidFileupload());
@@ -134,9 +134,11 @@ public class BulkOrderPadTest extends BaseTest {
 					
 					
 			Reporter.log("Valid Items are uploaded",true);
+			Thread.sleep(10000);
+			driver.close();
 				}
 				
-
+			
 	
 	
 	

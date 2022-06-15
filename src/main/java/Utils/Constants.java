@@ -34,5 +34,13 @@ public class Constants {
 	public static final String NotApprovedErrorMessage="Your account is not yet approved. If you have questions, please contact the seller.";
 	public static final String UnAuthorizedErrorMessage="You don't have access to this website.";
 	public static final String ConfirmPopup ="You will be redirected to respective branch website and all the cart items will not be moved to other website.";
+	public static final String REPORT_ERROR = null;
+	public static final String InvalidErrormsge = "Invalid login or password." ;
+	public static final String OpenOrder_Title = "Open Orders";
+	public static final String Invoice_Title = "Invoice History";
+	
+	public static final String Error_Popup =  "Our Texas based Florida Water Products & Pool & Electrical Products branches have rebranded to Texas Pool Supply!!!" ;
+	public static final String TPS_link_Stg ="https://tps-stg.heritagepoolplus.com/";
+	public static final String TPS_link_Prod ="https://tps.heritagepoolplus.com/" ;
 	
 }
