@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import SRSproject.SRSproject.BasePage;
 
-public class ProductDetailPage extends BasePage  {
+public class ProductDetailPage  extends BasePage{
 	WebDriverWait wait;
 	WebDriver driver;
 	Actions act;
@@ -21,32 +21,28 @@ public class ProductDetailPage extends BasePage  {
 	@FindBy(xpath="//strong[text()='Register']") WebElement RegisterLink;
 	@FindBy(xpath="(//div[@class='product attribute part'])[2]") WebElement PartLabel;
 	@FindBy(xpath="//span[text()='Add to Cart']") WebElement AddToCart;
-	
-	@FindBy(xpath="//p[text()='has been added to your cart']") WebElement text;
-	
-
+@FindBy(xpath="//div[@class='block-title title']") WebElement recently_viewed;
 	
 	@FindBy(css="#maincontent > div.columns > div > div.block.recentlyviewed > div.block-content.content > div > ol > div > div > div.slick-slide.slick-current.slick-active > div > li > div > div > strong > a") WebElement recently_viwed_First_item;
 
-	@FindBy(xpath="//select[@class='reorder-pad-list']") WebElement reorder_pad;
+	
 	@FindBy(xpath="//div[@id='tab-label-additional']") WebElement Specs;
 	
 	@FindBy(xpath="//span[text()='Brand:']") WebElement brand_label;
 	
 	
-	@FindBy(xpath = "/html/body/div[2]/main/div[3]/div/div[6]/div[2]/div/ol/div/div/div[5]/div/li/div/div/div[4]/div[1]/form/button[3]") WebElement recentlyviwed_add;	
+	@FindBy(css="#maincontent > div.columns > div > div.block.recentlyviewed > div.block-content.content > div > ol > li:nth-child(1) > div > div > div.product.actions.product-item-actions > div.actions-primary > form > button.action.tocart.primary > span") WebElement recentlyviwed_add;	
 	
 	@FindBy(xpath="//a[@id='mode-list']") WebElement List;
 	@FindBy(css= "#amasty-shopby-product-list > div.products.wrapper.grid.products-grid > ol > li > div > div.product.details.product-item-details > strong > a") WebElement Product;
 	  @FindBy(id = "search") WebElement SearchField; 
 	  
 	  @FindBy(xpath="//strong[@id='block-related-heading']") WebElement RelatedProduct_Title;
-	  @FindBy(xpath="(//button[@class='action tocart primary'])[1]") WebElement Related_AddToCart;
-	  @FindBy(xpath="//strong[@id='block-recentlyviewed-heading']") WebElement recently_viewed;
-	  @FindBy(xpath="//button[@class='action tocart primary']") WebElement RelatedProduct_section;
-//	  @FindBy(xpath="//strong[@id='block-related-heading']") WebElement RelatedProduct_Title;
+	
+	
+	@FindBy(xpath="//p[text()='has been added to your cart']") WebElement text;
 
-	  public ProductDetailPage(WebDriver driver)
+	public ProductDetailPage(WebDriver driver)
 	{
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
@@ -76,7 +72,7 @@ public class ProductDetailPage extends BasePage  {
 		
 	}
 	
-	public String AddingItem() throws Exception 
+	public String AddingItem() throws InterruptedException 
 	{
 		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -88,8 +84,7 @@ public class ProductDetailPage extends BasePage  {
 			wait.until(ExpectedConditions.visibilityOf(PartLabel));
 			 wait.until(ExpectedConditions.visibilityOf(AddToCart));
 	      Thread.sleep(5000);
-	      jsClick(AddToCart);
-//			AddToCart.click();
+			AddToCart.click();
 			
 				wait.until(ExpectedConditions.visibilityOf(text));
 			System.out.println(	text.getText());
@@ -100,11 +95,9 @@ public class ProductDetailPage extends BasePage  {
 		
 		
 	}
-	
 	public String Recently_viwed_Title()
 	{
-		//moveToElement(recently_viewed);
-		scrollUpandDownUsingElement(RelatedProduct_section);
+		moveToElement(recently_viewed);
 		return recently_viewed.getText();
 	
 	}
@@ -120,9 +113,9 @@ public class ProductDetailPage extends BasePage  {
 	public WebElement Spec_PDP_Title()
 	
 	{
-		scrollUpandDownUsingElement(reorder_pad); 
+		scrollUpandDownUsingElement(Specs);
 		
-		return Specs;
+		return brand_label;
 		
 	}
 	
@@ -175,7 +168,7 @@ public void RelatedProducts() throws InterruptedException
 	
 	 js.executeScript("arguments[0].scrollIntoView();", List);
 	 Product.click();
-} 
+}
 public String RelatedProductsTitle() throws InterruptedException 
 {
 	JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -184,8 +177,8 @@ public String RelatedProductsTitle() throws InterruptedException
 	return RelatedProduct_Title.getText();
 }
 
-public WebElement Related_add_tocart()
-{
-	return Related_AddToCart;
-}
+	
+	
+	
+
 }

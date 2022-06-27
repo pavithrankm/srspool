@@ -28,7 +28,6 @@ public class CheckoutPageTest extends BaseTest {
 	
 	CheckoutPage COp;
 	ArrayList<String> MyList = null;
-	int total_No_items;
 	
 	
 	@Test(priority=1, description= "Cart to Checkout Redirection ")
@@ -50,9 +49,6 @@ public class CheckoutPageTest extends BaseTest {
 		ArrayList<String> a1= Cp.getItemName1();
 		// System.out.println(a1);
 		 MyList=a1;
-		 String total_items=Cp.TotalNo_Items();
-		 int number = Integer.parseInt(total_items);
-		 total_No_items=number;
 		// System.out.println(MyList);
 		 Thread.sleep(1000);
 		
@@ -133,11 +129,8 @@ public class CheckoutPageTest extends BaseTest {
 			
 			a2.add(text);
 		}
-		int items= a2.size();
-		System.out.print( total_No_items);
-		 Assert.assertEquals(items,  total_No_items);
-		driver.close();
-		/*if(MyList.equals(a2))
+		
+		if(MyList.equals(a2))
 		{
 			System.out.println("Item in Cart Page"+ MyList);
 			System.out.println("Item in Checkout Page"+ a2);
@@ -148,9 +141,7 @@ public class CheckoutPageTest extends BaseTest {
 			System.out.println("Item in Cart Page"+ MyList);
 			System.out.println("Item in Checkout Page"+ a2);
 			Reporter.log("Not all item from cart are added to checkout page ",true);
-		}
-		*/
-		 }
+		}}
 	
 	/*@Test(priority=4,  description= "Placing Order validation")
 	public void OrderPlacement_Validation() throws InterruptedException 

@@ -12,7 +12,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.Reporter;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Test;
 
 import Pages.HomePage;
@@ -28,8 +27,8 @@ public class ProductDetailPageTest extends BaseTest {
 
 	ProductDetailPage pdp;
 	
-	@Test(priority=1, description= "Register now link redirection")
-	public void PDP_RegisterRedirection_GuestValidation() throws Exception 
+@Test(priority=1, description= "Register now link redirection")
+	public void PDP_RegisterRedirection_GuestValidation() throws InterruptedException, IOException 
 	{
 	BasePage.initializtion();
 	Thread.sleep(5000);
@@ -41,7 +40,7 @@ public class ProductDetailPageTest extends BaseTest {
 	 hp.SearchByKeyword();
 		Thread.sleep(10000);
 		
-		pdp = new ProductDetailPage(driver);
+		
 	ProductListPage	plp = new ProductListPage(driver);
 	pdp=plp.GuestUser_ClickItem();
 	Thread.sleep(4000);
@@ -54,7 +53,7 @@ Thread.sleep(600);
 	}
 	
 	@Test(priority=2, description= "Adding Item to Cart")
-	public void AddingItemToCart() throws Exception 
+	public void AddingItemToCart() throws InterruptedException, IOException 
 	{
 		BasePage.initializtion();
 		Thread.sleep(8000);
@@ -63,7 +62,7 @@ Thread.sleep(600);
 		Thread.sleep(1000);
 			LoginPage Lp = new LoginPage(driver);
 		Lp.ValidLogin();
-		Thread.sleep(9000);
+		Thread.sleep(8000);
 		
 		HomePage hp= new HomePage(driver);
 		
@@ -74,21 +73,20 @@ Thread.sleep(600);
 		
 	ProductListPage	plp = new ProductListPage(driver);
 	pdp=plp.GuestUser_ClickItem();
-	Thread.sleep(6000);
+	Thread.sleep(4000);
 	
 
 String successmsg= pdp.AddingItem();
 Assert.assertEquals(successmsg, Constants.Success_Msg_Reorder);
- 
+
 
 	
 	
 		
 				
 	}
-	
 	@Test(priority=3, description= "validating Recently viewed Items is in PDP")
-	public void Recently_viewedItems_validation() throws Exception 
+	public void Recently_viewedItems_validation() throws InterruptedException, IOException 
 	{
 		Thread.sleep(7000);
 		HomePage hp= new HomePage(driver);
@@ -107,7 +105,7 @@ Assert.assertEquals(successmsg, Constants.Success_Msg_Reorder);
 System.out.println(pdp.Recently_viwed_Title());
 
 String tile = pdp.Recently_viwed_Title();
-//pdp.Recently_viwed_Item().click();
+pdp.Recently_viwed_Item().click();
 
 Assert.assertEquals(tile,"Recently Viewed");
 	
@@ -115,21 +113,19 @@ Assert.assertEquals(tile,"Recently Viewed");
 		
 				
 	}
-	/*@Test(priority=4, description= "validating Recently viewed Items is in PDP")
+	@Test(priority=4, description= "validating Recently viewed Items is in PDP")
 	public void Recently_viewed_Add_validation() throws InterruptedException, IOException 
 	{
-		Thread.sleep(8000);
+		Thread.sleep(4000);
 		pdp.Recently_viwed_add().click();
 		Thread.sleep(500);
 		String successmsg= pdp.Adding_Recentlview_Sucssmsg();
 		Assert.assertEquals(successmsg, Constants.Success_Msg_Reorder);
 	} 
-	*/
+	
 	@Test(priority=5, description= "validating Related Products Items is in PDP")
 	public void RelatedProducts_validation() throws InterruptedException, IOException 
 	{
-		try
-		{
 		Thread.sleep(5000);
 	pdp.SearchByKeyword();
 		Thread.sleep(10000);
@@ -137,35 +133,6 @@ Assert.assertEquals(tile,"Recently Viewed");
 		pdp.RelatedProducts();
 	String	tile = pdp.RelatedProductsTitle();
 		System.out.println(tile);
-		Assert.assertEquals(tile,"Related Items");
-		}
-		catch (Exception e) {
-			System.out.println("No Related Products for this Product"+ e);
-		}
-	
 		
 	} 
-	
-	@Test(priority=6, description= "validating Related Products Adding to Cart")
-	public void Adding_RelatedProduct_validation() throws InterruptedException, IOException 
-	{
-		Thread.sleep(3000);
-		try
-		{
-		pdp.Related_add_tocart().click();
-		Thread.sleep(1000);
-		String successmsg= pdp.Adding_Recentlview_Sucssmsg();
-		Assert.assertEquals(successmsg, Constants.Success_Msg_Reorder);
-		}
-		catch (Exception e) {
-			System.out.println("No Related Products for this Product"+ e);
-		}
-	
-	
-		
-	} 
-	
-	
-	
-	
 }

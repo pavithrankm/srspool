@@ -47,21 +47,23 @@ public class InvoicePage extends BasePage{
 	@FindBy(xpath="//button[@id='filters-apply']") WebElement FindInvoice ;
 	@FindBy(xpath="//a[@href='javascript:void(0);']") WebElement AftersearchResultInvoiceNo;
     @FindBy(xpath="//td[@class='column column--PONumber']") WebElement POName ;
-    @FindBy(xpath="(//a[@href='javascript:void(0);'])[5]") WebElement InvoiceNoforSearch;
-    @FindBy(xpath="(//td[@class='column column--PONumber'])[8]")WebElement PoNames ;
+    @FindBy(xpath="(//a[@href='javascript:void(0);'])[3]") WebElement InvoiceNoforSearch;
+    @FindBy(xpath="(//td[@class='column column--PONumber'])[3]")WebElement PoNames ;
+                   
     @FindBy(xpath="(//a[@class='footable-page-link'])[7]") WebElement Nextbtn ;
     @FindBy(xpath="//td[@class='column column--InvoiceNumber']") List<WebElement> Invoice ;
     @FindBy(xpath="//td[@class='column column--InvoiceNumber']") List<WebElement> Invoicehistory ;
     @FindBy(xpath="//button[@id='view-orders']") WebElement view_orders;
    @FindBy(xpath = "//span[text()='Download XLSX']")WebElement DownloadXLSX ; 
-   
+ 
 
     
     @FindBy(xpath="//span[text()='Go back']") WebElement Go_Back;
     @FindBy(xpath="//span[text()='Invoice # ']") List<WebElement> invoicee;
-	
-	
+    @FindBy(xpath="//select[@id='select-reorder-pad']") WebElement Reorderpad ;
+	@FindBy(xpath="//button[@class='action primary add-to-reorder-pad']") WebElement Addtoreorderpad;
 	@FindBy(xpath="//button[@class='action primary view-button']") WebElement Viewselect_Invoice ;
+	@FindBy(xpath ="(//button[@class='action primary add-to-reorder-pad'])[2]") WebElement keepshopinginvce ;
 	public InvoicePage (WebDriver driver)
 	{
 		this.driver=driver;
@@ -240,7 +242,7 @@ if (size>=10)
 	 Thread.sleep(5000);
 	 scrollUpandDownUsingElement(InvoiceBtn);
 	 Checkbox1.click();
-	 scrolltoTopPage();
+	// scrolltoTopPage();
 	 jsClick(Viewselect_Invoice);
 	
 }
@@ -385,6 +387,32 @@ public int Next_button() throws InterruptedException
 					return invoice_count1;
 			}
 }
+
+public WebElement Reorderpad() {
+	driver.findElement(By.xpath("(//input[@type='checkbox'])[2]")).click();
+	Select reorderlist = new Select(Reorderpad);
+	reorderlist.selectByValue(prop.getProperty("Reorder_List_Value1"));
+	return Reorderpad;
+
+}
+
+public WebElement Reorderpad1() {
+	return Reorderpad;
+
+}
+public void  AddTOReorderPad() {
+	Addtoreorderpad.click();
+}
+
+
+public void  keepshoping() {
+	keepshopinginvce.click();
+}
+
+public void  ViewselectInvoice() {
+	Viewselect_Invoice.click();
+}
+
 }
 
 

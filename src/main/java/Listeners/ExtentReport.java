@@ -9,7 +9,6 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Base64;
 import java.util.Calendar;
@@ -22,7 +21,6 @@ import org.apache.commons.io.IOUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.Augmenter;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -74,7 +72,12 @@ public class ExtentReport extends BasePage implements ITestListener
 		htmlReporter.config().setDocumentTitle("TestExecutionReport");
 		
 	
-		htmlReporter.config().setReportName("Automation Test Results Of: APS  " );//
+//	htmlReporter.config().setReportName("Automation Test Results Of: Aqua-gon" );
+//		htmlReporter.config().setReportName("Automation Test Results Of: QPS" );
+//	htmlReporter.config().setReportName("Automation Test Results Of: PCS" );
+//		htmlReporter.config().setReportName("Automation Test Results Of: PEP" );
+//	htmlReporter.config().setReportName("Automation Test Results Of: APS" );
+	htmlReporter.config().setReportName("Automation Test Results Of: TPS" );
 		htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);
 		htmlReporter.config().setTheme(Theme.STANDARD);
 
@@ -156,8 +159,6 @@ public class ExtentReport extends BasePage implements ITestListener
 		}
 		
 	}
-	
-	
 
 	public synchronized void onTestSkipped(ITestResult result) {
 		String logText = "<b>Test Method " + result.getMethod().getMethodName() + " Skipped</b>";

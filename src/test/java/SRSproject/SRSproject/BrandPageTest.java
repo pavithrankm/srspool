@@ -1,7 +1,5 @@
 package SRSproject.SRSproject;
 
-import java.io.IOException;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -12,8 +10,8 @@ public class BrandPageTest extends BaseTest {
 	
 	HomePage HP;
 	@Test(priority=1,enabled=true)
-	public void BandsHeaderValid() throws InterruptedException, IOException {
-BasePage.initializtion();
+	public void BandsHeaderValid() throws InterruptedException {
+
 		HP = new HomePage(driver);
 		Thread.sleep(5000);
 		HP. mouseHoverToBrandsA();

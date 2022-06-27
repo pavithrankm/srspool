@@ -48,6 +48,5 @@ public class ChangeBranch_shipto_Test  extends BaseTest
 		//Aqua
 		Assert.assertEquals(Yourbranch,prop.getProperty("Branch2"));
 		
-		driver.close();
 	     }
 }

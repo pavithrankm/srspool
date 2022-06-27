@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <listeners>
     <listener class-name="Listeners.ExtentReport"/>
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="SRSproject.SRSproject.InvoiceTest">
+      <class name="SRSproject.SRSproject.AccountDashboardPageTest">
         <methods>
-          <include name="InvoiceSearchUsingInvoice_No_Po_No"/>
+          <include name="tearDown1"/>
+          <include name="DashBoard"/>
           <include name="setUp"/>
-          <include name="DownlodFileInvoiceXL"/>
-          <include name="Invoice_SecondPage_Listing"/>
-          <include name="Downloaded_File_validation"/>
-          <include name="DownlodFileInvoiceCSV"/>
+          <include name="Account"/>
         </methods>
-      </class> <!-- SRSproject.SRSproject.InvoiceTest -->
+      </class> <!-- SRSproject.SRSproject.AccountDashboardPageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

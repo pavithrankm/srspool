@@ -21,7 +21,7 @@ import org.testng.Assert;
 import SRSproject.SRSproject.BasePage;
 import Utils.Constants;
 
-public class ProductListPage extends BasePage{
+public class ProductListPage {
 
 	WebDriverWait wait;
 	WebDriver driver;
@@ -38,11 +38,9 @@ public class ProductListPage extends BasePage{
 	@FindBy(xpath="(//input[@name='qty'])[1]") WebElement FirstItem_Qty;
     @FindBy(xpath="(//button[@title='Add to Cart'])[1]") WebElement AddToCart;
     @FindBy(xpath="//p[text()='has been added to your cart']") WebElement text;
-    
     @FindBy(xpath="//strong[text()='Recently Viewed']") WebElement Recently_viwed_Title;
-    
     @FindBy(css = "#maincontent > div > div.sidebar.sidebar-main > div > div > div.block-content.content > div:nth-child(1) > div > strong > a") WebElement First_Recent_Item;
-    @FindBy(xpath="(// button[@class='action tocart primary recentlyviewed'])[1]") WebElement Add_Recently_viwed;
+
 
 	
 	public ProductListPage(WebDriver driver)
@@ -70,29 +68,26 @@ public class ProductListPage extends BasePage{
 		
 	}
 	
-	public ProductDetailPage GuestUser_ClickItem() throws Exception
+	public ProductDetailPage GuestUser_ClickItem()
 	{
-//		
-//		JavascriptExecutor js = (JavascriptExecutor) driver;
-//		
-//		 js.executeScript("arguments[0].scrollIntoView();", List);
-		jsClick(Product);
-//		 Product.click();
+		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		
+		 js.executeScript("arguments[0].scrollIntoView();", List);
+		 Product.click();
 		 
 		return new ProductDetailPage(driver);
 		
 	}
 	
-	public String AddItem() throws Exception
+	public String AddItem() throws InterruptedException
 	{
 		
 		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		
 		 js.executeScript("arguments[0].scrollIntoView();", List);
-		 
 		 Thread.sleep(1000);
-		// jsClick(FirstItem_Qty);
 		FirstItem_Qty.sendKeys("2");
 		 
 		 WebDriverWait wait= new WebDriverWait(driver, 50);
@@ -105,11 +100,8 @@ return text.getText();
 
 	
 	}
-	
-	public WebElement Recently_Viewed() throws InterruptedException
-	
+	public WebElement Recently_Viewed()
 	{
-		Thread.sleep(3000);
           return Recently_viwed_Title;
 	}
 	
@@ -119,20 +111,7 @@ return text.getText();
 		return First_Recent_Item;
 	}
 	
-	public WebElement Add_Recently_viwed()
-	{
-	return Add_Recently_viwed;
-	}
 	
-	public String AddItem_recently_viewed() throws InterruptedException
-	{
-		WebDriverWait wait= new WebDriverWait(driver, 50);
-		wait.until(ExpectedConditions.visibilityOf(text));
-	System.out.println(	text.getText());
-	return text.getText();
-
-		
-		}
 	
 
 }

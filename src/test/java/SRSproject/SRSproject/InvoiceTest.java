@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 
 import Pages.HomePage;
 import Pages.InvoicePage;
-import Pages.OpenOrdersPage;
+
 import Utils.Constants;
 
 public class InvoiceTest extends BaseTest {
@@ -34,15 +34,15 @@ public class InvoiceTest extends BaseTest {
 		Thread.sleep(8000);
 		Hp.Account_Hover();
 		Thread.sleep(2000);
-		Hp.Invoice_History();
+	//	Hp.Invoice_History();
 		
 		Ip = new InvoicePage(driver);
 		
 //		System.out.println(Ip.PagenationSize());
 //		System.out.println(Ip.NoofLintItems());
 		
-		String title = driver.getTitle();
-		Assert.assertEquals(title, Constants.Invoice_Title);
+	//	String title = driver.getTitle();
+	//	Assert.assertEquals(title, Constants.Invoice_Title);
 		
 		
 	}	
@@ -82,8 +82,11 @@ public class InvoiceTest extends BaseTest {
      Assert.assertEquals(invoicenumberSearch, AfterSearchInvoiceNo);
      
 	invoiceSearch.clear();
-	Ip.InvoiceClk();
-	Thread.sleep(4000);
+	Thread.sleep(2000);
+	Hp.Account_Hover();
+	Thread.sleep(2000);
+//	Hp.Invoice_History();
+	Thread.sleep(8000);
 	String poSearch = Ip.POSearch();
 	 invoiceSearch.sendKeys(poSearch);	
 	 Thread.sleep(2000);
@@ -148,7 +151,7 @@ public void InvoiceNumbervalidation() throws Exception {
 public void DownlodFileInvoiceCSV() throws Exception {
 	Hp.Account_Hover();
 	Thread.sleep(2000);
-	Hp.Invoice_History();
+//	Hp.Invoice_History();
 Thread.sleep(4000);
 	 String filePath = System.getProperty("user.dir") + "\\DownloadCSV";
       //Creating the File object

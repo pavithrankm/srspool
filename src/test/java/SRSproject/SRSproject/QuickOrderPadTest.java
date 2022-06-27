@@ -49,7 +49,7 @@ public class QuickOrderPadTest extends BaseTest {
 		 
 	
 		HomePage hp= new HomePage(driver);
-	//	hp.clickOnHomeLink();
+		hp.clickOnHomeLink();
 	//	Thread.sleep(8000);
 		//driver.navigate().refresh();
 		Thread.sleep(10000);
@@ -67,7 +67,7 @@ public class QuickOrderPadTest extends BaseTest {
 //
 //	Reporter.log("Item did not get added to cart ",true);
 //}
-	driver.close();
+	
 
   }
 	
@@ -161,7 +161,7 @@ System.out.println("final"+arr);
 	{
 	
 	
-		Thread.sleep(10000);
+		Thread.sleep(5000);
 	
 		qp = new QuickOrderPadPage(driver);
 		Thread.sleep(11000);
@@ -171,8 +171,7 @@ System.out.println("final"+arr);
 		if (ProductNotExistMessage.endsWith("Successfully Passed Validation"));
 		{
 			System.out.println(ProductNotExistMessage);
-			Thread.sleep(3000);
-			driver.close();
+			
 		}
 		
 	}
