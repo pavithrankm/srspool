@@ -26,7 +26,6 @@ public class UnAuthorizedAccessToEmsco extends BaseTest {
 		Hpg = new HomePage_Global(driver);
 
 		if (driver.getCurrentUrl().equals(prop.get("EmscoLoginPagePoolURL"))) {
-
 			Hpg.ValidLoginAgon();
 			LoginPage Lp = new LoginPage(driver);
 			Thread.sleep(3000);
