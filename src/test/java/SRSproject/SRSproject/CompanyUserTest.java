@@ -20,7 +20,6 @@ import SRSproject.SRSproject.BasePage;
 import SRSproject.SRSproject.BaseTest;
 
 public class CompanyUserTest extends BaseTest {
-	
 //Run Brand configuration properties file
 	CompanyUsersPage CUpg;
 	HomePage Hp;
@@ -28,31 +27,34 @@ public class CompanyUserTest extends BaseTest {
 	UserRolesPage UserRolesPg;
 
 	@Test(priority = 0)
-	public void CreateCompanyUser() throws Exception {
-		 BasePage.initializtion();
+	public void CreateCompanyUser() throws InterruptedException {
+
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 		Hp = new HomePage(driver);
 		Hp.ValidLogin();
-		Thread.sleep(11000);
+		Thread.sleep(16000);
 		Hp.Account_Hover();
 		Hp.ClickUserManagement();
 		Thread.sleep(5000);
 		CUpg = new CompanyUsersPage(driver);
 
 		CUpg.clickAddNewUserBtn();
+		Thread.sleep(5000);
 //		CUpg.enterAddNewUserPopup();
-//		Thread.sleep(2000);
+//		Thread.sleep(5000);
 		CUpg.enterFirstName();
 		CUpg.enterLastName();
 		CUpg.enterEmail();
-		CUpg.selectUserRole("Default User");
+//		CPS
+//		CUpg.selectUserRole("Default User");
+		//FIS
+		CUpg.selectUserRole("Testing");
 		CUpg.selectDefaultBranch(0);
 		CUpg.selectDefaultShipTo(0);
 		CUpg.selectStatus(0);
 		CUpg.selectSupervisorName(1);
 		CUpg.clickSaveUser();
-		
 		String successMsg = CUpg.captureSuccessMsg();
 		System.out.println(successMsg);
 
@@ -60,13 +62,11 @@ public class CompanyUserTest extends BaseTest {
 
 	@Test(priority = 1)
 	public void AddNewUserRole() throws InterruptedException, IOException {
- BasePage.initializtion();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		BasePage.initializtion();
 		Hp = new HomePage(driver);
 		Hp.ValidLogin();
-		Thread.sleep(5000);
+		Thread.sleep(16000);
 		Hp.Account_Hover();
-		Thread.sleep(2000);
 		Hp.ClickUserManagement();
 		Thread.sleep(5000);
 		CUpg = new CompanyUsersPage(driver);

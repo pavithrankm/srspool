@@ -58,10 +58,13 @@ public class AccountDashboardPage extends BasePage {
 
 	
 	public void EditOrganization() throws InterruptedException {
-		
-//		act.moveToElement(Account).moveToElement(AccountDashboard).perform();
-//		Thread.sleep(3000);
-//		AccountDashboard.click();
+		act=new Actions(driver);
+		act.moveToElement(Account).perform();
+		Account.click();
+		Thread.sleep(2000);
+		act.moveToElement(AccountDashboard).perform();
+		Thread.sleep(3000);
+		AccountDashboard.click();
 		
 		String Display1 = DashBoard.getText();
 		Thread.sleep(6000);
@@ -158,10 +161,10 @@ public class AccountDashboardPage extends BasePage {
 	        System.out.println(innum1);
 	}	
 	public void AccountModule() throws InterruptedException {
-		
+		scrollUpandDownUsingElement(Account);
 		act=new Actions(driver);
 		act.moveToElement(Account).perform();
-		Account.click();
+		//Account.click();
 		boolean Berlin = NewBerlin_Test_Corp.isDisplayed();
 		String Ber = NewBerlin_Test_Corp.getText();
 		System.out.println(Berlin);

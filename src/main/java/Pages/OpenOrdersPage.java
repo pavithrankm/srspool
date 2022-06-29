@@ -27,6 +27,7 @@ import SRSproject.SRSproject.BasePage;
 
 public class OpenOrdersPage extends BasePage {
 
+	
 	WebDriverWait wait;
 	WebDriver driver;
 	Actions act;
@@ -45,6 +46,16 @@ public class OpenOrdersPage extends BasePage {
 	@FindBy(xpath="//span[text()='Download CSV']") WebElement download_btn;
 	@FindBy(xpath="//span[@class='label label-default']") WebElement  noofProd;
 	@FindBy(xpath="//span[text()='Download XLSX']") WebElement download_xlx_btn;
+	@FindBy(xpath ="//td[@class='column column--invoiceStatus']") List<WebElement> partiallyinvoiced; 
+	@FindBy(xpath="//th[text()='Partially Invoiced']") WebElement Partialinvce;
+	@FindBy(xpath="//div[text()='Order Qty']") WebElement orderqty;
+	@FindBy(xpath="//div[text()='Invoiced Qty']") WebElement InvoiceQty;
+	@FindBy(xpath="//div[text()='Remaining Qty']") WebElement RemainingQty;
+	
+	
+	
+	
+	
 	public OpenOrdersPage(WebDriver driver) 
 	{
 	this.driver=driver;
@@ -275,7 +286,37 @@ public  int  ReadXLdata() throws Exception
     System.out.println("Total Number of Rows in the excel is : "+rowNum);
 	return rowNum;
 }
+public ArrayList<String> PartiallyInvoiced() throws InterruptedException
 
 
+{
+ Thread.sleep(5000);
+List<WebElement> list1= partiallyinvoiced;
+ArrayList<String> a1= new ArrayList<String>();
+for (WebElement option:list1)
+{
+	String text= option.getText();
+	
+	a1.add(text);
+	
+}
+return a1;
+}
+public WebElement partialinvce() {
+	
+	return Partialinvce ;
+}
+public WebElement orderQty() {
+	
+	return orderqty ;
+}
+public WebElement invoiceQty() {
+	
+	return InvoiceQty ;
+}
+public WebElement remainingQty() {
+	
+	return RemainingQty ;
+}
 
 }

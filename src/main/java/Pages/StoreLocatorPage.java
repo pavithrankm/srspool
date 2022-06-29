@@ -49,7 +49,7 @@ public class StoreLocatorPage extends BasePage {
 	
 	@FindBy(xpath="//select[@id='branches']") WebElement ChangeBranchSelection;
 	
-	@FindBy(xpath="/html/body/div[6]/aside[7]/div[2]/footer/button[1]") WebElement Confirm;
+	@FindBy(xpath="(//span[text()='Confirm'])[3]") WebElement Confirm;
 	
 	@FindBy(xpath="/html/body/div[1]/div[1]/div/div/div[1]/div[1]/ul/li[1]/span") WebElement YourBranch;
 	
@@ -152,10 +152,34 @@ try
 		a.add(prop.getProperty("Branch3"));
 		a.add(prop.getProperty("Branch4"));
 		
+	    a.add(prop.getProperty("Branch5"));
+	     a.add(prop.getProperty("Branch6"));
+	     
+	     a.add(prop.getProperty("Branch7"));
+			a.add(prop.getProperty("Branch8"));
+			a.add(prop.getProperty("Branch9"));
+			a.add(prop.getProperty("Branch10"));
+			
+			a.add(prop.getProperty("Branch11"));
+			a.add(prop.getProperty("Branch12"));
+			a.add(prop.getProperty("Branch13"));
+			a.add(prop.getProperty("Branch14"));
+			a.add(prop.getProperty("Branch15"));
+			a.add(prop.getProperty("Branch16"));
+			a.add(prop.getProperty("Branch17"));
+			a.add(prop.getProperty("Branch18"));
+			a.add(prop.getProperty("Branch19"));
+			a.add(prop.getProperty("Branch20"));
+			a.add(prop.getProperty("Branch21"));
+			a.add(prop.getProperty("Branch22"));
+			a.add(prop.getProperty("Branch23"));
+			a.add(prop.getProperty("Branch24"));
+			a.add(prop.getProperty("Branch25"));
+		
 		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		 js.executeScript("arguments[0].scrollIntoView();", LocationNearYoutitle);
-		Thread.sleep(12000);
+		Thread.sleep(10000);
 		
 		
 		List <WebElement>  searchresult= driver.findElements(By.xpath("//a[@class='storelocator-store-name 2121']"));
@@ -173,7 +197,6 @@ try
 	else
 			{
 		System.out.println("Branches are Not Listed As Expected");
-		System.out.println(a);
 		System.out.println(a1);
 			}
 }
@@ -279,7 +302,7 @@ Thread.sleep(1000);
 
 		 Thread.sleep(1000);
 		// WebDriverWait wait= new WebDriverWait(driver, 60);
-		
+					
 		 
 	
 	 ChangeBranchLink.click();
@@ -294,7 +317,8 @@ Thread.sleep(1000);
 		 Thread.sleep(900);
 		
 		js.executeScript("arguments[0].scrollIntoView();",ChangeBranchSelection);
-		Thread.sleep(2000);
+		
+		Thread.sleep(1000);
 		 WebDriverWait wait = new WebDriverWait(driver, 2000);
 			wait.until(ExpectedConditions.visibilityOf(Confirm));
 	 Confirm.click();

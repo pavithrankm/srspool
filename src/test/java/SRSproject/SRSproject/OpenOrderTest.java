@@ -6,13 +6,16 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 import static org.testng.Assert.assertTrue;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import  java.io.FileNotFoundException;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 
 import org.apache.commons.io.FileUtils;
@@ -55,13 +58,88 @@ public class OpenOrderTest extends BaseTest
 		
  String Title=	 driver.getTitle();
  Assert.assertEquals(Title,Constants.OpenOrder_Title);
-	
+
+ 
 
 }
-	@Test(priority=2, description="Validating that open order are listed and its not empty")
+
+	@Test(priority=2, description="Open Backorders")
+	public void Paritaal_invoiced() throws InterruptedException, CsvValidationException, IOException 
+	{
+		ArrayList<String> a1= new ArrayList<String>();
+		Op =  new OpenOrdersPage(driver);
+		Thread.sleep(3000);
+		boolean displayed = Op.partialinvce().isDisplayed();
+		System.out.println(displayed); 
+		Assert.assertTrue(displayed);
+		 ArrayList<String>List = Op.PartiallyInvoiced();
+
+		
+			System.out.println(List.size());
+			
+			StringBuilder str = new StringBuilder();
+			for (String Lists : List) {
+				str.append(Lists);
+				str.append(",");
+			}
+			System.out.println(str);
+		
+	for (int i = 1; i < List.size();) {
+		if(List.get(i).equals("Not Invoiced")) {
+			System.out.println("True");
+			
+			driver.findElement(By.xpath("(//td[@class='column column--orderNumber'])["+i+"]")).click();
+			
+			Thread.sleep(3000);
+			Assert.assertTrue(Op.orderQty().isDisplayed());
+			Assert.assertTrue(Op.invoiceQty().isDisplayed());
+			Assert.assertTrue(Op.remainingQty().isDisplayed());
+		    List<WebElement> findElements = driver.findElements(By.xpath("//span[@data-bind='text: quantity']"));
+		   
+		    for (WebElement option:findElements)
+		    {
+		    	String text= option.getText();
+		    	
+		    	a1.add(text);
+		    	
+				}
+				System.out.println(a1);
+		    	
+		    }else {
+		    	driver.findElement(By.xpath("(//td[@class='column column--orderNumber'])["+i+"]")).click();
+		    	Thread.sleep(3000);
+		    	Assert.assertTrue(Op.orderQty().isDisplayed());
+				Assert.assertTrue(Op.invoiceQty().isDisplayed());
+				Assert.assertTrue(Op.remainingQty().isDisplayed());
+			    List<WebElement> findElements = driver.findElements(By.xpath("//span[@data-bind='text: quantity']"));
+			   
+			    for (WebElement option:findElements)
+			    {
+			    	String text= option.getText();
+			    	
+			    	a1.add(text);
+			    	
+					}
+					System.out.println(a1);
+		    
+		    } 
+		break;
+		}
+	
+	}
+
+	
+	
+
+	
+	@Test(priority=3, description="Validating that open order are listed and its not empty")
 	public void OpenOrder_Listing() throws InterruptedException, CsvValidationException, IOException 
 	{
+		
+		
 		Op =  new OpenOrdersPage(driver);
+		Op.Go_back().click();
+		
 	ArrayList<String>List = Op.GetLineOrders();
 	OpenOrder_list=List;
 	System.out.println(OpenOrder_list.size());

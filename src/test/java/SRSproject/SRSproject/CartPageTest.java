@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Ignore;
 import org.openqa.selenium.By;
 
@@ -171,9 +172,9 @@ float MultipliedPrice= ActualPrice * quantity;
 	public void AddItemToCart_Validation() throws Exception
 
 	{
-		Thread.sleep(10000);
+		Thread.sleep(18000);
 		WebElement SearchField = Cp.Searcfield();
-		 Thread.sleep(5000);
+		 Thread.sleep(16000);
 		SearchField.click();
 		SearchField.sendKeys(prop.getProperty("KeywordSearch"));
 		 Thread.sleep(8000);
@@ -185,8 +186,8 @@ float MultipliedPrice= ActualPrice * quantity;
 		 Thread.sleep(5000);
 		 WebDriverWait wait= new WebDriverWait(driver, 80);
 		
-		 wait.until(ExpectedConditions.visibilityOf(listele1.get(1)));
-		listele1.get(1).click();
+		 wait.until(ExpectedConditions.visibilityOf(listele1.get(0)));
+		listele1.get(0).click();
 		
 		
 		Cp.AddToCart().click();
@@ -238,15 +239,14 @@ float MultipliedPrice= ActualPrice * quantity;
 		    {
 		    	Reporter.log(" Not All Items are added from cart to Reorder List selected" , true);
 				   
-		    }
-		
-			
+		    }	
 	}
 	
 	@Test(priority=9, description= "Adding item  cart to reorder validate the item will be added or nt  " )
 	public void AddItemToCart_ValidationTo_Reorder() throws Exception
 
 	{
+		Thread.sleep(5000);
 		MiniCartPage Mp= new MiniCartPage(driver);
 		Mp.MiniCart().click();
 		Thread.sleep(8000);
@@ -304,12 +304,80 @@ float MultipliedPrice= ActualPrice * quantity;
 			    }
 			
 	    
-		
+		driver.close();
 		
 		
 		
 			
 	}
+	@Test(priority = 7, description = "BackOrder Warning")
+	public void Backorder_Warning() throws Exception {
+	    WebElement stock_count = driver.findElement(By.xpath("//td[@class ='col stock']/span[1]"));
+	    if ((stock_count.getText().equals("In Stock"))) {
+	        Cp= new CartPage(driver);
+	        WebElement enterQty = Cp.enterQty1();
+	        enterQty.clear();
+	        enterQty.sendKeys("2000");
+	        enterQty.sendKeys(Keys.ENTER);
+	        Thread.sleep(9000);
+	        driver.findElement(By.xpath("(//div[@class='cart item message error']/span[1])[1]"));
+	        Reporter.log("Product was in stock now Backorder Warning is Present", true);
+
+	    }
+	    else if ((stock_count.getText().equals("Call for availability"))){
+	        Thread.sleep(3000);
+	        driver.findElement(By.xpath("(//div[@class='cart item message error']/span[1])[1]"));
+	        Reporter.log("Call for Availability is there and Backorder Warning is Present", true);
+	    }
+	    else {
+	        WebElement enterQty = Cp.enterQty1();
+	        enterQty.clear();
+	        String s = stock_count.getText();
+	        int i = Integer.parseInt(s);
+	        int quantity = i+1;
+	        driver.findElement(By.xpath("//*[@class='input-text qty'][1]")).sendKeys("" + quantity +"\n");
+	        Thread.sleep(9000);
+	        WebElement backorder_msg = driver.findElement(By.xpath("(//div[@class='cart item message error']/span[1])[1]"));
+	        Reporter.log("Quantity was present now Backorder Warning is Present", true);
+	    }
+
+
+	}
+	
+	@Test(priority = 6, description = "Inventory Count")
+	public void Inventory_Count() throws Exception {
+	    WebElement stock_count = driver.findElement(By.xpath("//td[@class ='col stock']/span[1]"));
+	    if ((stock_count.getText().equals("In Stock"))) {
+	        Reporter.log("In stock Text is Present ", true);
+	    } else if ((stock_count.getText().equals("Call for availability"))) {
+	        Reporter.log("Call for Availability Text is Present", true);
+	    } else {
+	        if (StringUtils.isNumeric(String.valueOf(stock_count.getText()))) {
+	            Reporter.log("Product Inventory count is Present", true);
+	        } else {
+	            Reporter.log("Invalid data is Present", true);
+	        }
+
+	    }
+	}
+	    @Test
+		public void CartPage_Count() throws InterruptedException, IOException 
+		{
+			BasePage.initializtion();
+			Thread.sleep(8000);
+			LoginPage Lp = new LoginPage(driver);
+			Lp.ValidLogin();
+			Thread.sleep(10000);
+			MiniCartPage Mp= new MiniCartPage(driver);
+			Mp.MiniCart().click();
+			Thread.sleep(8000);
+			Mp.ClickViewCart();
+			Cp = new CartPage(driver);
+			System.out.println(Cp.PageSize());
+			driver.close();
+		
+	}
+	}
 	
 	
-}
+

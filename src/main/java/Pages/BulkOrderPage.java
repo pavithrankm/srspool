@@ -39,8 +39,9 @@ public class BulkOrderPage extends BasePage {
 	@FindBy(xpath = "//div[@class='amqorder-item amqorder-sku']") List<WebElement> PartNo_List;
 	@FindBy(xpath = "//button[text()='Accept']") WebElement Accept;
 	@FindBy(xpath = "/html/body/div[2]/main/div[4]/div/aside/div/div[1]/h5") WebElement ItemsImported;
-    @FindBy(xpath = "(//button[text()='Add All Items To Cart'])[3]") WebElement Addallitems ;
-	public BulkOrderPage(WebDriver driver)
+	@FindBy(xpath = "(//button[text()='Add All Items To Cart'])[3]") WebElement Addallitems ;
+	
+	 public BulkOrderPage(WebDriver driver)
 	{
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
@@ -71,9 +72,10 @@ public class BulkOrderPage extends BasePage {
 		return BulkOrderPad;
 	}
 	
-	public String  BulkOrderPadClick()
+	public String  BulkOrderPadClick() throws InterruptedException
 	{
 		BulkOrderPad.click();
+		Thread.sleep(1000);
 		String BulkOrderPageTitle= driver.getTitle();
 		return BulkOrderPageTitle;
 }
@@ -92,7 +94,7 @@ public class BulkOrderPage extends BasePage {
 
 
 		listele.size();
-		 Thread.sleep(900);
+		 Thread.sleep(9000);
 		
 
 	listele.get(0).click();
@@ -100,7 +102,7 @@ public class BulkOrderPage extends BasePage {
 	
 	
 	
-	Thread.sleep(8000);
+	Thread.sleep(9000);
 	driver.findElement(By.xpath("(//li[@class='amqorder-item'])[2]")).click();
 	Thread.sleep(1000);
 	
@@ -110,7 +112,7 @@ public class BulkOrderPage extends BasePage {
 
 
 	listele1.size();
-	 Thread.sleep(3000);
+	 Thread.sleep(2000);
 	
 
 	
@@ -119,7 +121,7 @@ public class BulkOrderPage extends BasePage {
 	
 	
 	
-	Thread.sleep(8000);
+	Thread.sleep(9000);
 	driver.findElement(By.xpath("(//li[@class='amqorder-item'])[2]")).click();
 	
 	
@@ -131,17 +133,13 @@ public class BulkOrderPage extends BasePage {
 		 Thread.sleep(5000);
 		AddANewLineItem.click();
 		
-		 Thread.sleep(4000);
+		 Thread.sleep(5000);
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		
-		// js.executeScript("arguments[0].scrollIntoView();", ProductLabel);
-		 
-		
+//		 js.executeScript("arguments[0].scrollIntoView();", ProductLabel);
 		
 		List <WebElement>  listele= Product;
-		
-			
 	
 
 
@@ -157,6 +155,7 @@ public class BulkOrderPage extends BasePage {
 	
 	Thread.sleep(8000);
 	driver.findElement(By.xpath("(//li[@class='amqorder-item'])[2]")).click();
+	Thread.sleep(3000);
 	
 	
 	
@@ -172,34 +171,29 @@ public class BulkOrderPage extends BasePage {
 	{
 		((JavascriptExecutor) driver)
 	    .executeScript("window.scrollTo(0, -document.body.scrollHeight)");
+		Thread.sleep(1000);
 	return AddAll_ItemsToCart;
 	}
-	public WebElement  Addallitems() throws InterruptedException
-	{
-		((JavascriptExecutor) driver)
-	    .executeScript("window.scrollTo(0, -document.body.scrollHeight)");
-	return Addallitems;
-	}
+	
 	
 
-	public BulkOrderPage Fileupload() throws Exception
+	public BulkOrderPage Fileupload() throws InterruptedException
 	
 {
 		
 		Thread.sleep(5000);
 		
-//		((JavascriptExecutor) driver)
-//	    .executeScript("window.scrollTo(0, -document.body.scrollHeight)");
-//		waitUntilElementVisibility(UploadCsv);
+		((JavascriptExecutor) driver)
+	    .executeScript("window.scrollTo(0, -document.body.scrollHeight)");
+		
 		UploadCsv.click();
-		 Thread.sleep(8000);
+		 Thread.sleep(2000);
+		
 		 file .sendKeys(System.getProperty("user.dir") + prop.getProperty("valid_csvfile"));
 
-//		file.sendKeys(prop.getProperty("valid_csvfile"));
-
 		
 		
-		Thread.sleep(8000);
+		Thread.sleep(3000);
 		
 		UploadNow.click();
 		Thread.sleep(5000);
@@ -209,9 +203,10 @@ public class BulkOrderPage extends BasePage {
 
 	
 	
-	public ArrayList<String> ListOfItem()
+	public ArrayList<String> ListOfItem() throws InterruptedException
 	{
 		// List<String> a1 = new ArrayList();
+		Thread.sleep(9000);
 		 
 		List<WebElement> list1= PartNo_List;
 		ArrayList<String> a1= new ArrayList<String>();
@@ -229,12 +224,11 @@ public class BulkOrderPage extends BasePage {
 	
 	{
 			
-		
 		((JavascriptExecutor) driver)
 	    .executeScript("window.scrollTo(0, -document.body.scrollHeight)");
 		
 		UploadCsv.click();
-		 Thread.sleep(8000);
+		 Thread.sleep(5000);
 		 file .sendKeys(System.getProperty("user.dir") + prop.getProperty("Invalid_csvfile"));
 //		file.sendKeys(prop.getProperty("Invalid_csvfile"));
 
@@ -243,14 +237,21 @@ public class BulkOrderPage extends BasePage {
 		Thread.sleep(3000);
 		
 		UploadNow.click();
-		Thread.sleep(5000);
+		Thread.sleep(20000);
  String No_of_itemsimported= ItemsImported.getText();
-	Thread.sleep(8000);
+ Thread.sleep(2000);
 			Accept.click();
 			
 			return No_of_itemsimported;
 			
 		
+
+	}
+	public WebElement  Addallitems() throws InterruptedException
+	{
+		((JavascriptExecutor) driver)
+	    .executeScript("window.scrollTo(0, -document.body.scrollHeight)");
+	return Addallitems;
 	}
 	
 	
