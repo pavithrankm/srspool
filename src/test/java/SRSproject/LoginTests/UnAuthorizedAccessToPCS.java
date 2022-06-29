@@ -26,7 +26,6 @@ public class UnAuthorizedAccessToPCS extends BaseTest {
 		Hpg = new HomePage_Global(driver);
 
 		if (driver.getCurrentUrl().equals(prop.get("PCSLoginPagePoolURL"))) {
-
 			Hpg.ValidLoginQPS();
 			LoginPage Lp = new LoginPage(driver);
 			Thread.sleep(3000);
