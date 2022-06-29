@@ -32,8 +32,8 @@ public class BulkOrderPadTest extends BaseTest {
 		
 		LoginPage Lp = new LoginPage(driver);
 		Lp.ValidLogin();
-		Thread.sleep(5000);
 		Bp= new BulkOrderPage(driver);
+		Thread.sleep(15000);
 		String BulkOrderTitle= Bp.BulkOrderPadClick();
 		Assert.assertEquals(BulkOrderTitle, Constants.BulkOrderTitle);
 }
@@ -43,14 +43,13 @@ public class BulkOrderPadTest extends BaseTest {
 	{
 	
 		
-			Thread.sleep(1000);
+			Thread.sleep(6000);
 		
 		Bp.ProductEntry();
 	
 		
-		Reporter.log("Items added to bulk order as expected",true);
-		}
-		 
+		
+}
 	
 
 	@Test(priority=3)
@@ -58,15 +57,11 @@ public class BulkOrderPadTest extends BaseTest {
 	{
 	
 		
-		
-			Thread.sleep(1000);
+			Thread.sleep(10000);
 			
 		Bp.AddNewLineItem();
 		
-		Reporter.log("Items added to bulk order as expected",true);
-		}
-		 
-
+}
 	
 	@Test(priority=4)
 	public void UpdateQunatity_Validation() throws InterruptedException 
@@ -80,10 +75,8 @@ public class BulkOrderPadTest extends BaseTest {
 		Thread.sleep(1000);
 		qty_field.sendKeys(Keys.ENTER);
 		Reporter.log("Items added to bulk order as expected",true);
-		}
 		
-
-	
+	}
 
 		@Test(priority=5)
 		public void AddAll_ItemToCart_Validation() throws InterruptedException 
@@ -95,18 +88,17 @@ public class BulkOrderPadTest extends BaseTest {
 					
 		Bp.AddAllItem_TOCart().click();
 		
-		Reporter.log("Items added to cart",true);
-			}
-			
+		
+		}
 			
 			@Test(priority=6)
-			public void ListofItem_Validation() throws Exception 
+			public void ListofItem_Validation() throws InterruptedException, CsvValidationException, IOException 
 			{
-				Thread.sleep(5000);
+				Thread.sleep(10000);
 				
 				
 						Bp.Fileupload();
-						Thread.sleep(5000);
+						Thread.sleep(25000);
 					ArrayList<String> List= Bp.ListOfItem();
 					BulkOrderPage_List = List;
 					
@@ -118,25 +110,22 @@ public class BulkOrderPadTest extends BaseTest {
 					
 					Assert.assertEquals(BulkOrderPage_List,arr);
 					
-					
-			Reporter.log("Items are uploaded",true);
-				}
-				
+			
+			
+}
 			
 			@Test(priority=7)
 			public void InValid_FileUpload_Validation() throws InterruptedException 
 			{
-				Thread.sleep(5000);
-				
+				Thread.sleep(16000);
 				
 						System.out.println(Bp.InvalidFileupload());
 						
 					
-					
-			Reporter.log("Valid Items are uploaded",true);
-				}
-				
-
+				driver.close();	
+			
+			
+}
 	
 	
 	

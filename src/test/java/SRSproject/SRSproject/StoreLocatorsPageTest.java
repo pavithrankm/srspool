@@ -22,6 +22,7 @@ import Pages.LoginPage;
 import Pages.ProductListPage;
 import Pages.RegistrationForm;
 import Pages.StoreLocatorPage;
+import Pages.StoreLocatorPage_CPS;
 import Utils.Constants;
 
 
@@ -37,13 +38,12 @@ public class StoreLocatorsPageTest extends BaseTest {
 	public void AllBranchValidation() throws InterruptedException, IOException 
 	{
 	BasePage.initializtion();
-	Thread.sleep(9000);
+	Thread.sleep(10000);
 		HomePage hp= new HomePage(driver);
 		
-	    hp.Locations_click();
-//
+		slp = new StoreLocatorPage(driver);
+		hp.Locations_click();
 	Thread.sleep(8000);
-	slp = new StoreLocatorPage(driver);
 	slp.YourLocation_EnterLocation();
 	Thread.sleep(8000);
 	slp.AllBranchListing();

@@ -25,12 +25,11 @@ public class RegistrationFormTest extends BaseTest{
 	RegistrationForm rf;
 	
 	@Test(priority=1)
-	public void RegistrationForm_RegisternowRedirectionValidation() throws InterruptedException 
-	{
-		
+	public void RegistrationForm_RegisternowRedirectionValidation() throws InterruptedException {
+	
 		rf= new RegistrationForm(driver);
 		String title=rf.ClickOnRegisternowOnGlobalSite();
-		Assert.assertEquals(title, Constants.REGISTRATIONFORM_URL);
+		Assert.assertEquals(title, prop.getProperty("Homepage_url"));
 		
 	}
 	
@@ -65,14 +64,14 @@ String PreferredbrandErr=	rf.NoBrandSelectedErrorvalidation();
 
 	}
 	
-@Test(priority=10)
+/*@Test(priority=10)
 	
 	public void RegistrationForm_GLobalsite_PhoneNoValidation () throws InterruptedException
 	{
 	String IncorrectPhonenoError = rf.PhonenoFieldvalidation();
 	Assert.assertEquals(IncorrectPhonenoError, Constants.Incorrect_phno_MSG);
 	
-	}
+	}*/
 	@Test(priority=11)
 	
 public void RegistrationForm_GLobalsite_IncorrectEmailValidation () throws InterruptedException
@@ -108,7 +107,6 @@ Assert.assertEquals(TermsNotcheckedError, Constants.Termnotchecked_MSG);
 
 public void RegistrationForm_KnowMyHeritagePlusAccount() throws InterruptedException
 {
-	Thread.sleep(1000);
 	rf.KnowMyHeritagePlusAccountclick();
 	WebElement CompanyAccount=rf.company_Account_Field();
 	Assert.assertEquals(CompanyAccount.isEnabled(), true);
@@ -125,7 +123,6 @@ public void RegistrationForm_KnowMyHeritagePlusAccount() throws InterruptedExcep
 
 public void RegistrationForm_Dont_KnowMyHeritagePlusAccountValidation() throws InterruptedException
 {
-	Thread.sleep(1000);
 	rf.Dont_KnowMyHeritagePlusAccountclick();
 	WebElement CompanyAccount=rf.company_Account_Field();
 	Assert.assertEquals(CompanyAccount.isDisplayed(),false);
@@ -143,7 +140,6 @@ public void RegistrationForm_Dont_KnowMyHeritagePlusAccountValidation() throws I
 public void RegistrationForm_DontHave_MyHeritagePlusAccountValidation() throws InterruptedException
 {
 
-	Thread.sleep(1000);
 rf.DontHave_MyHeritagePlusAccountclick();
 WebElement Industry_Professional_option = rf.Industry_Professional_option();
 //Assert.assertEquals(CompanyAccount.isDisplayed(),false);
@@ -164,7 +160,7 @@ Assert.assertEquals(Industry_Professional_Verbiage, Constants.Industry_Professio
 
 public void RegistrationForm_AccountInfoSelectionValidation() throws InterruptedException
 
-{Thread.sleep(1000);
+{
 	
 	WebElement CompanyAccount=rf.company_Account_Field();
 	WebElement Industry_Professional_verb = rf.Industry_Professional_option();
@@ -221,11 +217,10 @@ public void RegistrationForm_AccountInfoSelectionValidation() throws Interrupted
 
 public void RegistrationForm_yes_Industrial_ProfessionalValidation() throws InterruptedException
 {
-	Thread.sleep(1000);
 	rf.DontHave_MyHeritagePlusAccountclick();
 	String Messageon_yes_Industrial_Prof_option =  rf.Messageon_yes_Industrial_Prof_option_Selection();
 	
-	//System.out.println(Messageon_yes_Industrial_Prof_option);
+	System.out.println(Messageon_yes_Industrial_Prof_option);
 	//Assert.assertEquals(Messageon_yes_Industrial_Prof_option, Constants.Messageon_yes_Industrial_Prof_option);
 	
 	
@@ -235,7 +230,6 @@ public void RegistrationForm_yes_Industrial_ProfessionalValidation() throws Inte
 
 public void RegistrationForm_Not_Industrial_ProfessionalValidation() throws InterruptedException
 {
-	Thread.sleep(1000);
 	rf.DontHave_MyHeritagePlusAccountclick();
 	String Messageon_Not_Industrial_Prof_option = rf.Messageon_Not_Industrial_Professional_option_Click();
 	
@@ -253,7 +247,7 @@ public void RegistrationForm_BrandFieldDisplayed() throws InterruptedException
 	
 	
 
-/*@Test(priority=14)
+@Test(priority=14)
 
 public void RegistrationForm_FIS_BrandAndBranchValidation() throws InterruptedException
 {
@@ -298,15 +292,15 @@ public void RegistrationForm_FIS_BrandAndBranchValidation() throws InterruptedEx
 	}
 
 }
-*/
+
 @Test(priority=15)
 
-public void RegistrationForm_PCS_BrandAndBranchValidation() throws InterruptedException
+public void RegistrationForm_CPS_BrandAndBranchValidation() throws InterruptedException
 {
 	driver.navigate().refresh();
 	Thread.sleep(6000);
 	//Thread.sleep(1000);
-	rf.Hertiage_Brand_PCS_Selection();
+	rf.Hertiage_Brand_CPS_Selection();
 	Thread.sleep(6000);
 	rf.Scrollup_Branch_SelectionField();
 	Thread.sleep(1000);
@@ -323,10 +317,10 @@ public void RegistrationForm_PCS_BrandAndBranchValidation() throws InterruptedEx
     for(int i =0; i<size ; i++)
     {
        String options = op.get(i).getText();
-       String BranchPref = "POOL CONTRACTORS SUPPLY";
+       String BranchPref = "CPS";
        String BranchdefPref= "Preferred Branch Location";
       // Assert.assertEquals(options.startsWith(BranchPref)||options.startsWith(BranchdefPref), true);
-     if((options.contains(BranchPref))||options.contains(BranchdefPref))
+     if((options.contains(BranchPref))&&options.contains(BranchdefPref))
     		 {
     	 System.out.println(options);
     }
@@ -347,7 +341,7 @@ public void RegistrationForm_PCS_BrandAndBranchValidation() throws InterruptedEx
 
 }
 
-@Test(priority=16)
+/*@Test(priority=16)
 
 public void RegistrationForm_QPS_BrandAndBranchValidation() throws InterruptedException
 {
@@ -391,237 +385,10 @@ public void RegistrationForm_QPS_BrandAndBranchValidation() throws InterruptedEx
 	}
 
 }
-@Test(priority=15,enabled = false)
 
-public void RegistrationForm_Aqua_gon__BrandAndBranchValidation() throws InterruptedException
-{
-	driver.navigate().refresh();
-	Thread.sleep(6000);
-	//Thread.sleep(1000);
-	rf.Hertiage_Brand_Aqua_gon_Selection();
-	Thread.sleep(6000);
-	rf.Scrollup_Branch_SelectionField();
-	Thread.sleep(1000);
-	WebElement a = rf.Branch_SelectionField();
-	Thread.sleep(6000);
-	a.click();
-	Thread.sleep(6000);
-	Select s = new Select(a);
-	List<WebElement> op = s.getOptions();
-	
-	int size = op.size();
-	try
-	{
-    for(int i =0; i<size ; i++)
-    {
-       String options = op.get(i).getText();
-       String BranchPref = "AQUA-GON";
-       String BranchdefPref= "Preferred Branch Location";
-      // Assert.assertEquals(options.startsWith(BranchPref)||options.startsWith(BranchdefPref), true);
-     if((options.contains(BranchPref))||options.contains(BranchdefPref))
-    		 {
-    	 System.out.println(options);
-    }
-     
-    
-     
-     else
-     {
-    	 System.out.println("Some Other branch are also listed"+options);
-    }
+*/
 
-}
-	}
-	catch (Exception e)
-	{
-		System.out.println(e);
-	}
-
-}
-
-//PCS
-
-
-//@Test(priority=17,enabled =false)
-//
-//public void RegistrationForm_DontKnowHertiageAccount_RegistrationValidation() throws InterruptedException, IOException
-//{
-//	BasePage.initializtion();
-//	Thread.sleep(8000);
-//rf= new RegistrationForm(driver);
-//rf.ClickOnRegisternowOnGlobalSite();
-//Thread.sleep(8000);
-//	rf.FirstName_Entry();
-//	rf.LastName_Entry();
-//	rf.Email_Entry_Scenario1();
-//	rf.Heritage_Brand_SelectionField();
-//	rf.Hertiage_Brand_PCS_Selection();
-//	rf.Branch_SelectionField();
-//	rf.Branch_pcsSelection();
-//	rf.CompanyField_click();
-//	rf.Address1Field_click();
-//	rf.Address2Field_click();
-//	rf.CityField_click();
-//	rf.State_Selection();
-//	rf.ZipCode_click();
-//	rf.Valid_PhoneNo_click();
-//	rf.Fax_click();
-//	rf.Dont_KnowMyHeritagePlusAccountclick();
-//	rf.ValidPassword_Entry();
-//	rf.Terms_Click();
-//
-//	rf.Submitclick();
-//Thread.sleep(10000);
-//	
-//	String AccountCreatePage = rf.PageTitle();
-//	Thread.sleep(100);
-//	
-//	
-//	Assert.assertEquals(AccountCreatePage,prop.getProperty("HomePageTitle"));
-//	
-//	Thread.sleep(3000);
-//	
-//	
-//	
-//}
-//
-//
-//
-//
-//@Test(priority=18)
-//
-//public void RegistrationForm_KnowHertiageAccount_RegistrationValidation() throws InterruptedException, IOException
-//{
-//	//BasePage Bp= new BasePage();
-//	BasePage.initializtion();
-//	Thread.sleep(8000);
-//rf= new RegistrationForm(driver);
-//	rf.ClickOnRegisternowOnGlobalSite();
-//	rf.FirstName_Entry();
-//	rf.LastName_Entry();
-//	rf.Email_Entry_Scenario2();
-//	rf.Heritage_Brand_SelectionField();
-//	rf.Hertiage_Brand_PCS_Selection();
-//	rf.Branch_SelectionField();
-//	rf.Branch_pcsSelection();
-//	rf.CompanyField_click();
-//	rf.Address1Field_click();
-//	rf.Address2Field_click();
-//	rf.CityField_click();
-//	rf.State_Selection();
-//	rf.ZipCode_click();
-//	rf.Valid_PhoneNo_click();
-//	rf.Fax_click();
-//	rf.KnowMyHeritagePlusAccountclick();
-//	rf.company_Account_Entry();
-//	rf.ValidPassword_Entry();
-//	rf.Terms_Click();
-//	rf.Submitclick();
-//	
-//Thread.sleep(10000);
-//	
-//	String AccountCreatePage = rf.PageTitle();
-//	Thread.sleep(100);
-//	
-//	
-//	Assert.assertEquals(AccountCreatePage,prop.getProperty("HomePageTitle"));
-//	
-//	Thread.sleep(3000);
-//	
-//}}
-//
-//
-//@Test(priority=19)
-//
-//public void RegistrationForm_QPSBranch_RegistrationValidation() throws InterruptedException, IOException
-//{
-//	BasePage.initializtion();
-//	Thread.sleep(8000);
-//	rf.ClickOnRegisternowOnGlobalSite();
-//	rf.FirstName_Entry();
-//	rf.LastName_Entry();
-//	rf.Email_Entry_Scenario3();
-//	rf.Heritage_Brand_SelectionField();
-//	rf.Hertiage_Brand_QPS_Selection();
-//	rf.Branch_SelectionField();
-//	rf.Branch_qpsSelection();
-//	rf.CompanyField_click();
-//	rf.Address1Field_click();
-//	rf.Address2Field_click();
-//	rf.CityField_click();
-//	rf.State_Selection();
-//	rf.ZipCode_click();
-//	rf.Valid_PhoneNo_click();
-//	rf.Fax_click();
-//	rf.KnowMyHeritagePlusAccountclick();
-//	rf.company_Account_Entry();
-//	rf.ValidPassword_Entry();
-//	rf.Terms_Click();
-//	rf.Submitclick();
-//
-//Thread.sleep(10000);
-//	
-//	String AccountCreatePage = rf.PageTitle();
-//	Thread.sleep(100);
-//	
-//	
-//	Assert.assertEquals(AccountCreatePage,prop.getProperty("HomePageTitle"));
-//	
-//	Thread.sleep(3000);
-//	
-//
-//}
-	
-
-
-//@Test(priority=20)
-//
-//public void RegistrationForm_DontHaveHertiageAccount_RegistrationValidation() throws InterruptedException, IOException
-//{
-//	BasePage.initializtion();
-//	Thread.sleep(8000);
-//	rf= new RegistrationForm(driver);
-//	rf.ClickOnRegisternowOnGlobalSite();
-//	rf.FirstName_Entry();
-//	rf.LastName_Entry();
-//	rf.Heritage_Brand_SelectionField();
-//	rf.Hertiage_Brand_PCS_Selection();
-//	rf.Branch_SelectionField();
-//	rf.Branch_pcsSelection();
-//	rf.CompanyField_click();
-//	rf.Address1Field_click();
-//	rf.Address2Field_click();
-//	rf.CityField_click();
-//	rf.State_Selection();
-//	rf.ZipCode_click();
-//	rf.Valid_PhoneNo_click();
-//	rf.Fax_click();
-//	rf.DontHave_MyHeritagePlusAccountclick();
-//	rf.yes_Industrial_Professional_option_Click();
-//	Thread.sleep(2000);
-//	rf.BecomeACustomer().click();
-//	
-//	Thread.sleep(2000);
-//	String BecomeACustomerPage = rf.PageURL();
-//	Thread.sleep(2000);
-//	String windowHandle = driver.getWindowHandle();
-//	ArrayList<String> newTab = new ArrayList<String>(driver.getWindowHandles());
-//	   driver.switchTo().window(newTab.get(1));
-//	  
-//	 
-//	  Thread.sleep(5000);
-//	
-//	Assert.assertEquals(BecomeACustomerPage, Constants.BecomeACustomerURL);
-//	
-//	Thread.sleep(3000);
-//	 //driver.switchTo().window(newTab.get(0));
-//	
-//	//driver.navigate().back();
-//	
-//}}
-////Aqua-gon
-//
-@Test(priority=17,enabled = false)
+/*@Test(priority=17)
 
 public void RegistrationForm_DontKnowHertiageAccount_RegistrationValidation() throws InterruptedException, IOException
 {
@@ -634,9 +401,9 @@ Thread.sleep(8000);
 	rf.LastName_Entry();
 	rf.Email_Entry_Scenario1();
 	rf.Heritage_Brand_SelectionField();
-	rf.Hertiage_Brand_Aqua_gon_Selection();
-   rf.Branch_SelectionField();
-	rf.Branch_Aqua_gonSelection();
+	rf.Hertiage_Brand_FIS_Selection();
+	rf.Branch_SelectionField();
+	rf.Branch_fisSelection();
 	rf.CompanyField_click();
 	rf.Address1Field_click();
 	rf.Address2Field_click();
@@ -648,9 +415,8 @@ Thread.sleep(8000);
 	rf.Dont_KnowMyHeritagePlusAccountclick();
 	rf.ValidPassword_Entry();
 	rf.Terms_Click();
-
 	rf.Submitclick();
-Thread.sleep(10000);
+	Thread.sleep(10000);
 	
 	String AccountCreatePage = rf.PageTitle();
 	Thread.sleep(100);
@@ -663,10 +429,10 @@ Thread.sleep(10000);
 	
 	
 }
+*/
 
 
-
-@Test(priority=18,enabled = false)
+/*@Test(priority=18)
 
 public void RegistrationForm_KnowHertiageAccount_RegistrationValidation() throws InterruptedException, IOException
 {
@@ -674,14 +440,15 @@ public void RegistrationForm_KnowHertiageAccount_RegistrationValidation() throws
 	BasePage.initializtion();
 	Thread.sleep(8000);
 rf= new RegistrationForm(driver);
+Thread.sleep(8000);
 	rf.ClickOnRegisternowOnGlobalSite();
 	rf.FirstName_Entry();
 	rf.LastName_Entry();
 	rf.Email_Entry_Scenario2();
 	rf.Heritage_Brand_SelectionField();
-	rf.Hertiage_Brand_Aqua_gon_Selection();
+	rf.Hertiage_Brand_CPS_Selection();
 	rf.Branch_SelectionField();
-	rf.Branch_Aqua_gonSelection();
+	rf.Branch_cpsSelection();
 	rf.CompanyField_click();
 	rf.Address1Field_click();
 	rf.Address2Field_click();
@@ -695,19 +462,105 @@ rf= new RegistrationForm(driver);
 	rf.ValidPassword_Entry();
 	rf.Terms_Click();
 	rf.Submitclick();
-	
-Thread.sleep(10000);
+
+	Thread.sleep(10000);
 	
 	String AccountCreatePage = rf.PageTitle();
-	Thread.sleep(100);
+	Thread.sleep(200);
 	
 	
 	Assert.assertEquals(AccountCreatePage,prop.getProperty("HomePageTitle"));
+}
+*/
+
+/*(@Test(priority=19)
+
+public void RegistrationForm_QPSBranch_RegistrationValidation() throws InterruptedException, IOException
+{
+	BasePage.initializtion();
+	Thread.sleep(8000);
+	rf.ClickOnRegisternowOnGlobalSite();
+	rf.FirstName_Entry();
+	rf.LastName_Entry();
+	rf.Email_Entry_Scenario3();
+	rf.Heritage_Brand_SelectionField();
+	rf.Hertiage_Brand_QPS_Selection();
+	rf.Branch_SelectionField();
+	rf.Branch_qpsSelection();
+	rf.CompanyField_click();
+	rf.Address1Field_click();
+	rf.Address2Field_click();
+	rf.CityField_click();
+	rf.State_Selection();
+	rf.ZipCode_click();
+	rf.Valid_PhoneNo_click();
+	rf.Fax_click();
+	rf.KnowMyHeritagePlusAccountclick();
+	rf.company_Account_Entry();
+	rf.ValidPassword_Entry();
+	rf.Terms_Click();
+	rf.Submitclick();
+	//Thread.sleep(5000);
+	String AccountCreatePage = rf.PageURL();
+//Assert.assertEquals(AccountCreatePage, Constants.AccountCreatePageURL_Global);
+	Assert.assertEquals(AccountCreatePage,prop.getProperty("AccountCreated_URL"));
+	
+	Thread.sleep(500);
+	HomePage Hp=new HomePage(driver);
+	Hp.clickOnHomeLink();
+	Thread.sleep(5000);
+	
+}
+
+@Test(priority=20)
+
+public void RegistrationForm_DontHaveHertiageAccount_RegistrationValidation() throws InterruptedException, IOException
+{
+	BasePage.initializtion();
+	Thread.sleep(8000);
+	rf= new RegistrationForm(driver);
+	rf.ClickOnRegisternowOnGlobalSite();
+	rf.FirstName_Entry();
+	rf.LastName_Entry();
+	rf.Heritage_Brand_SelectionField();
+	rf.Hertiage_Brand_PCS_Selection();
+	rf.Branch_SelectionField();
+	rf.Branch_pcsSelection();
+	rf.CompanyField_click();
+	rf.Address1Field_click();
+	rf.Address2Field_click();
+	rf.CityField_click();
+	rf.State_Selection();
+	rf.ZipCode_click();
+	rf.Valid_PhoneNo_click();
+	rf.Fax_click();
+	rf.DontHave_MyHeritagePlusAccountclick();
+	rf.yes_Industrial_Professional_option_Click();
+	Thread.sleep(2000);
+	rf.BecomeACustomer().click();
+	
+	Thread.sleep(2000);
+	String BecomeACustomerPage = rf.PageURL();
+	Thread.sleep(2000);
+	String windowHandle = driver.getWindowHandle();
+	ArrayList<String> newTab = new ArrayList<String>(driver.getWindowHandles());
+	   driver.switchTo().window(newTab.get(1));
+	  
+	 
+	  Thread.sleep(5000);
+	
+	Assert.assertEquals(BecomeACustomerPage, Constants.BecomeACustomerURL);
 	
 	Thread.sleep(3000);
+	 //driver.switchTo().window(newTab.get(0));
 	
+	//driver.navigate().back();
+	
+}
+*/
 
-}}
+
+}
 
 
 

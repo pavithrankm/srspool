@@ -10,9 +10,6 @@ import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
-import com.aventstack.extentreports.Status;
-import com.mongodb.diagnostics.logging.Logger;
-
 import Pages.HomePage;
 import Pages.HomePage_Global;
 import Pages.LoginPage;
@@ -20,20 +17,20 @@ import Utils.Constants;
 
 public class HomePage_Brands_Test extends BaseTest 
 
+
 {
 	
 	HomePage Hp ;
 
-	@Test(priority=1,description="Brand Selection From layout")
+	/*@Test(priority=1,description="Brand Selection From layout")
 	public void homepageglobal() throws InterruptedException, IOException 
 	{
-		BasePage.initializtion();
-		Thread.sleep(10000);
-		
+	BasePage.initializtion();
+	Thread.sleep(10000);
+		Thread.sleep(8000);
 		Hp = new HomePage(driver);
 	String	BrandPage= Hp.BrandSelection();
 	Assert.assertEquals(BrandPage, prop.get("BrandPage_URL"));
-	
 		
     }
 	
@@ -65,11 +62,30 @@ public class HomePage_Brands_Test extends BaseTest
  Assert.assertEquals(HomePageTitle,prop.get("HomePageTitle") );
 
  
-     }
+     }*/
 	
-	
-	
-	@Test(priority=5, description="Site Map link Redirection ")
+	/*@Test(priority=6, description="Become A customer Redirection ")
+	public void BecomeACustomer_Footer_Validation() throws InterruptedException 
+	{
+		Thread.sleep(8000);
+		
+		
+		Hp = new HomePage(driver);
+		
+		
+
+		 String BecomeCustomerTitle= Hp.BecomeACustomer_Footer_click();
+		 Thread.sleep(1000);
+		 
+		 driver.navigate().back();
+		 
+		 Assert.assertEquals(BecomeCustomerTitle, Constants.BecomeACustomerTitle);
+		 
+		
+ 
+    }
+	*/
+	/*@Test(priority=5, description="Site Map link Redirection ")
 	public void siteMap_Redirection_Validation() throws InterruptedException 
 	{
 		Thread.sleep(8000);
@@ -97,15 +113,19 @@ public class HomePage_Brands_Test extends BaseTest
 		 driver.navigate().back();
 		 Thread.sleep(500);
 	
-    }
+    }*/
     
     
-  /*  @Test(priority=8,  description="Changing Shipto ")
-     public void ChangeShipto_Validation() throws InterruptedException 
+    @Test(priority=8,  description="Changing Shipto ")
+     public void ChangeShipto_Validation() throws InterruptedException, IOException 
     {
-	Thread.sleep(8000);
+    	BasePage.initializtion();
+    	Thread.sleep(10000);
+    	Hp = new HomePage(driver);
+	
 	LoginPage Lp = new LoginPage(driver);
 	Lp.ValidLogin();
+	Thread.sleep(2000);
 	
 	String shipto =Hp.ChangeShipTo();
 	Assert.assertEquals(shipto,prop.getProperty("Shipto"));
@@ -114,18 +134,18 @@ public class HomePage_Brands_Test extends BaseTest
     
     
 
-   @Test(priority=12, description="Changing Branch")
-    public void ChangeBranch_Validation() throws InterruptedException 
+  @Test(priority=12, description="Changing Branch")
+    public void ChangeBranch_Validation() throws Exception 
     {
 	Thread.sleep(8000);
 	//LoginPage Lp = new LoginPage(driver);
 	//Lp.ValidLogin();
 	
 	String Yourbranch =Hp.ChangeBranch();
-	Assert.assertEquals(Yourbranch,prop.getProperty("Branch2"));
+	Assert.assertEquals(Yourbranch,prop.getProperty("Branch8"));
 	
      }
-*/
+
      
     @Test(priority=11,  description="Search by keyword")
     
