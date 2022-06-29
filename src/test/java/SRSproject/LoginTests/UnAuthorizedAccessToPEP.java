@@ -25,7 +25,6 @@ public class UnAuthorizedAccessToPEP extends BaseTest {
 	@Test(priority = 1)
 	public void AccessPCS() throws InterruptedException {
 		Thread.sleep(3000);
-
 		Hpg = new HomePage_Global(driver);
 		Object object = prop.get("PEPLoginPagePoolURL");
 		System.out.println(object);
