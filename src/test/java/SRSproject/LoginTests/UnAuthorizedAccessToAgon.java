@@ -25,7 +25,6 @@ public class UnAuthorizedAccessToAgon extends BaseTest {
 	@Test(priority = 1)
 	public void AccessPEP() throws InterruptedException {
 		Thread.sleep(3000);
-
 		Hpg = new HomePage_Global(driver);
 		Object object = prop.get("AgonLoginPagePoolURL");
 		System.out.println(object);
