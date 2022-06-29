@@ -61,11 +61,11 @@ public class BasePage
 		
 		//NFI
 		//public static String configpath ="src/main/java/config_staging2/config_stage2_nfi.properties";
-		//public static String configpath ="src/main/java/config_prod/config_prod_nfi.properties";
+		public static String configpath ="src/main/java/config_prod/config_prod_nfi.properties";
 	
         //WCC
 	//	public static String configpath="src/main/java/config_prod/config_prod_wolf.properties";
-		public static String configpath="src/main/java/config_staging2/config_stag2_wolf.properties";
+		//public static String configpath="src/main/java/config_staging2/config_stag2_wolf.properties";
 		
 	//GLB
 	   // public static String configpath ="src/main/java/config_prod/config_prod_glb.properties";
