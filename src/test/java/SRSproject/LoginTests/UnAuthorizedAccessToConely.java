@@ -26,7 +26,6 @@ public class UnAuthorizedAccessToConely extends BaseTest {
 		Hpg = new HomePage_Global(driver);
 
 		if (driver.getCurrentUrl().equals(prop.get("ConelyLoginPagePoolURL"))) {
-
 			Hpg.ValidLoginAgon();
 			LoginPage Lp = new LoginPage(driver);
 			Thread.sleep(3000);
