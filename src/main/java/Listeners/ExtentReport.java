@@ -47,6 +47,9 @@ public class ExtentReport extends BasePage implements ITestListener
 	public static final String OUTPUT_FOLDER = "./build/";
 	public static final String FILE_NAME = "SRS-TestExecutionReport.html";
 	
+	
+
+//	test.log(Status.PASS,"Attached Screenshot ", MediaEntityBuilder.createScreenCaptureFromBase64String("data:image/png;base64,"+base64).build();
 
 	String concatenate = ".";
 	
@@ -72,7 +75,7 @@ public class ExtentReport extends BasePage implements ITestListener
 		htmlReporter.config().setDocumentTitle("TestExecutionReport");
 		
 	
-		htmlReporter.config().setReportName("Automation Test Results Of: WCC  " );//
+		htmlReporter.config().setReportName("Automation Test Results Of: AQUAGON STG 2" );//
 		htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);
 		htmlReporter.config().setTheme(Theme.STANDARD);
 
@@ -124,9 +127,44 @@ public class ExtentReport extends BasePage implements ITestListener
 		Markup m = MarkupHelper.createLabel(logText, ExtentColor.GREEN);
 		test.get().log(Status.PASS, m);
 	}
+//
+//	public synchronized void onTestFailure(ITestResult result) {
+//	//	System.out.println((result.getMethod().getMethodName() + " failed!"));
+//		
+//		String logText = "<b>Test Method " +  result.getMethod().getMethodName()  + " Failed</b>";
+//		Markup m = MarkupHelper.createLabel(logText, ExtentColor.RED);
+//		test.get().log(Status.FAIL, m);
+//		String exceptionMessage = Arrays.toString(result.getThrowable().getStackTrace());
+//		test.get().fail("<details><summary><b><font color=red>" +
+//						"Exception Occured, click to see details:"+ "</font></b></summary>" +
+//						exceptionMessage.replaceAll(",", "<br>") + "</details> \n");
+//		
+//		try {
+//			
+//			
+//
+//			test.get().fail("<b><font color=red>" + "Screenshot of failure" + "</font></b>",
+//					MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
+//			
+//			test.get().fail("Snapshot below: " + test.get().addScreenCaptureFromPath(getScreenshot()));
+//			 
+//			 
+////			test.get().fail( (Markup) MediaEntityBuilder.createScreenCaptureFromPath("." + getScreenshot()).build());
+//
+//			test.get().log(Status.INFO,result.getThrowable());
+//			test.get().log(Status.INFO,result.getThrowable());
+//
+//		} catch (IOException | InterruptedException e) {
+//			test.get().fail("Test Failed, cannot attach screenshot");
+//		}
+//		
+//	}
+	
+	
 
 	public synchronized void onTestFailure(ITestResult result) {
-	//	System.out.println((result.getMethod().getMethodName() + " failed!"));
+		
+		
 		
 		String logText = "<b>Test Method " +  result.getMethod().getMethodName()  + " Failed</b>";
 		Markup m = MarkupHelper.createLabel(logText, ExtentColor.RED);
@@ -137,23 +175,28 @@ public class ExtentReport extends BasePage implements ITestListener
 						exceptionMessage.replaceAll(",", "<br>") + "</details> \n");
 		
 		try {
-		
 			
+			String Screenshotpath = concatenate + getScreenshot();
+			
+			
+//
 			test.get().fail("<b><font color=red>" + "Screenshot of failure" + "</font></b>",
-					MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
+					MediaEntityBuilder.createScreenCaptureFromPath(addScreenshot()).build());
+//			test.get().fail(exceptionMessage, MediaEntityBuilder.createScreenCaptureFromPath(getBase64Screenshot( driver, "Aps")).build());
+			test.get().fail(exceptionMessage,MediaEntityBuilder.createScreenCaptureFromPath(addScreenshot()).build());
 			
-			test.get().fail("Snapshot below: " + test.get().addScreenCaptureFromPath(getScreenshot()));
-			 
 		
-
+	
 			test.get().log(Status.INFO,result.getThrowable());
 			test.get().log(Status.INFO,result.getThrowable());
 
 		} catch (IOException | InterruptedException e) {
+			
 			test.get().fail("Test Failed, cannot attach screenshot");
 		}
 		
 	}
+	
 
 	public synchronized void onTestSkipped(ITestResult result) {
 		String logText = "<b>Test Method " + result.getMethod().getMethodName() + " Skipped</b>";

@@ -2,7 +2,6 @@ package SRSproject.SRSproject;
 
 import java.io.IOException;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -30,12 +29,7 @@ public class AccountStatementTest extends BaseTest {
 		Thread.sleep(3000);
 		HP.Downloadfiles();
 		Thread.sleep(3000);
-		HP.InvoiceId();
-		Thread.sleep(3000);
-		//HP.IsDispayed();
-		//Thread.sleep(3000);
-//		HP.DownloadDocu();
-//		Thread.sleep(3000);
+	
 		HP.ReadfileData();
 		Thread.sleep(5000);
 	    HP.ReadXLdata();
@@ -51,22 +45,30 @@ public class AccountStatementTest extends BaseTest {
 			System.out.println("error");
 			
 		}
-	//	Assert.assertEquals(get, AccUrl);
+		Assert.assertEquals(get, AccUrl);
+		
 
 }
 	@Test(priority=2,enabled=true)
 	public void AccountStatementVerify() throws IOException, InterruptedException {
 		
-	       HP=new AccountStatementPage(driver);
-		   Thread.sleep(8000);	
-			HP.AccountStatementButton();
-				Thread.sleep(8000);
+			       HP=new AccountStatementPage(driver);
+//			  Thread.sleep(3000);
+//			LoginPage Lp = new LoginPage(driver);
+//			Lp.ValidLogin();
+//			Thread.sleep(5000);	
+//			String URL = driver.getCurrentUrl();
+//			String Title = driver.getTitle();
+//			System.out.println(Title + "-> " + URL);
+		
+			HP.AccountStatement2();
+			Thread.sleep(3000);
 			HP.AccountBalance();
-			Thread.sleep(8000);
+			Thread.sleep(3000);
 			
 			String get = driver.getCurrentUrl();
 			System.out.println(get);
-			String AccUrl = prop.getProperty("AccountDetails_URL");
+			String AccUrl = prop.getProperty("AccountStatement");
 			
 			if(get.equalsIgnoreCase(AccUrl)) {
 				System.out.println("working fine");
@@ -129,21 +131,20 @@ public class AccountStatementTest extends BaseTest {
 	@Test(priority=4,enabled=true)
 	public void InvoiceIdVerify() throws IOException, InterruptedException {
 
-	
+		 BasePage.initializtion();
 	       HP=new AccountStatementPage(driver);
 			  Thread.sleep(8000);
-//			LoginPage Lp = new LoginPage(driver);
-//			Lp.ValidLogin();
-//			Thread.sleep(5000);	
-//			String URL = driver.getCurrentUrl();
-//			String Title = driver.getTitle();
-//			System.out.println(Title + "-> " + URL);
+			LoginPage Lp = new LoginPage(driver);
+			Lp.ValidLogin();
+			Thread.sleep(8000);	
+			String URL = driver.getCurrentUrl();
+			String Title = driver.getTitle();
+			System.out.println(Title + "-> " + URL);
 			
 		
-				HP.AccountStatementButton();
-				Thread.sleep(8000);
-		//	HP.AccountStatement();
-		//	Thread.sleep(3000);
+			
+			HP.AccountStatement();
+			Thread.sleep(8000);
 			HP.InvoiceId();
 			Thread.sleep(8000);
 			
@@ -153,34 +154,47 @@ public class AccountStatementTest extends BaseTest {
 			System.out.println(AccUrl);
 	}
 	
-	@Test(priority=6,enabled=true)
+	@Test(priority=5,enabled=true)
 	public void AccountBillVerify() throws IOException, InterruptedException {
 
-	
+		 BasePage.initializtion();
 	       HP=new AccountStatementPage(driver);
 			  Thread.sleep(8000);
+			LoginPage Lp = new LoginPage(driver);
+			Lp.ValidLogin();
+			Thread.sleep(5000);	
+			String URL = driver.getCurrentUrl();
+			String Title = driver.getTitle();
+			System.out.println(Title + "-> " + URL);
 					
-			HP.AccountStatementButton();
-			Thread.sleep(8000);	
+			HP.AccountStatement();
+			Thread.sleep(3000);
 			HP.AccountBill();
-			Thread.sleep(8000);
+			Thread.sleep(3000);
 			
 			String get = driver.getCurrentUrl();
 			System.out.println(get);
-			String AccUrl = prop.getProperty("BillPage_ur");
+			String AccUrl = prop.getProperty("AccountStatement");
 			System.out.println(AccUrl);
 	}
 	
-	@Test(priority=5,enabled=true)
+	@Test(priority=6,enabled=true)
 	public void PageCountVerify() throws IOException, InterruptedException {
 
+		 BasePage.initializtion();
 	       HP=new AccountStatementPage(driver);
 			  Thread.sleep(8000);
-	
-			HP.AccountStatementButton();;
-			Thread.sleep(6000);
+			LoginPage Lp = new LoginPage(driver);
+			Lp.ValidLogin();
+			Thread.sleep(5000);	
+			String URL = driver.getCurrentUrl();
+			String Title = driver.getTitle();
+			System.out.println(Title + "-> " + URL);
+					
+			HP.AccountStatement();
+			Thread.sleep(3000);
 			HP.ListOfPage();
-			Thread.sleep(8000);
+			Thread.sleep(3000);
 			
 			String get = driver.getCurrentUrl();
 			System.out.println(get);

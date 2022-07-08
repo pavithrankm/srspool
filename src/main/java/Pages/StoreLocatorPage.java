@@ -45,16 +45,19 @@ public class StoreLocatorPage extends BasePage {
 	
 	@FindBy(xpath="/html/body/div[1]/main/div[4]/div/div[1]/div[2]/div[2]/ul/li[1]/a") WebElement Branch;
 	
-	@FindBy(xpath="(//a[text()='Change Branch'])[3]") WebElement ChangeBranchLink;
+	@FindBy(xpath="(//a[text()='Change Branch'])[1]") WebElement ChangeBranchLink;
+	
+	@FindBy(xpath="(//a[text()='Change Branch'])") WebElement ChangeBranch_Link1;
 	
 	@FindBy(xpath="//select[@id='branches']") WebElement ChangeBranchSelection;
 	
-	@FindBy(xpath="(//span[text()='Confirm'])[3]") WebElement Confirm;
+	@FindBy(xpath="(//button[@class='action primary'])[6]") WebElement Confirm;
 	
 	@FindBy(xpath="/html/body/div[1]/div[1]/div/div/div[1]/div[1]/ul/li[1]/span") WebElement YourBranch;
 	
 	@FindBy(xpath="/html/body/div[1]/main/div[4]/div/div[1]/div[2]/div[1]")  WebElement c;
 	
+	@FindBy(xpath="//a[@class='storelocator-store-name 2121']") List<WebElement> branches;
 	public StoreLocatorPage(WebDriver driver)
 	{
 		this.driver=driver;
@@ -63,6 +66,7 @@ public class StoreLocatorPage extends BasePage {
 	
 	public void YourLocation_EnterZipcode() throws InterruptedException
 	{
+		
 		 WebDriverWait wait= new WebDriverWait(driver, 40);
 			wait.until(ExpectedConditions.visibilityOf(YourLocation));
 		YourLocation.clear();
@@ -152,34 +156,10 @@ try
 		a.add(prop.getProperty("Branch3"));
 		a.add(prop.getProperty("Branch4"));
 		
-	    a.add(prop.getProperty("Branch5"));
-	     a.add(prop.getProperty("Branch6"));
-	     
-	     a.add(prop.getProperty("Branch7"));
-			a.add(prop.getProperty("Branch8"));
-			a.add(prop.getProperty("Branch9"));
-			a.add(prop.getProperty("Branch10"));
-			
-			a.add(prop.getProperty("Branch11"));
-			a.add(prop.getProperty("Branch12"));
-			a.add(prop.getProperty("Branch13"));
-			a.add(prop.getProperty("Branch14"));
-			a.add(prop.getProperty("Branch15"));
-			a.add(prop.getProperty("Branch16"));
-			a.add(prop.getProperty("Branch17"));
-			a.add(prop.getProperty("Branch18"));
-			a.add(prop.getProperty("Branch19"));
-			a.add(prop.getProperty("Branch20"));
-			a.add(prop.getProperty("Branch21"));
-			a.add(prop.getProperty("Branch22"));
-			a.add(prop.getProperty("Branch23"));
-			a.add(prop.getProperty("Branch24"));
-			a.add(prop.getProperty("Branch25"));
-		
 		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		 js.executeScript("arguments[0].scrollIntoView();", LocationNearYoutitle);
-		Thread.sleep(10000);
+		Thread.sleep(12000);
 		
 		
 		List <WebElement>  searchresult= driver.findElements(By.xpath("//a[@class='storelocator-store-name 2121']"));
@@ -197,12 +177,29 @@ try
 	else
 			{
 		System.out.println("Branches are Not Listed As Expected");
+		System.out.println(a);
 		System.out.println(a1);
 			}
 }
 catch (Exception e) {
 	System.out.print("There is No Branch for the Search Criteria");
 }
+
+}
+	
+	
+	public ArrayList<String> AllBranch() 
+	{
+		List <WebElement>  searchresult= driver.findElements(By.xpath("//a[@class='storelocator-store-name 2121']"));
+		
+		ArrayList<String> a1= new ArrayList<String>();
+		for (WebElement option:searchresult)
+		{
+			String text= option.getText();
+			a1.add(text);
+		}	
+		
+		return a1;
 
 }
 	
@@ -283,7 +280,7 @@ Thread.sleep(1000);
 			wait.until(ExpectedConditions.visibilityOf(Branch));*/
 		 
 	
-	return	 ChangeBranchLink; 
+	return	 ChangeBranch_Link1; 
 		 
 			
 		
@@ -302,10 +299,16 @@ Thread.sleep(1000);
 
 		 Thread.sleep(1000);
 		// WebDriverWait wait= new WebDriverWait(driver, 60);
-					
+		
 		 
-	
+	try
+	{
 	 ChangeBranchLink.click();
+	}
+	catch (Exception e)
+	{
+		ChangeBranch_Link1.click();
+	}
 	 Thread.sleep(800);
 	 
 	//	wait.until(ExpectedConditions.visibilityOf(ChangeBranchSelection));
@@ -317,9 +320,8 @@ Thread.sleep(1000);
 		 Thread.sleep(900);
 		
 		js.executeScript("arguments[0].scrollIntoView();",ChangeBranchSelection);
-		
-		Thread.sleep(1000);
-		 WebDriverWait wait = new WebDriverWait(driver, 2000);
+		Thread.sleep(8000);
+		 WebDriverWait wait = new WebDriverWait(driver,50 );
 			wait.until(ExpectedConditions.visibilityOf(Confirm));
 	 Confirm.click();
 		

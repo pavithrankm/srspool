@@ -23,8 +23,8 @@ public class LoginTest extends BaseTest {
 	HomePage Hp;
 
 	@Test(priority = 0)
-	public void LoginValidation() throws InterruptedException, IOException {
-		initializtion();
+	public void LoginValidation() throws Exception {
+		
 		Thread.sleep(3000);
 		Hp = new HomePage(driver);
 		Hp.ValidLogin();
@@ -44,13 +44,11 @@ public class LoginTest extends BaseTest {
 		
 		Assert.assertEquals(URL, prop.get("Homepage_logurl"));
 		Hp.confirmLogin(); 
-		
-		driver.close();
+		Hp.SignOut();
 	}
 	@Test(priority = 0)
-	public void invalidLoginValidation() throws InterruptedException, IOException {
-		Thread.sleep(3000);
-		BasePage.initializtion();
+	public void invalidLoginValidation() throws Exception {
+		Thread.sleep(5000);
 		Hp = new HomePage(driver);
 		Hp.InValidLogin();
 		Thread.sleep(8000);
@@ -67,16 +65,18 @@ public class LoginTest extends BaseTest {
 			System.out.println("Incorrect error message displayed");
 		}
 		Assert.assertEquals(errorMsg, Constants.InvalidErrormsge);
-		driver.close();
-		
+
+	
 	}
 		
 
 	
 	
 	@Test(priority = 1)
-	public void UnApprovedLoginValidation() throws InterruptedException, IOException {
-BasePage.initializtion();
+	public void UnApprovedLoginValidation() throws Exception {
+
+		Thread.sleep(5000);
+		
 		HomePage Hp = new HomePage(driver);
 		Hp.UnApprovedLogin();
 		LoginPage Lp = new LoginPage(driver);
@@ -90,19 +90,21 @@ BasePage.initializtion();
 		}
 		Assert.assertEquals(errorMsg, Constants.NotApprovedErrorMessage);
 
-		driver.close();
+		
 	}
 	@Test(priority = 2)
 	public void LoginFromPLP() throws Exception {
 //		
-		BasePage.initializtion();
+		HomePage hp= new HomePage(driver);
 		Thread.sleep(5000);
-		for (int i = 0; i < 1; i++) {
+		hp.Cancelbtn().click();
+	
+		
 			
 		
-		HomePage hp= new HomePage(driver);
+		
 		 Thread.sleep(2000);
-		hp.SearchByKeyword();
+		 hp.SearchByKeyword();
 
 	  Thread.sleep(500);
 		
@@ -112,13 +114,12 @@ BasePage.initializtion();
 		
 		Thread.sleep(5000);
 		hp.SignOut();
-		driver.close();
-		}
+	
 		}
 	@Test(priority = 3)
 	public void LoginFromPDP() throws Exception {
 //		
-		BasePage.initializtion();
+	
 		Thread.sleep(5000);
 		for (int i = 0; i < 1; i++) {
 			
@@ -136,16 +137,13 @@ BasePage.initializtion();
 		hp.ValidLogin();
 		Thread.sleep(5000);
 		hp.SignOut();
-		driver.close();
+		
+		
 		}
 	}
-	
-
-
-	@Test(priority = 5, description = "validLogin with differsites",enabled = false)
-	public void UnAuthorisedLogin() throws InterruptedException, IOException {
-		Thread.sleep(3000);
-		BasePage.initializtion();
+	@Test(priority = 5, description = "validLogin with differsites")
+	public void UnAuthorisedLogin() throws Exception {
+		Thread.sleep(5000);
 		Hp = new HomePage(driver);
 		Hp.UnAuthorisedLogin();
 		Thread.sleep(8000);
@@ -162,7 +160,7 @@ BasePage.initializtion();
          Assert.assertEquals(currentUrl,TPS_Link);
          Thread.sleep(5000);
          Hp.TPS_Login();
-         
+      
          
            
 		} else {
@@ -171,8 +169,11 @@ BasePage.initializtion();
 		Assert.assertEquals(errorMsg, Constants.Error_Popup);
 
 		Thread.sleep(3000);
-		driver.quit();
+		 Hp.SignOut();
 	}
-	}
+	  
+	
+}
+
 
 	

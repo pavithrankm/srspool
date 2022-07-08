@@ -2,6 +2,7 @@ package Pages;
 
 import java.util.List;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -41,7 +42,8 @@ public class AddNewUserRolesPage extends BasePage {
 	}
 
 	public AddNewUserRolesPage enterRoleName() {
-		RoleName.sendKeys(prop.getProperty("RoleName"));
+		String Rolename = RandomStringUtils.randomAlphabetic(8); 
+		RoleName.sendKeys(Rolename);
 		return this;
 	}
 

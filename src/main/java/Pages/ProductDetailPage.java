@@ -45,6 +45,9 @@ public class ProductDetailPage extends BasePage  {
 	  @FindBy(xpath="//strong[@id='block-recentlyviewed-heading']") WebElement recently_viewed;
 	  @FindBy(xpath="//button[@class='action tocart primary']") WebElement RelatedProduct_section;
 //	  @FindBy(xpath="//strong[@id='block-related-heading']") WebElement RelatedProduct_Title;
+	  @FindBy(xpath="(//span[@class='price-uom'])[1]") WebElement uom;
+	  @FindBy(xpath="/html/body/div[2]/main/div[3]/div/div[2]/div[1]/div[5]/div/span/span/span[1]") WebElement price;
+	  
 
 	  public ProductDetailPage(WebDriver driver)
 	{
@@ -87,7 +90,7 @@ public class ProductDetailPage extends BasePage  {
 		
 			wait.until(ExpectedConditions.visibilityOf(PartLabel));
 			 wait.until(ExpectedConditions.visibilityOf(AddToCart));
-	      Thread.sleep(5000);
+	      Thread.sleep(500);
 	      jsClick(AddToCart);
 //			AddToCart.click();
 			
@@ -187,5 +190,19 @@ public String RelatedProductsTitle() throws InterruptedException
 public WebElement Related_add_tocart()
 {
 	return Related_AddToCart;
+}
+public String Uom()
+{
+	
+      return uom.getText();
+}
+
+public String Price() throws InterruptedException
+{
+	JavascriptExecutor js = (JavascriptExecutor) driver;
+	
+	 js.executeScript("arguments[0].scrollIntoView();", PartLabel);
+	 Thread.sleep(1000);
+      return price.getText();
 }
 }

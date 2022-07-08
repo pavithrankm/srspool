@@ -1,17 +1,11 @@
 package SRSproject.SRSproject;
 
-import static org.testng.Assert.assertEquals;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
-import org.junit.Ignore;
 import org.openqa.selenium.By;
-
-import org.openqa.selenium.By.ById;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -19,17 +13,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-import org.openqa.selenium.support.*;
-
-
 
 import Pages.CartPage;
 import Pages.LoginPage;
 import Pages.MiniCartPage;
-import Pages.ProductListPage;
 import Utils.Constants;
-import net.bytebuddy.agent.builder.AgentBuilder.RedefinitionStrategy.DiscoveryStrategy.Explicit;
-import net.bytebuddy.asm.Advice.Enter;
 
 public class CartPageTest  extends BaseTest
 {
@@ -41,7 +29,7 @@ public class CartPageTest  extends BaseTest
 	@Test(priority=1, description= "Minicart to cartpage redirection")
 	public void MiniCartToCartPage_Redirection() throws InterruptedException, IOException 
 	{
-		BasePage.initializtion();
+		
 		Thread.sleep(8000);
 		LoginPage Lp = new LoginPage(driver);
 		Lp.ValidLogin();
@@ -167,14 +155,55 @@ float MultipliedPrice= ActualPrice * quantity;
 				}
 	}
 	
+	@Test(priority=5, description= "UOM displayed for the product")
+	public void UOM_Validation() throws Exception
+
+	{
+		Thread.sleep(7000);
 	
-	@Test(priority=5, description= "Adding item to cart using search option in cart page")
+	String uom=Cp.UOM().getText();
+	String str2 = uom.replaceAll("[^a-zA-Z0-9]"," "); 
+	String UOM= 	str2.replaceAll("\\d","");
+	
+	String Uom=UOM.trim().replaceAll(" +", " ");
+	
+	
+	
+	 switch(Uom)
+	 {
+	  case "EA":
+		  System.out.println(Uom);
+		  Reporter.log("UOM EA is Present in PLP", true);
+		  
+		  
+      break;
+  case "FT":
+	  System.out.println(Uom);
+	  Reporter.log("UOM FT is Present in PLP", true);
+	 
+	 
+  break;
+  case "RL":
+	  System.out.println(Uom);
+	  Reporter.log("UOM RL is Present in PLP", true);
+	 
+  break;
+  
+	  
+  default: Uom= "Call for pricing";
+  Assert.assertNotSame(Uom,"Call for pricing" );
+}
+
+}
+
+	@Test(priority=6, description= "Adding item to cart using search option in cart page")
 	public void AddItemToCart_Validation() throws Exception
 
 	{
-		Thread.sleep(18000);
+		Thread.sleep(20000);
+		
 		WebElement SearchField = Cp.Searcfield();
-		 Thread.sleep(16000);
+		 Thread.sleep(30000);
 		SearchField.click();
 		SearchField.sendKeys(prop.getProperty("KeywordSearch"));
 		 Thread.sleep(8000);
@@ -203,7 +232,55 @@ float MultipliedPrice= ActualPrice * quantity;
 			
 	}
 	
-	@Test(priority=6,description= "Adding items to an reorder list")
+	@Test(priority=7, description= "Adding item to cart using legacy part no search")
+	public void Leagacy_PartNo_Validation() throws Exception
+
+	{
+		Thread.sleep(10000);
+		WebElement SearchField = Cp.Searcfield();
+		 Thread.sleep(8000);
+		SearchField.click();
+		SearchField.sendKeys(prop.getProperty("Legacy_PartNo"));
+		 Thread.sleep(8000);
+		List <WebElement>  listele1= driver.findElements(By.xpath("//li[@class='ui-menu-item']"));
+		
+		 
+		listele1.size();
+		
+		 
+		 WebDriverWait wait= new WebDriverWait(driver, 80);
+		Thread.sleep(500);
+		listele1.get(0).click();
+		
+		
+		Cp.AddToCart().click();
+		
+		String a = SearchField.getText();
+		System.out.print(a);
+		String b="";
+		
+		Assert.assertEquals(b, a);
+		System.out.println("Item Added successfully");
+		
+		
+			
+	}
+	
+	
+	@Test(priority=8, description= "Quatity Count displayed above table")
+	public void QuatityCount_Displayed_Validation() throws Exception
+
+	{
+		String items= Cp.TotalNo_Items();
+		int count1=Integer.parseInt(items); 
+		
+		int count2=	Cp.Number();
+			Assert.assertEquals(count1, count2);
+	}
+	
+	
+	
+	@Test(priority=9,description= "Adding items to an reorder list")
 	public void Reorder_Validation() throws InterruptedException
 
 	{
@@ -242,7 +319,7 @@ float MultipliedPrice= ActualPrice * quantity;
 		    }	
 	}
 	
-	@Test(priority=9, description= "Adding item  cart to reorder validate the item will be added or nt  " )
+	@Test(priority=10, description= "Adding item  cart to reorder validate the item will be added or nt  " )
 	public void AddItemToCart_ValidationTo_Reorder() throws Exception
 
 	{
@@ -293,19 +370,21 @@ float MultipliedPrice= ActualPrice * quantity;
 			    	Thread.sleep(3000);
 			    	
 
-			    	
-			    	
+			    
+					
+				
 			    	
 			    }
 			    else
 			    {
 			    	Reporter.log(" Not All Items are added from cart to Reorder List selected" , true);
-					   
+			    	driver.close();
+					 
 			    }
 			
 	    
-		driver.close();
-		
+			 
+				
 		
 		
 			
@@ -359,25 +438,17 @@ float MultipliedPrice= ActualPrice * quantity;
 	        }
 
 	    }
+	    
 	}
-	    @Test
-		public void CartPage_Count() throws InterruptedException, IOException 
-		{
-			BasePage.initializtion();
-			Thread.sleep(8000);
-			LoginPage Lp = new LoginPage(driver);
-			Lp.ValidLogin();
-			Thread.sleep(10000);
-			MiniCartPage Mp= new MiniCartPage(driver);
-			Mp.MiniCart().click();
-			Thread.sleep(8000);
-			Mp.ClickViewCart();
-			Cp = new CartPage(driver);
-			System.out.println(Cp.PageSize());
-			driver.close();
-		
-	}
-	}
-	
-	
+//	@Test(priority = 2)
+//	public void CartPage_Count() throws InterruptedException, IOException 
+//	{
+//		
+//	
+//		  Cp= new CartPage(driver);
+//		  Cp.PageSize();
+//		 
+//}
 
+	
+}

@@ -135,7 +135,7 @@ public class RegistrationForm extends BasePage {
 	
 	public String ClickOnRegisternowOnGlobalSite() throws InterruptedException
 	{
-
+       Thread.sleep(8000);
 	    act= new Actions(driver);
 		act.moveToElement(Account).build().perform();
 	
@@ -143,7 +143,6 @@ public class RegistrationForm extends BasePage {
 		wait.until(ExpectedConditions.visibilityOf(RegisterNow));
 		
 		RegisterNow.click();
-		Thread.sleep(1000);
 		return driver.getCurrentUrl();
 		
 	}
@@ -169,6 +168,7 @@ Thread.sleep(1000);
 		return PageCurrentTitle;
 	
 	}
+	
 	
 	public String FirstNameFieldErrorvalidation() throws InterruptedException
 	{
@@ -268,12 +268,10 @@ return ConfirmemailidError.getText();
 	{
 		EmailidField.clear();
 		EmailidField.sendKeys(prop.getProperty("existingemail"));
-		//Thread.sleep(5000);
-		wait = new WebDriverWait(driver,90);
-		wait.until(ExpectedConditions.visibilityOf(ConfirmemailidField));
+		Thread.sleep(5000);
 		ConfirmemailidField.clear();
 		ConfirmemailidField.sendKeys(prop.getProperty("existingemail"));
-		Thread.sleep(5000);
+		Thread.sleep(10000);
 		
 		return EmailaddressError.getText();
 	}
@@ -450,14 +448,24 @@ Select Brand= new Select(Heritage_Brand_Selection);
 
 }
 
-public void Hertiage_Brand_CPS_Selection()
+public void Hertiage_Brand_PCS_Selection()
 
 {
 
 Select Brand= new Select(Heritage_Brand_Selection);
-Brand.selectByVisibleText("CPS");
+Brand.selectByVisibleText("Pool Contractor Supply");
 
 }
+public void Hertiage_Brand_Aqua_gon_Selection() throws InterruptedException
+
+{
+
+Select Brand= new Select(Heritage_Brand_Selection);
+Thread.sleep(3000);
+Brand.selectByVisibleText("Aqua-Gon");
+
+}
+
 
 public void Hertiage_Brand_QPS_Selection()
 
@@ -479,9 +487,9 @@ public void Scrollup_Branch_SelectionField() //directly retriving webelement
 public WebElement Branch_SelectionField() throws InterruptedException //directly retriving webelement
 {
 	
-//	JavascriptExecutor js = (JavascriptExecutor) driver;
+	JavascriptExecutor js = (JavascriptExecutor) driver;
 	 
-	//  js.executeScript("arguments[0].scrollIntoView();",LastnameField);
+	  js.executeScript("arguments[0].scrollIntoView();",LastnameField);
 	  
 	  Thread.sleep(5000);
 
@@ -499,11 +507,11 @@ public void Branch_fisSelection() throws InterruptedException //directly retrivi
 	
 }
 
-public void Branch_cpsSelection() throws InterruptedException //directly retriving webelement
+public void Branch_pcsSelection() throws InterruptedException //directly retriving webelement
 {
 	
 	Select Brand= new Select(Branch_SelectionField());
-	Brand.selectByVisibleText("CPS WESTMINSTER");
+	Brand.selectByVisibleText("POOL CONTRACTORS SUPPLY BIRMINGHAM");
 	
 }
 
@@ -512,6 +520,13 @@ public void Branch_qpsSelection() throws InterruptedException //directly retrivi
 	
 	Select Brand= new Select(Branch_SelectionField());
 	Brand.selectByVisibleText("QUALITY POOL SUPPLY PERRYSBURG");
+	
+}
+public void Branch_Aqua_gonSelection() throws InterruptedException //directly retriving webelement
+{
+	
+	Select Brand= new Select(Branch_SelectionField());
+	Brand.selectByVisibleText("AQUAGON - NAPERVILLE");
 	
 }
 
@@ -661,10 +676,13 @@ public  void Email_Entry_Scenario1() throws InterruptedException
 	//WebElement x= driver.findElement(By.xpath("/html/body/div[1]/main/div[3]/div/div[2]/span"));
 	//js.executeScript("arguments[0].scrollIntoView();", x);
 	EmailidField.click();
-	EmailidField.sendKeys(prop.getProperty("email1"));
+	String userName = ""+(int)(Math.random()*Integer.MAX_VALUE);
+	String emailID = "User"+userName+"@mailinator.com";
+	System.out.println(emailID);
+	EmailidField.sendKeys(emailID);
 	Thread.sleep(5000);
 	ConfirmemailidField.click();
-	ConfirmemailidField.sendKeys(prop.getProperty("email1"));
+	ConfirmemailidField.sendKeys(emailID);
 	Thread.sleep(5000);
 	
 	
@@ -675,18 +693,21 @@ public  void Email_Entry_Scenario2() throws InterruptedException
 
 
 {
-	JavascriptExecutor js = (JavascriptExecutor) driver;
+	
 	 
-	WebElement x= driver.findElement(By.xpath(" /html/body/div[1]/main/div[3]/div/form/fieldset[1]/legend/span"));
-	js.executeScript("arguments[0].scrollIntoView();", x);
+JavascriptExecutor js = (JavascriptExecutor) driver;
+	
+	//WebElement x= driver.findElement(By.xpath("/html/body/div[1]/main/div[3]/div/div[2]/span"));
+	//js.executeScript("arguments[0].scrollIntoView();", x);
 	EmailidField.click();
-	EmailidField.sendKeys(prop.getProperty("email2"));
+	String userName = ""+(int)(Math.random()*Integer.MAX_VALUE);
+	String emailID = "User"+userName+"@mailinator.com";
+	System.out.println(emailID);
+	EmailidField.sendKeys(emailID);
 	Thread.sleep(5000);
 	ConfirmemailidField.click();
-	ConfirmemailidField.sendKeys(prop.getProperty("email2"));
+	ConfirmemailidField.sendKeys(emailID);
 	Thread.sleep(5000);
-	
-	
 	
 }
 
@@ -694,10 +715,7 @@ public  void Email_Entry_Scenario3() throws InterruptedException
 
 
 {
-	JavascriptExecutor js = (JavascriptExecutor) driver;
-	 
-	WebElement x= driver.findElement(By.xpath("/html/body/div[1]/main/div[3]/div/div[2]/span"));
-	js.executeScript("arguments[0].scrollIntoView();", x);
+	
 	EmailidField.click();
 	EmailidField.sendKeys(prop.getProperty("email3"));
 	Thread.sleep(5000);
@@ -733,8 +751,8 @@ public void Pagerefresh() throws InterruptedException
 driver.navigate().refresh();
 Thread.sleep(6000);
 JavascriptExecutor js = (JavascriptExecutor) driver;
-//WebElement x= driver.findElement(By.xpath("/html/body/div[1]/main/div[3]/div/div[2]/span"));
-js.executeScript("arguments[0].scrollIntoView();", FirstNameField);
+WebElement x= driver.findElement(By.xpath("/html/body/div[1]/main/div[3]/div/div[2]/span"));
+js.executeScript("arguments[0].scrollIntoView();", x);
 }
 
 

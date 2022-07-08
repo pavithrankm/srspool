@@ -88,7 +88,7 @@ public class CompanyUsersPage extends BasePage {
 	}
 
 	public void enterAddNewUserPopup() {
-		wait = new WebDriverWait(driver, 50);
+		wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOf(AddNewUserPopup));
 
 	}
@@ -104,7 +104,9 @@ public class CompanyUsersPage extends BasePage {
 	}
 
 	public CompanyUsersPage enterEmail() {
-		Email.sendKeys(prop.getProperty("Email_User"));
+		String userName = ""+(int)(Math.random()*Integer.MAX_VALUE);
+		String emailID = "User"+userName+"@mailinator.com";
+		Email.sendKeys(emailID);
 		return this;
 	}
 
@@ -141,7 +143,8 @@ public class CompanyUsersPage extends BasePage {
 	// SupervisorEmail.sendKeys(prop.getProperty("FirstName_User"));
 	// }
 
-	public CompanyUsersPage clickSaveUser() {
+	public CompanyUsersPage clickSaveUser() throws Exception {
+		waitUntilElementVisibility(SaveUser);
 		SaveUser.click();
 		return this;
 	}
@@ -157,8 +160,10 @@ public class CompanyUsersPage extends BasePage {
 	}
 
 	public String captureSuccessMsg() {
-		String successMsg = SuccessMsg.getText();
-		return successMsg;
+		wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOf(SuccessMsg));
+		String successMsge = SuccessMsg.getText();
+		return successMsge;
 	}
 	
 	

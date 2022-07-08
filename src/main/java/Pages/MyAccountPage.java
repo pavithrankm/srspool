@@ -83,7 +83,8 @@ public class MyAccountPage extends BasePage {
 	public void AccountModule() throws InterruptedException
 
 	{
-		
+		act.moveToElement(ReturnToCart).perform();
+		ReturnToCart.click();
 	  act= new Actions(driver);
 	act.moveToElement(Account).moveToElement(AccountDashboard).perform();
 	Thread.sleep(3000);
@@ -214,8 +215,11 @@ SaveButton.click();
 	}
 	
 	public void ChangeBranchPage() throws InterruptedException {
+	
 		act.moveToElement(ReturnToCart).perform();
 		ReturnToCart.click();
+		
+		Thread.sleep(8000);
 		driver.getTitle();
 		ChangeBranch.click();
 		Thread.sleep(3000);

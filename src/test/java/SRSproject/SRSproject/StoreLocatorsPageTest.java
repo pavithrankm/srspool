@@ -22,7 +22,6 @@ import Pages.LoginPage;
 import Pages.ProductListPage;
 import Pages.RegistrationForm;
 import Pages.StoreLocatorPage;
-import Pages.StoreLocatorPage_CPS;
 import Utils.Constants;
 
 
@@ -37,16 +36,18 @@ public class StoreLocatorsPageTest extends BaseTest {
 @Test(priority=1)
 	public void AllBranchValidation() throws InterruptedException, IOException 
 	{
-	BasePage.initializtion();
-	Thread.sleep(10000);
+	//BasePage.initializtion();
+	Thread.sleep(9000);
 		HomePage hp= new HomePage(driver);
-		
-		slp = new StoreLocatorPage(driver);
-		hp.Locations_click();
+		 
+	    hp.Locations_click();
+//
 	Thread.sleep(8000);
+	slp = new StoreLocatorPage(driver);
 	slp.YourLocation_EnterLocation();
 	Thread.sleep(8000);
-	slp.AllBranchListing();
+	ArrayList<String> list = slp.AllBranch();
+	Assert.assertTrue(!list.isEmpty());
 	
 
 }
@@ -82,7 +83,9 @@ driver.navigate().back();
 		slp.Radius_50MilesSelection();
 		slp.Search_click();
 		Thread.sleep(2000);
-		slp.BranchAsPerRadius();
+	//	slp.BranchAsPerRadius();
+		ArrayList<String> list = slp.AllBranch();
+		Assert.assertTrue(!list.isEmpty());
 		
 
 }
@@ -99,7 +102,9 @@ driver.navigate().back();
 		slp.Radius_250MilesSelection();
 		slp.Search_click();
 		Thread.sleep(2000);
-		slp.BranchAsPerRadius();
+		//slp.BranchAsPerRadius();
+		ArrayList<String> list = slp.AllBranch();
+		Assert.assertTrue(!list.isEmpty());
 		
 
 }

@@ -63,6 +63,8 @@ public class CheckoutPage extends BasePage {
     @FindBy(xpath ="(//input[@type='checkbox'])[2]") WebElement Checkbox;
     @FindBy(xpath="(//button[contains(@class,'action secondary')])[1]") WebElement Holdorder;
     @FindBy(xpath="//button[contains(@class,'action secondary')]/following-sibling::button[1]") WebElement Placeorder;
+    @FindBy(xpath="(//div[@class='item-total']//span)[1]") WebElement UOM;
+    
     
     
     
@@ -99,12 +101,14 @@ public class CheckoutPage extends BasePage {
 		
 	}
 	
-public void PO_Number()
+public void PO_Number() throws InterruptedException
 	
 	{
-	WebDriverWait wait= new WebDriverWait(driver, 40);
+	WebDriverWait wait= new WebDriverWait(driver, 50);
 	wait.until(ExpectedConditions.visibilityOf(PO_field));
+
 	PO_field.click();
+	Thread.sleep(200);
 		PO_field.sendKeys("Ab123");
 		
 	}
@@ -268,6 +272,10 @@ public WebElement Terms_Check() throws Exception
 }
 
 
+public WebElement  UOM()
+{
+	return UOM;
+}
 
 
 }

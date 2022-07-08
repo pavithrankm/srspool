@@ -21,7 +21,7 @@ import org.testng.Assert;
 import SRSproject.SRSproject.BasePage;
 import Utils.Constants;
 
-public class ProductListPage {
+public class ProductListPage extends BasePage{
 
 	WebDriverWait wait;
 	WebDriver driver;
@@ -43,7 +43,9 @@ public class ProductListPage {
     
     @FindBy(css = "#maincontent > div > div.sidebar.sidebar-main > div > div > div.block-content.content > div:nth-child(1) > div > strong > a") WebElement First_Recent_Item;
     @FindBy(xpath="(// button[@class='action tocart primary recentlyviewed'])[1]") WebElement Add_Recently_viwed;
-
+    @FindBy(xpath="(//span[@class='price-uom'])[1]") WebElement UOM;
+    @FindBy(xpath="/html/body/div[2]/main/div[4]/div[1]/div[2]/div/div[2]/ol/li[1]/div/div[2]/div[4]/span/span/span[1]") WebElement price;
+	
 	
 	public ProductListPage(WebDriver driver)
 	{
@@ -63,33 +65,32 @@ public class ProductListPage {
 		
 		 js.executeScript("arguments[0].scrollIntoView();", List);
 		 
-		 WebDriverWait wait= new WebDriverWait(driver, 30);
+		 WebDriverWait wait= new WebDriverWait(driver, 20);
 			wait.until(ExpectedConditions.visibilityOf(RegisterLink));
 		RegisterLink.click();
 		return driver.getCurrentUrl();
 		
 	}
 	
-	public ProductDetailPage GuestUser_ClickItem()
+	public ProductDetailPage GuestUser_ClickItem() throws Exception
 	{
-		
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		
-		 js.executeScript("arguments[0].scrollIntoView();", List);
-		 Product.click();
+		jsClick(Product);
+
 		 
 		return new ProductDetailPage(driver);
 		
 	}
 	
-	public String AddItem() throws InterruptedException
+	public String AddItem() throws Exception
 	{
 		
 		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		
 		 js.executeScript("arguments[0].scrollIntoView();", List);
-		 Thread.sleep(1000);
+		 
+		 Thread.sleep(500);
+		// jsClick(FirstItem_Qty);
 		FirstItem_Qty.sendKeys("2");
 		 
 		 WebDriverWait wait= new WebDriverWait(driver, 50);
@@ -130,6 +131,20 @@ return text.getText();
 
 		
 		}
+	public String Uom()
+	{
+		
+          return UOM.getText();
+	}
+	
+	public String Price() throws InterruptedException
+	{
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		
+		 js.executeScript("arguments[0].scrollIntoView();", List);
+		 Thread.sleep(1000);
+          return price.getText();
+	}
 	
 
 }

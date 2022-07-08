@@ -1,5 +1,8 @@
 package SRSproject.SRSproject;
 
+import static org.junit.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +13,9 @@ import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.Status;
+import com.mongodb.diagnostics.logging.Logger;
+
 import Pages.HomePage;
 import Pages.HomePage_Global;
 import Pages.LoginPage;
@@ -17,20 +23,20 @@ import Utils.Constants;
 
 public class HomePage_Brands_Test extends BaseTest 
 
-
 {
 	
 	HomePage Hp ;
 
-	/*@Test(priority=1,description="Brand Selection From layout")
+	@Test(priority=1,description="Brand Selection From layout")
 	public void homepageglobal() throws InterruptedException, IOException 
 	{
-	BasePage.initializtion();
-	Thread.sleep(10000);
-		Thread.sleep(8000);
+	//	BasePage.initializtion();
+		Thread.sleep(2000);
+		
 		Hp = new HomePage(driver);
 	String	BrandPage= Hp.BrandSelection();
 	Assert.assertEquals(BrandPage, prop.get("BrandPage_URL"));
+	
 		
     }
 	
@@ -39,7 +45,7 @@ public class HomePage_Brands_Test extends BaseTest
 	@Test(priority=2, description="Category Selection From layout")
 	public void CategorySelection_Validation() throws InterruptedException 
 	{
-		Thread.sleep(8000);
+		Thread.sleep(1000);
 	
 	
  String CategoryPageTitle= Hp.mouseHoverSelectCategory();
@@ -53,7 +59,7 @@ public class HomePage_Brands_Test extends BaseTest
     @Test(priority=4, description="Logo redirection")
 	public void Logo_Validation() throws InterruptedException 
 	{
-		Thread.sleep(8000);
+		Thread.sleep(2000);
 		
 		Hp.clickOnHomeLink();
 		
@@ -62,38 +68,19 @@ public class HomePage_Brands_Test extends BaseTest
  Assert.assertEquals(HomePageTitle,prop.get("HomePageTitle") );
 
  
-     }*/
+     }
 	
-	/*@Test(priority=6, description="Become A customer Redirection ")
-	public void BecomeACustomer_Footer_Validation() throws InterruptedException 
-	{
-		Thread.sleep(8000);
-		
-		
-		Hp = new HomePage(driver);
-		
-		
-
-		 String BecomeCustomerTitle= Hp.BecomeACustomer_Footer_click();
-		 Thread.sleep(1000);
-		 
-		 driver.navigate().back();
-		 
-		 Assert.assertEquals(BecomeCustomerTitle, Constants.BecomeACustomerTitle);
-		 
-		
- 
-    }
-	*/
-	/*@Test(priority=5, description="Site Map link Redirection ")
+	
+	
+	@Test(priority=5, description="Site Map link Redirection ")
 	public void siteMap_Redirection_Validation() throws InterruptedException 
 	{
-		Thread.sleep(8000);
+		Thread.sleep(1500);
 	
 		
 
 		 String SiteMapTitle= Hp.Sitemap_Footer_click();
-		 Thread.sleep(1000);
+		 Thread.sleep(500);
 		 driver.navigate().back();
 		 Assert.assertEquals(SiteMapTitle, Constants.SitemapTitle);
 		 
@@ -103,29 +90,25 @@ public class HomePage_Brands_Test extends BaseTest
     @Test(priority=7,  description="Terms link Redirection ")
 	public void Terms_Redirection_Validation() throws InterruptedException 
 	{
-		Thread.sleep(8000);
+		Thread.sleep(1500);
 		
 		
 
 		 String Term_title=	Hp.Terms_Footer_click();
 		 Assert.assertEquals(Term_title, Constants.TermsPageTitle);
-		 Thread.sleep(1000);
+		 Thread.sleep(500);
 		 driver.navigate().back();
 		 Thread.sleep(500);
 	
-    }*/
+    }
     
     
-    @Test(priority=8,  description="Changing Shipto ")
-     public void ChangeShipto_Validation() throws InterruptedException, IOException 
+  /*  @Test(priority=8,  description="Changing Shipto ")
+     public void ChangeShipto_Validation() throws InterruptedException 
     {
-    	BasePage.initializtion();
-    	Thread.sleep(10000);
-    	Hp = new HomePage(driver);
-	
+	Thread.sleep(8000);
 	LoginPage Lp = new LoginPage(driver);
 	Lp.ValidLogin();
-	Thread.sleep(2000);
 	
 	String shipto =Hp.ChangeShipTo();
 	Assert.assertEquals(shipto,prop.getProperty("Shipto"));
@@ -134,27 +117,30 @@ public class HomePage_Brands_Test extends BaseTest
     
     
 
-  @Test(priority=12, description="Changing Branch")
-    public void ChangeBranch_Validation() throws Exception 
+   @Test(priority=12, description="Changing Branch")
+    public void ChangeBranch_Validation() throws InterruptedException 
     {
 	Thread.sleep(8000);
 	//LoginPage Lp = new LoginPage(driver);
 	//Lp.ValidLogin();
 	
 	String Yourbranch =Hp.ChangeBranch();
-	Assert.assertEquals(Yourbranch,prop.getProperty("Branch8"));
+	Assert.assertEquals(Yourbranch,prop.getProperty("Branch2"));
 	
      }
+*/
 
-     
-    @Test(priority=11,  description="Search by keyword")
+
+
+ @Test(priority=11,  description="Search by keyword")
     
     public void Search_KeywordValidation() throws InterruptedException, TimeoutException 
     {
 	
 	Hp.SearchByKeyword();
-	
+	Thread.sleep(2500);
 	List<WebElement> list1=Hp.LineItemsList();
+	Thread.sleep(2500);
 	ArrayList<String> a1= new ArrayList<String>();
 	for (WebElement option:list1)
 	{
@@ -165,9 +151,12 @@ public class HomePage_Brands_Test extends BaseTest
 	if (a1.isEmpty())
 	{
 		Reporter.log("Items are Not listed in search result page",true);
+		assertFalse(a1.isEmpty());
+
     } else
     {
     	Reporter.log("Items are listed in search result page ",true);
+    	assertFalse(a1.isEmpty());
     }
 	System.out.println("*****************");
 	
@@ -178,9 +167,9 @@ public class HomePage_Brands_Test extends BaseTest
     @Test(priority=9, description="Search by keyword and its autosuggestion")
     public void Search_Keyword_Autosuggestion() throws InterruptedException, TimeoutException 
    {
-    	
+    	Thread.sleep(500);
     Hp.SearchByKeyword_Autosuggestion();
-
+    Thread.sleep(3500);
     List<WebElement> list1=Hp.LineItemsListAuto();
     ArrayList<String> a1= new ArrayList<String>();
     
@@ -196,9 +185,11 @@ public class HomePage_Brands_Test extends BaseTest
     if (a1.isEmpty()) 
     {
 		Reporter.log("Items are Not listed in autosuggestion on Search by Keyword",true);
+		assertFalse(a1.isEmpty());
     } else
     {
     	Reporter.log("Items are listed in autosuggestion on Search by Keyword",true);
+    	assertFalse(a1.isEmpty());
     }
     System.out.println("*****************");
 
@@ -208,9 +199,9 @@ public class HomePage_Brands_Test extends BaseTest
     @Test(priority=10,  description="Search by Partno and its autosuggestion")
     public void Search_PartNo_Autosuggestion() throws InterruptedException, TimeoutException 
     {
-	
+	Thread.sleep(500);
 	Hp.SearchByPartNo_Autosuggestion();
-	
+	Thread.sleep(2500);
 	List<WebElement> list1=Hp.LineItemsListAuto();
 	ArrayList<String> a1= new ArrayList<String>();
 	
@@ -226,22 +217,99 @@ public class HomePage_Brands_Test extends BaseTest
 	if (a1.isEmpty()) 
 	{
 			Reporter.log("Items are Not listed in autosuggestion on Search by Part No",true);
+			assertFalse(a1.isEmpty());
      } 
 	else 
 	{
         	Reporter.log("Items are listed in autosuggestion on Search by Part No",true);
+        	assertFalse(a1.isEmpty());
       }
+	
+	System.out.println("*****************");
+	
+	
+	}
+    
+    @Test(priority=12, description="Search by Legacy Part no and its autosuggestion")
+    public void Legacy_No_Autosuggestion() throws InterruptedException, TimeoutException 
+   {
+    	
+    Hp.LegacyPartNo_Autosuggestion();
+    Thread.sleep(2000);
+    List<WebElement> list1=Hp.LineItemsListAuto();
+    Thread.sleep(1500);
+    ArrayList<String> a1= new ArrayList<String>();
+    
+    for (WebElement option:list1)
+    {
+	String text= option.getText();
+	
+	a1.add(text);
+    }
+    System.out.println(a1);
+    
+    
+    if (a1.isEmpty()) 
+    {
+		Reporter.log("Items are Not listed in autosuggestion on Search by legacy no",true);
+		assertFalse(a1.isEmpty());
+    } else
+    {
+    	Reporter.log("Items are listed in autosuggestion on Search by legacy no",true);
+    	assertFalse(a1.isEmpty());
+    }
+    
+    a1.size();
+    assertTrue(a1.size()==1);
+    
+    System.out.println("*****************");
+
+
+   }
+
+
+
+@Test(priority=13,  description="Search by keyword")
+    
+    public void Legacy_SearchResult_Validation() throws InterruptedException, TimeoutException 
+    {
+	
+ 	
+    Hp.LegacyPartNo_Autosuggestion();
+	Thread.sleep(2000);
+	List<WebElement> list1=Hp.LineItemsList();
+	Thread.sleep(2000);
+	ArrayList<String> a1= new ArrayList<String>();
+	for (WebElement option:list1)
+	{
+		String text= option.getText();
+		a1.add(text);
+	}
+	System.out.println(a1);
+	if (a1.isEmpty())
+	{
+		Reporter.log("Items are Not listed in search result page",true);
+		assertFalse(a1.isEmpty());
+
+    } else
+    {
+    	Reporter.log("Items are listed in search result page ",true);
+    	assertFalse(a1.isEmpty());
+    }
 	System.out.println("*****************");
 	
 	
 	}
 
 
+	
+	
 
 
 
 	
 	
+		
 	
 }
 		

@@ -34,21 +34,19 @@ public class ProductListPageTest extends BaseTest {
 	@Test(priority=1, description= "Register now link redirection")
 	public void PLP_RegisterRedirection_GuestValidation() throws InterruptedException, IOException 
 	{
-		BasePage.initializtion();
-		Thread.sleep(5000);
+		//BasePage.initializtion();
+		Thread.sleep(1500);
 		HomePage hp= new HomePage(driver);
-		 Thread.sleep(2000);
-	//	hp.mouseHoverSelectCategory();
+
 		 
 
 		
 			
 			
 			hp.SearchByKeyword();
-			Thread.sleep(10000);
 
 
-	  Thread.sleep(500);
+	  Thread.sleep(1500);
 		
 		plp = new ProductListPage(driver);
 		
@@ -56,32 +54,33 @@ public class ProductListPageTest extends BaseTest {
 		Assert.assertEquals(title, prop.getProperty("Homepage_url"));
 		
 		
-		driver.close();	
+		
 	}
 	
 	@Test(priority=2, description= "Adding Item to Cart")
-	public void AddToCart_Validation() throws InterruptedException, IOException 
+	public void AddToCart_Validation() throws Exception 
 	{
-		BasePage.initializtion();
-		Thread.sleep(8000);
+		//BasePage.initializtion();
+		driver.navigate().back();
+		Thread.sleep(2000);
 		
 		 
-		Thread.sleep(1000);
+
 			LoginPage Lp = new LoginPage(driver);
 		Lp.ValidLogin();
-		Thread.sleep(8000);
+		Thread.sleep(3000);
 		
 		HomePage hp= new HomePage(driver);
 		
 		
 		hp.SearchByKeyword();
-		Thread.sleep(10000);
+		Thread.sleep(1500);
 
 
 	
 		
 		plp = new ProductListPage(driver);
-		  Thread.sleep(3000);
+//		  Thread.sleep(3000);
 		
 	String successmsg= plp.AddItem();
 	Assert.assertEquals(successmsg.contains(Constants.Success_Msg_Reorder), true);
@@ -90,29 +89,23 @@ public class ProductListPageTest extends BaseTest {
 
 		
 	}
-	@Test(priority=3, description= "Adding Item to Cart using mousehover")
+	
+	@Test(priority=3, description= "Adding Item to Cart")
 	public void AddToCart_Validation_using_mousehover() throws Exception 
 	{
-		BasePage.initializtion();
-		Thread.sleep(8000);
 		
-		
-			LoginPage Lp = new LoginPage(driver);
-		Lp.ValidLogin();
-		Thread.sleep(8000);
+		Thread.sleep(2000);
 		
 		HomePage hp= new HomePage(driver);
 		
-		
+		Thread.sleep(1000);
 		hp.mouseHoverSelectCategory();
-		Thread.sleep(10000);
+		
 
-
-
+	
 		
 		plp = new ProductListPage(driver);
-		  Thread.sleep(3000);
-		
+		Thread.sleep(1000);
 	String successmsg= plp.AddItem();
 	Assert.assertEquals(successmsg.contains(Constants.Success_Msg_Reorder), true);
 
@@ -120,27 +113,27 @@ public class ProductListPageTest extends BaseTest {
 
 		
 	}
+	
 
-@Test(priority=4, description= "Validating Recently viewed is  List in PLP")
-	public void Recently_viewedItems_validation() throws InterruptedException, IOException 
+	@Test(priority=4, description= "Validating Recently viewed is  List in PLP")
+	public void Recently_viewedItems_validation() throws Exception 
 	{
-		Thread.sleep(7000);
+		Thread.sleep(4000);
 		HomePage hp= new HomePage(driver);
 		
 		
 		hp.SearchByKeyword();
-		Thread.sleep(6000);
+		Thread.sleep(3000);
 		
 	
 	
 	plp.GuestUser_ClickItem();
 	Thread.sleep(3000);
 	driver.navigate().back();
-	Thread.sleep(5000);
-	
+	Thread.sleep(3000);
+	HomePage	Hp = new HomePage(driver);
 	ProductDetailPage	pdp = new ProductDetailPage(driver);
-	
-	hp.BrandSelection();
+	Hp.BrandSelection();
 	System.out.print(plp.Recently_Viewed().getText());
 	plp.First_Recently_Viewed().click();
 	String pdp_page_spec= pdp.Spec_PDP_Title().getText();
@@ -154,7 +147,7 @@ public class ProductListPageTest extends BaseTest {
 public void Recently_viewedItems_Add_validation() throws InterruptedException, IOException 
 {
 	driver.navigate().back();
-	Thread.sleep(8000);
+	Thread.sleep(5000);
 	plp.Add_Recently_viwed().click();
 	
 	String successmsg= plp.AddItem_recently_viewed();
@@ -164,18 +157,58 @@ public void Recently_viewedItems_Add_validation() throws InterruptedException, I
 
 }
 
-@Test(priority=6, description= "Validating Recently viewed is  List in PLP")
-public void Recently() throws InterruptedException, IOException 
+
+	
+
+@Test(priority=6, description= "Validating UOM in PLP")
+public void UOM_Validation() throws InterruptedException, IOException 
 {
-	Thread.sleep(7000);
+	Thread.sleep(2000);
 	HomePage hp= new HomePage(driver);
 	
 	
 	hp.SearchByKeyword();
-	Thread.sleep(10000);
+	Thread.sleep(2000);
+	String uom = plp.Uom();
+	String uom1=uom.replaceAll("[^a-zA-Z0-9]", "");
+	String price = plp.Price();
 	
-	driver.close();	
+	if (!price.isEmpty())
+		
+		
+			{
+		System.out.println(price);
+	
+	 switch(uom1)
+	 {
+	  case "EA":
+		  System.out.println(uom1);
+		  Reporter.log("UOM EA is Present in PLP", true);
+		  
+		  
+      break;
+  case "FT":
+	  System.out.println(uom1);
+	  Reporter.log("UOM FT is Present in PLP", true);
+	 
+	 
+  break;
+  case "RL":
+	  System.out.println(uom1);
+	  Reporter.log("UOM RL is Present in PLP", true);
+	 
+  break;
+  
+  default: uom1= "Call for pricing";
+  Assert.assertNotSame(uom1,"Call for pricing" );
 }
-
+			}
+	 else
+	 {
+		 Reporter.log("UOM is not displayed as expected", true);
+	 }
+	
+	
+}
 	
 }

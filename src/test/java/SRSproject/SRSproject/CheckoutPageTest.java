@@ -1,27 +1,18 @@
 package SRSproject.SRSproject;
 
-import java.util.List;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.List;
 
-import org.apache.tools.ant.taskdefs.condition.Contains;
-import org.jsoup.select.Evaluator.ContainsData;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import Pages.CartPage;
 import Pages.CheckoutPage;
-import Pages.HomePage;
 import Pages.LoginPage;
 import Pages.MiniCartPage;
-import Pages.ProductListPage;
-import Pages.ProductDetailPage;
-import Pages.RegistrationForm;
 import Utils.Constants;
 
 public class CheckoutPageTest extends BaseTest {
@@ -30,36 +21,38 @@ public class CheckoutPageTest extends BaseTest {
 	ArrayList<String> MyList = null;
 	int total_No_items;
 	
-	
 	@Test(priority=1, description= "Cart to Checkout Redirection ")
 	public void CartToCheckout_Validation() throws InterruptedException, IOException 
 	{
-		BasePage.initializtion();
+	//	BasePage.initializtion();
+		
+		
 		Thread.sleep(8000);
 		LoginPage Lp = new LoginPage(driver);
 		Lp.ValidLogin();
-		Thread.sleep(9000);
-		MiniCartPage Mp= new MiniCartPage(driver);
-		Mp.MiniCart().click();
-		Mp.ClickViewCart();
-		
+		Thread.sleep(5000);
+		//
+			Thread.sleep(9000);
+			MiniCartPage Mp= new MiniCartPage(driver);
+			Mp.MiniCart().click();
+			Mp.ClickViewCart();
+			
 
-	Thread.sleep(1000);
-	
-		CartPage Cp= new CartPage(driver);
-		ArrayList<String> a1= Cp.getItemName1();
-		// System.out.println(a1);
-		 MyList=a1;
-		 String total_items=Cp.TotalNo_Items();
-		 int number = Integer.parseInt(total_items);
-		 total_No_items=number;
-		// System.out.println(MyList);
-		 Thread.sleep(1000);
+		Thread.sleep(1000);
 		
-		Cp.clickOnProceedToCheckout();
-		String title= driver.getTitle();
-		Assert.assertEquals(title, Constants.CheckoutPageTitle);
-		Reporter.log(title, true);
+			CartPage Cp= new CartPage(driver);
+			ArrayList<String> a1= Cp.getItemName1();
+			// System.out.println(a1);
+			 MyList=a1;
+			 String total_items=Cp.TotalNo_Items();
+			 int number = Integer.parseInt(total_items);
+			 total_No_items=number;
+			// System.out.println(MyList);
+			 Thread.sleep(1000);
+			
+			Cp.clickOnProceedToCheckout();
+			String title= driver.getTitle();
+			Assert.assertEquals(title, Constants.CheckoutPageTitle);
 		
 	}
 	
@@ -67,7 +60,7 @@ public class CheckoutPageTest extends BaseTest {
 	public void Date_Validation() throws InterruptedException 
 	{
 		COp =  new CheckoutPage(driver);
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		COp.Shipto_Selection();
 		
 		COp.Branch_Selection();
@@ -122,7 +115,7 @@ public class CheckoutPageTest extends BaseTest {
 		//ArrayList<String> a1= Cp.getItemName1();
 		// System.out.println(a1);
 		
-		
+		Thread.sleep(30000);
 		
 
 		List<WebElement> list2=COp.getCheckout_ItemName();
@@ -134,35 +127,52 @@ public class CheckoutPageTest extends BaseTest {
 			a2.add(text);
 		}
 		int items= a2.size();
-		System.out.print( total_No_items);
+		System.out.print( "Total No of Items"+total_No_items);
 		 Assert.assertEquals(items,  total_No_items);
-		 driver.close();	}
+		// driver.close();	}
 }
-		/*if(MyList.equals(a2))
-		{
-			System.out.println("Item in Cart Page"+ MyList);
-			System.out.println("Item in Checkout Page"+ a2);
-			Reporter.log("Items in Cart are all added to Checkout Page successfully",true);
-		}
-		else
-		{
-			System.out.println("Item in Cart Page"+ MyList);
-			System.out.println("Item in Checkout Page"+ a2);
-			Reporter.log("Not all item from cart are added to checkout page ",true);
-		}
-		
-		 }
 	
-	/*@Test(priority=4,  description= "Placing Order validation")
-	public void OrderPlacement_Validation() throws InterruptedException 
+	@Test(priority=4,  description= "UOM validation")
+	public void UOM_Validation() throws InterruptedException 
 	{
-		COp.scroll();
-		Thread.sleep(500);
-		COp.Terms_Check().click();
-	//COp.PlaceOrder().click();;
+		Thread.sleep(7000);
 		
-	//	System.out.println(driver.getTitle());
+		String uom=COp.UOM().getText();
+		String str2 = uom.replaceAll("[^a-zA-Z0-9]"," "); 
+		String UOM= 	str2.replaceAll("\\d","");
 		
-}*/
+		String Uom=UOM.trim().replaceAll(" +", " ");
+		
+		
+		
+		 switch(Uom)
+		 {
+		  case "EA":
+			  System.out.println(Uom);
+			  Reporter.log("UOM EA is Present in PLP", true);
+			  
+			  
+	      break;
+	  case "FT":
+		  System.out.println(Uom);
+		  Reporter.log("UOM FT is Present in PLP", true);
+		 
+		 
+	  break;
+	  case "RL":
+		  System.out.println(Uom);
+		  Reporter.log("UOM RL is Present in PLP", true);
+		 
+	  break;
+	  
+		  
+	 
+	  default: Uom= "Call for pricing";
+	  Assert.assertNotSame(Uom,"Call for pricing" );
+	}
 
 
+		
+}
+
+}

@@ -11,7 +11,9 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import SRSproject.SRSproject.BasePage;
 
@@ -33,22 +35,40 @@ public class Reorder_Page extends BasePage {
 	
 	@FindBy(xpath="//div[@id='swal2-content']") WebElement Notification;
 	@FindBy(xpath="//button[@class='swal2-close']") WebElement close_btn;
-	@FindBy(xpath="//*[@id=\"maincontent\"]/div[2]/div[1]/div[3]/a[1]") WebElement CreateNew_Pad;
+	@FindBy(xpath="//div[@class='reorderpad-help-text']/following-sibling::a[1]") WebElement CreateNew_Pad;
 	
 	@FindBy(xpath="(//input[@id='id-items0sku'])[1]") WebElement Product_input;
 	
-	@FindBy(xpath="(//div[@class='action'])[2]") WebElement Second_List_View;
-	
-	@FindBy(xpath="(//a[text()[normalize-space()='Automation_Valid']])[1]") WebElement ClickthesecondlineItem ;
-	
+	@FindBy(xpath="(//div[@class='pad-title'])[2]") WebElement First_List_View;
+	@FindBy(xpath="//a[@href='https://qps-stg2.heritagepoolplus.com/reorder-pads/index/detail/?id=3636']") WebElement Click_view ; 
 	@FindBy(xpath="(//button[@title='Add All Items To Cart'])[1]") WebElement Add_All_Items_btn;
 	
-//	@FindBy(xpath="//div[contains(text(),'successfully added to your Cart')]") WebElement Success_msg;
 	@FindBy(xpath = "//p[text()=' Items have been successfully added to your Cart']") WebElement Success_msg;
-	@FindBy(xpath="/html/body/div[7]/aside[11]/div[2]/header/button") WebElement Pop_close;
-	@FindBy(xpath="(//span[text()='Delete Reorder Pad'])[1]") WebElement Delete_Reorder;
+	@FindBy(xpath = "(//span[text()='View Cart'])[2]") WebElement view_cart;
+	@FindBy(css = "body > div.swal2-container.swal2-center.swal2-fade.swal2-shown > div > div.swal2-header > button") WebElement Pop_close;
+	@FindBy(css ="body > div.modals-wrapper > aside.modal-popup.message-modal-container._show > div.modal-inner-wrap > header > button") WebElement close;
+//	@FindBy(css="html>body>div:nth-of-type(2)>aside:nth-of-type(22)>div:nth-of-type(2)>footer>button:nth-of-type(2)>span") WebElement Proceed_Btn ;
 	@FindBy(xpath = "(//button[@class='action-primary'])[2]") WebElement Proceed_Btn ;
-	
+	@FindBy(xpath="//a[@class='account-header']") WebElement Account;
+	@FindBy(xpath="//input[@id='header-email']") WebElement LoginEmail;
+	@FindBy(xpath="//input[@title='Password']") WebElement Password;
+	@FindBy(xpath="//button[@class='action login primary']") WebElement Singin;
+	@FindBy(xpath="//a[@class='logout-link']") WebElement SingOut;
+	@FindBy(xpath="(//span[text()='Delete Reorder Pad'])[1]") WebElement DeleteBtn;
+	@FindBy(xpath="//input[@type='checkbox']") WebElement toggle;
+	@FindBy(xpath="(//select[@class='reorder-pad-list'])[1]")WebElement addingReorderpad;
+	@FindBy(xpath="(//h1[@class='modal-title'])[2]") WebElement productheading;
+	@FindBy(xpath="//button[@class='action primary add-to-reorder-pad']") WebElement AddtoReorderpad;
+	@FindBy(xpath="(//button[@class='action cancel']/following-sibling::button)[2]") WebElement keepshoping;
+	@FindBy(xpath="//button[@class='action primary add-to-reorder-pad']") WebElement PDPReorderpad ; 
+	@FindBy(xpath ="//select[@class='reorder-pad-list']") WebElement addreorderpadPdp ;
+	@FindBy(xpath ="(//button[@class='action primary add-to-reorder-pad'])[2]") WebElement keepshopingPdp ;
+	@FindBy(xpath="(//h1[@class='modal-title'])[4]") WebElement productheadingpdp;
+	@FindBy(xpath="(//button[@class='action remove'])[3]") WebElement productDlt ;
+	@FindBy(xpath = "(//div[@class='field product-your_price'])[1]") WebElement FirstProduct_UOM;
+	@FindBy(xpath = "(//div[@class='field product-your_price'])[2]")  WebElement SecondProduct_UOM;
+	@FindBy(xpath = "//button[@class='action-add-new-line']") WebElement Add_New_lineItem;
+	@FindBy(xpath="(//input[@id='id-items1sku'])[1]") WebElement Product2_input;
 	
 	public Reorder_Page(WebDriver driver)
 	{
@@ -62,18 +82,14 @@ public class Reorder_Page extends BasePage {
 		
 	
 		 Thread.sleep(5000);
-		 WebDriverWait wait = new WebDriverWait(driver, 2000);
-			wait.until(ExpectedConditions.visibilityOf(Uploadcsv));
 		 Uploadcsv.click();
 		Thread.sleep(3000);
 		
-//		File.sendKeys(prop.getProperty("valid_csvfile"));
-		 File .sendKeys(System.getProperty("user.dir") + prop.getProperty("valid_csvfile"));
+		File.sendKeys(System.getProperty("user.dir") + prop.getProperty("valid_csvfile"));
+
 		
 		
 		Thread.sleep(3000);
-		wait.until(ExpectedConditions.visibilityOf(Uploadfile_btn));
-		
 		
 		Uploadfile_btn.click();
 		return new MyAccountPage(driver);
@@ -86,18 +102,14 @@ public class Reorder_Page extends BasePage {
 			
 		
 			 Thread.sleep(5000);
-			 WebDriverWait wait = new WebDriverWait(driver, 80);
-				wait.until(ExpectedConditions.visibilityOf(Uploadcsv));
 			 Uploadcsv.click();
 			Thread.sleep(3000);
-			
-			 File .sendKeys(System.getProperty("user.dir") + prop.getProperty("Invalid_csvfile"));
+			File.sendKeys(System.getProperty("user.dir") + prop.getProperty("Invalid_csvfile"));
+//			File.sendKeys(prop.getProperty("Invalid_csvfile"));
 
 			
 			
 			Thread.sleep(3000);
-			
-			wait.until(ExpectedConditions.visibilityOf(Uploadfile_btn));
 			
 			Uploadfile_btn.click();
 			return new MyAccountPage(driver);
@@ -134,18 +146,17 @@ public  WebElement ReorderNameField()
 	{
 		return Save_btn;
 	}
+	
 	public WebElement Proceed_Btn() throws Exception {
 		jsClick(Proceed_Btn);
 		return Proceed_Btn ;
 	}
 	
+	
+	
 public String  ItemsNotAdded_Notification() 
 	
 	{
-	
-	 WebDriverWait wait = new WebDriverWait(driver, 80);
-		wait.until(ExpectedConditions.visibilityOf(Notification));
-	
 		return Notification.getText();
 	}
 
@@ -164,29 +175,23 @@ public  WebElement Create_New_ReorderPad()
 public  void EnterProduct() throws InterruptedException 
 
 {
-	
-	JavascriptExecutor js = (JavascriptExecutor) driver;
-	 js.executeScript("arguments[0].scrollIntoView();", Delete_Reorder);
-	 Thread.sleep(2000);
 	 Product_input.sendKeys(prop.getProperty("KeywordSearch"));
 
-		Thread.sleep(10000);
-		
-		
-		driver.findElement(By.xpath("(//li[@class='ui-menu-item'])[1]")).click();
-		
+		Thread.sleep(5000);
+//		WebElement Item=driver.findElement(By.xpath("/html/body/div[1]/main/div[2]/div/div[1]/div[2]/form/div[4]/fieldset/div[2]/div/ul[1]/li[1]/a"));
+		WebElement Item=driver.findElement(By.xpath("(//li[@class='ui-menu-item']//span)[1]"));	
+//		WebDriverWait wait = new WebDriverWait(driver, 2000);
+//			wait.until(ExpectedConditions.visibilityOf(Item));
+			Item.click();
 		Thread.sleep(1000);
 	
 }
 
-public  void View_Click() 
+public  WebElement  View_Click() 
 
 {
-	Second_List_View.click();
-}
-
-public void SecondlineItemClk() {
-	ClickthesecondlineItem.click();
+	First_List_View.click();
+	return First_List_View;
 }
 
 public  WebElement Add_All_Items() 
@@ -198,7 +203,7 @@ public  WebElement Add_All_Items()
 public  String Items_addtocart_msg() throws InterruptedException 
 
 {
-	Thread.sleep(2000);
+	
 	return Success_msg.getText();
 	
 }
@@ -209,7 +214,182 @@ public  WebElement PopUp_Closebutton()
 	return Pop_close;
 }
 
+public  WebElement Closebutton() 
+
+{
+	return close;
+}
+public void ReorderPadLogin_usingview_and_edit_access() throws InterruptedException
+
+{
+	
+	Thread.sleep(8000);
+  act= new Actions(driver);
+
+		//wait = new WebDriverWait(driver,30);
+	//	wait.until(ExpectedConditions.visibilityOf(Account));
+		act.moveToElement(Account).build().perform();
+	LoginEmail.sendKeys(prop.getProperty("Reorderpad_view_editLogin_email"));
+	Password.sendKeys(prop.getProperty("Reorderpad_view_editLogin_pswd"));
+	Singin.click();
+	
+}
+
+public void ReorderPadLogin_usingview_access() throws InterruptedException
+
+{
+	
+	Thread.sleep(8000);
+  act= new Actions(driver);
+
+		//wait = new WebDriverWait(driver,30);
+	//	wait.until(ExpectedConditions.visibilityOf(Account));
+		act.moveToElement(Account).build().perform();
+	LoginEmail.sendKeys(prop.getProperty("Reorderpad_view_Login_email"));
+	Password.sendKeys(prop.getProperty("Reorderpad_view_Login_pswd"));
+	Singin.click();
+	
+}
+
+public void ReorderPadLogin_withoutview_Edit_access() throws InterruptedException
+
+{
+	
+	Thread.sleep(8000);
+  act= new Actions(driver);
+
+		//wait = new WebDriverWait(driver,30);
+	//	wait.until(ExpectedConditions.visibilityOf(Account));
+		act.moveToElement(Account).build().perform();
+	LoginEmail.sendKeys(prop.getProperty("Reorderpad_noacess_Login_email"));
+	Password.sendKeys(prop.getProperty("Reorderpad_noacess_Login_pswd"));
+	Singin.click();
+	
+}
+public  WebElement Deletebutton() 
+
+{
+	return DeleteBtn;
+}
+public  WebElement Acesstoggle() 
+
+{
+	return toggle;
+}
+public WebElement ViewCart() {
+	
+	return view_cart;
+}
+	
+public WebElement AddReorderpad() {
+	Select reorderlist = new Select(addingReorderpad);
+	reorderlist.selectByValue(prop.getProperty("Reorder_List_Value1"));
+	return addingReorderpad;
+
+}
+public void Addreorderpad1() throws InterruptedException {
+	
+
+		addingReorderpad.isDisplayed();
+		Select reorderlist = new Select(addingReorderpad);
+		reorderlist.selectByValue(prop.getProperty("Reorder_List_Value1"));
+	
+		
+		
+		
+	}
+		
+	
+
+public WebElement AddReorderpadpdp() {
+	Select reorderlist = new Select(addreorderpadPdp);
+	reorderlist.selectByValue(prop.getProperty("Reorder_List_Value1"));
+	return addreorderpadPdp;
+
+}
+public WebElement addreorderpadPdpenble() {
+
+	return addreorderpadPdp;
+
+}
+public WebElement Productheading_verify() {
+	
+	return productheading;
+
+}
+public void Add_to_reorderpad() {
+	AddtoReorderpad.click();
+}
+public void KeepShopping() {
+	keepshoping.click();
+}
+
+public void pdpReorderpad() {
+	PDPReorderpad.click();
+}
+
+
+public void AddreorderpadPdp() {
+	addreorderpadPdp.click();
+}
+
+public String Productheadingpdp_verify() {
+	
+	return productheadingpdp.getText();
+
+}
+
+public void KeepShoppingpdp() {
+	
+	keepshopingPdp.click();
+}
+public WebElement uploadbtn() {
+	return Uploadcsv;
+}
+
+public  WebElement ProductInput() 
+
+{
+	return Product_input;
+	
+}
+public void Productdelete() throws InterruptedException {
+
+		scrollUpandDownUsingElement(Add_All_Items_btn);
+		Thread.sleep(3000);
+		productDlt.isDisplayed();
+		
+		productDlt.click();
+		System.out.println("delete is present ");
+	
+		
 	
 	
+}
+
+public WebElement  First_Product_UOM()
+{
+	return FirstProduct_UOM;
+}
+
+public WebElement  Second_Product_UOM()
+{
+	return SecondProduct_UOM;
+}
+public  void Enter_LegacyPartNo() throws InterruptedException 
+
+{
+	Add_New_lineItem.click();
+	 Product2_input.sendKeys(prop.getProperty("Legacy_PartNo"));
+
+		Thread.sleep(8000);
+//		WebElement Item=driver.findElement(By.xpath("/html/body/div[1]/main/div[2]/div/div[1]/div[2]/form/div[4]/fieldset/div[2]/div/ul[1]/li[1]/a"));
+		WebElement Item=driver.findElement(By.xpath("(//li[@class='ui-menu-item']//a)[1]"));	
+		WebDriverWait wait = new WebDriverWait(driver, 5000);
+			wait.until(ExpectedConditions.visibilityOf(Item));
+			Item.click();
+		Thread.sleep(1000);
+	
+}
 
 }

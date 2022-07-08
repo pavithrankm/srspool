@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
 public class Constants { 
-//	
+
 	public static final String REGISTRATIONFORM_URL="https://www.heritagepoolplus.com/company/account/create";
 //	public static final String REGISTRATIONFORM_URL="https://mcstaging.heritagepoolplus.com/company/account/create";
 //	public static final String REGISTRATIONFORM_URL="https://mcstaging2.heritagepoolplus.com/company/account/create";
@@ -38,5 +38,9 @@ public class Constants {
 	public static final String InvalidErrormsge = "Invalid login or password." ;
 	public static final String OpenOrder_Title = "Open Orders";
 	public static final String Invoice_Title = "Invoice History";
+	
 	public static final String Error_Popup =  "Our Texas based Florida Water Products & Pool & Electrical Products branches have rebranded to Texas Pool Supply!!!" ;
+	public static final String TPS_link_Stg ="https://tps-stg.heritagepoolplus.com/";
+	public static final String TPS_link_Prod ="https://tps.heritagepoolplus.com/" ;
+	
 }

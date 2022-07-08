@@ -58,13 +58,10 @@ public class AccountDashboardPage extends BasePage {
 
 	
 	public void EditOrganization() throws InterruptedException {
-		act=new Actions(driver);
-		act.moveToElement(Account).perform();
-		Account.click();
-		Thread.sleep(2000);
-		act.moveToElement(AccountDashboard).perform();
-		Thread.sleep(3000);
-		AccountDashboard.click();
+		
+//		act.moveToElement(Account).moveToElement(AccountDashboard).perform();
+//		Thread.sleep(3000);
+//		AccountDashboard.click();
 		
 		String Display1 = DashBoard.getText();
 		Thread.sleep(6000);
@@ -164,7 +161,6 @@ public class AccountDashboardPage extends BasePage {
 		scrollUpandDownUsingElement(Account);
 		act=new Actions(driver);
 		act.moveToElement(Account).perform();
-		//Account.click();
 		boolean Berlin = NewBerlin_Test_Corp.isDisplayed();
 		String Ber = NewBerlin_Test_Corp.getText();
 		System.out.println(Berlin);
@@ -179,6 +175,7 @@ public class AccountDashboardPage extends BasePage {
 		String ed = EditProfile.getText();
 		System.out.println(Edit);
 		System.out.println(ed);
+		
 		act.moveToElement(EditProfile).perform();
 		EditProfile.click();
 		Thread.sleep(8000);

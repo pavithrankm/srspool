@@ -53,7 +53,7 @@ public class MyAccountPageTest extends BaseTest {
 		 String sae = HP.verifysame();
 		Thread.sleep(5000);
 		
-		HP.ChangeBranchPage();
+		
 		Thread.sleep(5000);
 			
 		if (URL.equals(prop.get("Homepage_logurl"))) {
