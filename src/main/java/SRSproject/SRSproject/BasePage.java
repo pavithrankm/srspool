@@ -59,14 +59,14 @@ public class BasePage
 		// public static String configpath ="src/main/java/config_staging2/config_stage2_fis.properties";
 		
 		//CPS
-		public static String configpath ="src/main/java/config_prod/config_prod_cps.properties";
+		//public static String configpath ="src/main/java/config_prod/config_prod_cps.properties";
 		//public static String configpath ="src/main/java/config_staging2/config_stage2_cps.properties";
 		//public static String configpath ="src/main/java/config_staging/configuration_staging_cps.properties";
 		
 		//NFI
 	    //public static String configpath ="src/main/java/config_staging/configuration_staging_nfi.properties
 		//public static String configpath ="src/main/java/config_staging2/config_stage2_nfi.properties";
-		//public static String configpath ="src/main/java/config_prod/config_prod_nfi.properties" ;
+		public static String configpath ="src/main/java/config_prod/config_prod_nfi.properties" ;
 	
         //WCC
 		// public static String configpath="src/main/java/config_prod/config_prod_wolf.properties";
