@@ -53,7 +53,9 @@ public class BulkOrderPageTest100 extends BaseTest{
 		
 								
 			System.out.println("Item Lists : "+arr);
+			System.out.println("****************************************************************");
 			System.out.println("Number of Items Added : "+arr.size());
+			System.out.println("****************************************************************");
 			
 			
 			//Bp.fileDetails();
@@ -65,4 +67,37 @@ public class BulkOrderPageTest100 extends BaseTest{
 	//Reporter.log("Items are uploaded",true);
 	
 		}
+	
+	@Test(priority=3,enabled=true)
+	public void MoreItems_Validation() throws Exception 
+	{
+		Thread.sleep(15000);
+		
+		
+				Bp.HundredFileupload();
+			//	Thread.sleep(10000);
+				Bp.AddOnemoreHundred();
+//			ArrayList<String> List= Bp.ListOfItem();
+//			BulkOrderPage_List = List;
+//			
+//			System.out.println("List Of Items: "+BulkOrderPage_List);
+//			QuickOrderPadPage qp = new QuickOrderPadPage(driver);
+//			
+//			List<String> arr = qp.ReadHunderdfileData(); 
+//		
+//								
+//			System.out.println("Item Lists : "+arr);
+//			System.out.println("Number of Items Added : "+arr.size());
+			
+			
+			//Bp.fileDetails();
+		
+		//	Assert.assertEquals(BulkOrderPage_List,arr);
+			
+		
+			
+	//Reporter.log("Items are uploaded",true);
+	
+		}
+	
 }

@@ -9,6 +9,7 @@
       <class name="SRSproject.SRSproject.BulkOrderPageTest100">
         <methods>
           <include name="ListofItem_Validation"/>
+          <include name="MoreItems_Validation"/>
           <include name="beforeClass"/>
           <include name="BulOrder_Redirection"/>
         </methods>

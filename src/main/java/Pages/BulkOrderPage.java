@@ -47,8 +47,10 @@ public class BulkOrderPage extends BasePage {
     //100line items
     @FindBy(xpath="//h5[@class='amqorder-header']")WebElement LineItemsCount;
     @FindBy(xpath="//button[@class='-fill -secondary amqorder-button']")WebElement AcceptButton;
+                   //button[@class='-fill -secondary amqorder-button']
     @FindBy(xpath="//ul[contains(@class,'amqorder-errors-list')]")WebElement ErrorList;
-    
+    @FindBy(xpath="//div[@id='swal2-content']")WebElement MoreItems;//more than 100 items
+    @FindBy(xpath="//button[@aria-label='Close this dialog']")WebElement CloseMark;
     
     
 	public BulkOrderPage(WebDriver driver)
@@ -222,7 +224,7 @@ public class BulkOrderPage extends BasePage {
 	
 {
 		
-		Thread.sleep(8000);
+		Thread.sleep(6000);
 		
 //		((JavascriptExecutor) driver)
 //	    .executeScript("window.scrollTo(0, -document.body.scrollHeight)");
@@ -267,11 +269,15 @@ public class BulkOrderPage extends BasePage {
 			Thread.sleep(12000);
 			LineItemsCount.getText();
 			Thread.sleep(6000);
+			System.out.println("****************************************************************");
 			System.out.println(LineItemsCount.getText());
+			System.out.println("****************************************************************");
 			Thread.sleep(5000);
 			ErrorList.getText();
+			System.out.println("****************************************************************");
 			System.out.println(ErrorList.getText());
-			act.moveToElement(AcceptButton).build().perform();
+			System.out.println("****************************************************************");
+		//	act.moveToElement(AcceptButton).click();
 			AcceptButton.click();
 			Thread.sleep(5000);
 			
@@ -287,6 +293,27 @@ public class BulkOrderPage extends BasePage {
 		
 	
 }
+	
+//100 line items
+	public void AddOnemoreHundred() throws InterruptedException {
+	try {
+		//UploadCsv.click();
+		MoreItems.isDisplayed();
+		System.out.println(MoreItems.getText());
+		Thread.sleep(6000);
+		CloseMark.isDisplayed();
+		System.out.println(CloseMark.isDisplayed());
+		CloseMark.click();
+		Thread.sleep(6000);
+		System.out.println("****************************************************************");
+		System.out.println("Not able to Upload more than 100 files");
+		System.out.println("****************************************************************");
+	}catch (Exception e) {
+		System.out.println("Uploaded all files");
+		Thread.sleep(6000);
+	}
+	}
+	
 ////100 line items
 	public void fileDetails() throws InterruptedException {
 		LineItemsCount.getText();
