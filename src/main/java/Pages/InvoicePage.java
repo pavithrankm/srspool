@@ -211,8 +211,7 @@ public int Invoicecount() throws Exception {
 	
 	}
 	
-	public WebElement DownloadExcel() throws InterruptedException {
-		Thread.sleep(1000);
+	public WebElement DownloadExcel() {
 		return DownloadXLSX ;
 	}
 

@@ -289,7 +289,7 @@ Thread.sleep(1000);
 	public String ChangeBranchDropDown() throws InterruptedException  
 	{
 
-		Thread.sleep(1000);
+		Thread.sleep(6000);
 		
 		
 
@@ -325,7 +325,7 @@ Thread.sleep(1000);
 			wait.until(ExpectedConditions.visibilityOf(Confirm));
 	 Confirm.click();
 		
-//		 js.executeScript("arguments[0].scrollIntoView();",YourBranch);
+		 js.executeScript("arguments[0].scrollIntoView();",YourBranch);
 		 Thread.sleep(10000);
 		 return YourBranch.getText();
 		 

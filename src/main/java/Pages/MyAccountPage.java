@@ -10,8 +10,10 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import SRSproject.SRSproject.BasePage;
+import Utils.Constants;
 
 public class MyAccountPage extends BasePage {
 
@@ -35,7 +37,14 @@ public class MyAccountPage extends BasePage {
 	
 //	@FindBy(xpath="//input[@id='dp1655367671921']")WebElement RequestedDate;
 	@FindBy(xpath="//input[contains(@id,'dp')]")WebElement RequestedDate;
-	@FindBy(xpath="//a[contains(@class,'ui-state-default ui-state-hover')]")WebElement CalenderDate;
+//	@FindBy(xpath="//a[contains(@class,'ui-state-default ui-state-hover')]")WebElement CalenderDate;
+	//@FindBy(xpath="//button[normalize-space()='Today']")WebElement CalenderDate;
+	@FindBy(xpath=" //a[@class='ui-state-default ui-state-active ui-state-hover']")WebElement CalenderDate;
+	@FindBy(xpath="//li[@class='requested-date']")WebElement RequestDate;
+	
+	@FindBy(xpath="//span[normalize-space()='5']")WebElement ParticularDate;
+	@FindBy(xpath="//input[@placeholder='Requested Date*']")WebElement Futuredate;
+	@FindBy(xpath="//div[@class='field requested-date _required']")WebElement Datesss;
 	
 	@FindBy(xpath="//button[@class='button action continue secondary']//span//span[contains(text(),'Next Step')]")WebElement NextButton;
 	@FindBy(xpath=" //button[@class='button action continue primary']//span//span[contains(text(),'Next Step')]")WebElement NextStepButton;          
@@ -156,7 +165,13 @@ SaveButton.click();
 		//act.moveToElement(OrderDetails).perform();
 		OrderDetails.click();
 		Thread.sleep(5000);
-  	OrderDetails.sendKeys("12");
+		
+  	OrderDetails.sendKeys("1234567890123456");
+  	OrderDetails.getText();
+  	System.out.println(OrderDetails.getText());
+
+
+  
 		Thread.sleep(3000);
 		
 		
@@ -166,11 +181,40 @@ SaveButton.click();
 		act.moveToElement(RequestedDate).perform();
 		RequestedDate.click();
 		Thread.sleep(3000);
-		act.moveToElement(CalenderDate).perform();
-		CalenderDate.click();
+		
+		
+
+		if(ParticularDate.isDisplayed())
+		{
+			System.out.println(ParticularDate.isEnabled());
+			act.moveToElement(ParticularDate).build().perform();
+			ParticularDate.click();
+		}else {
+		
+			CalenderDate.isDisplayed();
+			System.out.println("----  ParticularDate is not Enabled ---- ");
+			System.out.println("current date is enabled -" +CalenderDate.isEnabled());
+			act.moveToElement(CalenderDate).build().perform();
+			CalenderDate.click();
+			CalenderDate.getText();
+			System.out.println(CalenderDate.getText());
+			Datesss.getText();
+			System.out.println(Datesss.getText());
+		
+		}
+			
+//		act.moveToElement(CalenderDate).build().perform();
+//		CalenderDate.isEnabled();
+//		System.out.println(CalenderDate.isEnabled());
+//		CalenderDate.click();
+
 		Thread.sleep(3000);
 		NextButton.click();
 		Thread.sleep(3000);
+		RequestDate.getText();
+		System.out.println(RequestDate.getText());
+		Thread.sleep(3000);
+		
 		
 		
 		
@@ -215,17 +259,17 @@ SaveButton.click();
 	}
 	
 	public void ChangeBranchPage() throws InterruptedException {
+	
 		act.moveToElement(ReturnToCart).perform();
 		ReturnToCart.click();
+		
+		Thread.sleep(8000);
 		driver.getTitle();
-		Thread.sleep(3000);
 		ChangeBranch.click();
 		Thread.sleep(3000);
 		
-		Select Brand= new Select(ChangeBranchSelection);
-
-		Brand.selectByValue(prop.getProperty("Change_Branch_val"));
-		
+		act.moveToElement(ChangeBranchID).click();
+		ChangeBranchID.sendKeys(Keys.ARROW_DOWN);
 		Thread.sleep(3000);
 
 		ConFirmButton.click();

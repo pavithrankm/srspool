@@ -3,13 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="SRSproject.SRSproject.LoginTest">
+      <class name="SRSproject.SRSproject.AccountStatementTest">
         <methods>
-          <include name="UnAuthorisedLogin"/>
+          <include name="Account"/>
+          <include name="AccountBillVerify"/>
+          <include name="InvoiceIdVerify"/>
           <include name="beforeClass"/>
-          <include name="tearDown"/>
+          <include name="AccountStatementVerify"/>
         </methods>
-      </class> <!-- SRSproject.SRSproject.LoginTest -->
+      </class> <!-- SRSproject.SRSproject.AccountStatementTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

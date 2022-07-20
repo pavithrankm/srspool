@@ -1,4 +1,3 @@
-
 package Pages;
 
 import java.io.BufferedReader;
@@ -11,7 +10,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-import org.apache.commons.io.FileUtils;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -74,31 +72,30 @@ public class AccountStatementPage extends BasePage {
 	}
 	
 	public void AccountStatementButton() throws InterruptedException {
-		
-	
-	
 		act=new Actions(driver);
-		
 		act.moveToElement(Account).perform();
-		Thread.sleep(5000);
-		Account.click();
-		
+		Thread.sleep(8000);
+		//Account.click();
 		act.moveToElement(invoice).perform();
-		
-		Thread.sleep(3000);
+		Thread.sleep(8000);
 		act.moveToElement(AccountStatement).perform();
-		Thread.sleep(3000);
+		Thread.sleep(8000);
 		AccountStatement.click();
-		Thread.sleep(3000);
-		
+		Thread.sleep(8000);	
 	}
 	
 	public void AccountStatement() throws InterruptedException {
 		act=new Actions(driver);
-		Thread.sleep(3000);
 		act.moveToElement(AccountStatement1).perform();
 		AccountStatement1.click();
-		Thread.sleep(3000);
+		Thread.sleep(8000);
+	}
+	public void AccountStatement2() throws InterruptedException {
+		act=new Actions(driver);
+		act.moveToElement(Account).moveToElement(AccountStatement).perform();
+	//	act.moveToElement(AccountStatement).perform();
+		AccountStatement.click();
+		Thread.sleep(8000);
 	}
 	
 //	public boolean PrintStatement() throws InterruptedException {
@@ -112,7 +109,7 @@ public class AccountStatementPage extends BasePage {
 	public void PrintPageButton() throws InterruptedException {
 		act.moveToElement(PrintPage).perform();
 		PrintPage.click();
-		Thread.sleep(2000);
+		Thread.sleep(8000);
 	}
 	
 //	public boolean PrintStatement() {
@@ -150,38 +147,37 @@ public class AccountStatementPage extends BasePage {
 		TotalBalance.isDisplayed();
 		String TotalBal = TotalBalance.getText();
 		System.out.println(TotalBal);
-		Thread.sleep(3000);
-
+		Thread.sleep(8000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,1000)");
+		Thread.sleep(8000);
 		onemonth.isDisplayed();
 		String one = onemonth.getText();
 		System.out.println(one);
-		Thread.sleep(3000);
+		Thread.sleep(8000);
 		TwoMonths.isDisplayed();
 		String two = TwoMonths.getText();
 		System.out.println(two);
-		Thread.sleep(3000);
+		Thread.sleep(8000);
 		ThreeMonths.isDisplayed();
 		String three = ThreeMonths.getText();	
 		System.out.println(three);
-		Thread.sleep(3000);
+		Thread.sleep(8000);
 		OverMonth.isDisplayed();
 		String over = OverMonth.getText();
 		System.out.println(over);
-		Thread.sleep(3000);
+		Thread.sleep(8000);
 		InvoiceHastag.isDisplayed();
 		InvoiceHastag.getText();
 		BottomTotalBalance.isDisplayed();
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,1000)");
-		Thread.sleep(3000);	
 		String BottomTotalBal = BottomTotalBalance.getText();
 		System.out.println(BottomTotalBal);
-		Thread.sleep(3000);
+		Thread.sleep(8000);
 		 String Amo = TotalBalanceAmount.getText();
 		System.out.println(Amo);
 		String amoun = BottomTotalBalanceAmount.getText();
 		System.out.println(amoun);
-		//Assert.assertEquals(amoun,Amo);
+		Assert.assertEquals(amoun,Amo);
 		if(Amo.equals(amoun)) {
 			System.out.println("Total balance is equal");
 		}else {
@@ -190,19 +186,18 @@ public class AccountStatementPage extends BasePage {
 	}
 	
 	public void InvoiceId() throws InterruptedException {
-//		JavascriptExecutor js = (JavascriptExecutor) driver;
-//		js.executeScript("window.scrollBy(0,300)");
-	//	scrollUpandDownUsingElement(InvoiceID);
-		Thread.sleep(3000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,200)");
+		Thread.sleep(9000);
 		act.moveToElement(InvoiceID).perform();
 		String in = InvoiceID.getText();
 		System.out.println(in);
 		InvoiceID.click();
-		Thread.sleep(3000);
+		Thread.sleep(8000);
 		InvoiceIDNUmber.isDisplayed();
 		String inn = InvoiceIDNUmber.getText();
 		System.out.println(inn);
-		Thread.sleep(3000);
+		Thread.sleep(8000);
 		if(in.equals(inn)) {
 			System.out.println("Invoice-ID is equal");
 		}else {
@@ -212,28 +207,32 @@ public class AccountStatementPage extends BasePage {
 		}
 	
 	public void AccountBill() throws InterruptedException {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,1000)");
-		Thread.sleep(3000);
+//		JavascriptExecutor js = (JavascriptExecutor) driver;
+//		js.executeScript("window.scrollBy(0,1200)");
+//		Thread.sleep(3000);
+	//	WebElement element = driver.findElement(By.id("my-id"));
+		Actions actions = new Actions(driver);
+		actions.moveToElement(AccountBillTrust);
+		actions.perform();
 		AccountBillTrust.isEnabled();
 		AccountBillTrust.getText();
-		AccountBillTrust.click();
+		
 		String newtab = driver.getWindowHandle();
 		System.out.println(newtab);
-		
-		Thread.sleep(3000);
+		AccountBillTrust.click();
+		Thread.sleep(8000);
 		for(String childTab:driver.getWindowHandles()) {
 			driver.switchTo().window(childTab);
 		}
 		System.out.println(driver.getTitle());
-		Thread.sleep(4000);
+		Thread.sleep(8000);
 		SignUp.click();
 	}
 	
 	public String ListOfPage() throws InterruptedException {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,1000)");
-		Thread.sleep(3000);
+		Thread.sleep(8000);
 		List<WebElement> findElements = driver.findElements (By.xpath("//li[contains(@class,'footable-page visible')]//a"));
 		int PaginationSize = findElements.size();
         String s2 = "No of Pagess : " + PaginationSize;		
@@ -241,41 +240,19 @@ public class AccountStatementPage extends BasePage {
 		return s2;
 	}
 	
-	public void Downloadfiles() throws InterruptedException, IOException {
-		Thread.sleep(1500);
-		 String filePath = System.getProperty("user.dir") + "\\DownloadCSV";
-	      //Creating the File object
-	      File file = new File(filePath);
-	      FileUtils.cleanDirectory(file);
-	    
-	      System.out.println("Files deleted........");
-	      Thread.sleep(20000);
-	      act.moveToElement(DownloadCSV).perform();
-	      DownloadCSV.getText();
-			DownloadCSV.click();
-			Thread.sleep(3000);
-			act.moveToElement(DownloadXLSX).perform();
-			DownloadXLSX.getText();
-			DownloadXLSX.click();
-	      System.out.println("File Downloded");
-	    
-		
-		
-		
-	
+	public void Downloadfiles() throws InterruptedException {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,200)");
+		Thread.sleep(8000);
+		act.moveToElement(DownloadCSV).perform();
+		DownloadCSV.getText();
+		DownloadCSV.click();
+		Thread.sleep(8000);
+		act.moveToElement(DownloadXLSX).perform();
+		DownloadXLSX.getText();
+		DownloadXLSX.click();
+		Thread.sleep(8000);
 	}
-	public boolean IsDispayed()
-	{
-	    try {
-	    	PrintPage.isDisplayed();
-	    	System.out.println("s");
-	    } catch (Exception e) {
-	    	System.out.println("n");
-	        return false;
-	    }
-	    return true;
-	}
-	
 //	public void DownloadFileAvailable() {
 //		File folder = new File(System.getProperty("user.dir") +"\\DownloadCSV");
 //		File[] listOfFiles = folder.listFiles();
@@ -306,7 +283,7 @@ public  int ReadfileData() throws InterruptedException, CsvValidationException, 
 	
 	{
 //		 file .sendKeys(System.getProperty("user.dir") + prop.getProperty("Invalid_csvfile"));
-	 String file = System.getProperty("user.dir") + "\\DownloadCSV\\";
+	 String file = System.getProperty("user.dir") + "\\DownloadCSV\\statement.csv";
 		 
 	 String delimiter = ",";
      

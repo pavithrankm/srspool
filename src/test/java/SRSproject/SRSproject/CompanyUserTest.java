@@ -1,23 +1,14 @@
 package SRSproject.SRSproject;
 
-import static org.testng.Assert.assertTrue;
-
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import Pages.AddNewUserRolesPage;
 import Pages.CompanyUsersPage;
 import Pages.HomePage;
-import Pages.HomePage_Global;
-import Pages.LoginPage;
 import Pages.UserRolesPage;
-import SRSproject.SRSproject.BasePage;
-import SRSproject.SRSproject.BaseTest;
 
 public class CompanyUserTest extends BaseTest {
 	
@@ -27,7 +18,7 @@ public class CompanyUserTest extends BaseTest {
 	AddNewUserRolesPage AddNewRolePg;
 	UserRolesPage UserRolesPg;
 
-	@Test(priority = 1)
+	@Test(priority = 0)
 	public void CreateCompanyUser() throws Exception {
 		// BasePage.initializtion();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -42,17 +33,14 @@ public class CompanyUserTest extends BaseTest {
 
 		CUpg.clickAddNewUserBtn();
 //		CUpg.enterAddNewUserPopup();
-//		Thread.sleep(2000);
+//		Thread.sleep(8000);
 		CUpg.enterFirstName();
 		CUpg.enterLastName();
-		Thread.sleep(5000);
 		CUpg.enterEmail();
-		Thread.sleep(5000);
-		CUpg.selectUserRole("Default user");
+		CUpg.selectUserRole("Default User");
 		CUpg.selectDefaultBranch(0);
 		CUpg.selectDefaultShipTo(0);
 		CUpg.selectStatus(0);
-		Thread.sleep(5000);
 		CUpg.selectSupervisorName(1);
 		CUpg.clickSaveUser();
 		
@@ -62,7 +50,7 @@ public class CompanyUserTest extends BaseTest {
 
 	}
 
-	@Test(priority = 2)
+	@Test(priority = 1)
 	public void AddNewUserRole() throws InterruptedException, IOException {
  BasePage.initializtion();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -70,11 +58,10 @@ public class CompanyUserTest extends BaseTest {
 		Hp.ValidLogin();
 		Thread.sleep(5000);
 		Hp.Account_Hover();
-		Thread.sleep(2000);
+		Thread.sleep(6000);
 		Hp.ClickUserManagement();
 		Thread.sleep(5000);
 		CUpg = new CompanyUsersPage(driver);
-		Thread.sleep(500);
 		CUpg.clickEditUserRolesBtn();
 		Thread.sleep(5000);
 		UserRolesPg = new UserRolesPage(driver);

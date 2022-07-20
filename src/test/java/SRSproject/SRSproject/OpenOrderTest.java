@@ -49,10 +49,10 @@ public class OpenOrderTest extends BaseTest
 	public void OpenOrder_Redirection() throws InterruptedException, IOException 
 	{
 		//BasePage.initializtion();
-		Thread.sleep(8000);
+		Thread.sleep(2000);
 		LoginPage Lp = new LoginPage(driver);
 		Lp.ValidLogin();
-		Thread.sleep(8000);
+		Thread.sleep(2000);
 		HomePage Hp = new HomePage(driver);
 		Hp.MyAccount_Hover();
 		Hp.OpenOrder_Hover();
@@ -152,7 +152,7 @@ public class OpenOrderTest extends BaseTest
 	{
 		Op =  new OpenOrdersPage(driver);
 		Op.Selecting_Order();
-		Thread.sleep(8000);
+		Thread.sleep(2000);
 		int order_count= Op.Orders();
 		if(order_count==3)
 		{
@@ -176,7 +176,7 @@ public class OpenOrderTest extends BaseTest
 		Thread.sleep(2000);
 		int order_count= Op.Orders();
 		System.out.println("Selected 1 order and enterd the view order page");
-		Assert.assertEquals(order_count, 1);
+		Assert.assertEquals(order_count, 0);
 		
 		
 
@@ -187,11 +187,11 @@ public void Download_Validation() throws Exception
 		HomePage Hp = new HomePage(driver);
 		Hp.MyAccount_Hover();
 		Hp.OpenOrder_Hover();
-		Thread.sleep(8000);
+		Thread.sleep(2000);
 		int orders=Op.Next_button();
 		System.out.println(orders);
 		System.out.println("Order in Front end and the dowloaded file" +orders); 
-		Thread.sleep(8000);
+		Thread.sleep(2000);
 	 String filePath = System.getProperty("user.dir") + "\\DownloadCSV";
      //Creating the File object
      File file = new File(filePath);
@@ -221,7 +221,7 @@ public void Download_Validation() throws Exception
 	 int orders=Op.Next_button();
 			System.out.println("Order in Front end and the downloaded file"+orders); 
 			
-Thread.sleep(8000);
+Thread.sleep(2000);
 		 String filePath = System.getProperty("user.dir") + "\\DownloadCSV";
 	      //Creating the File object
 	      File file = new File(filePath);

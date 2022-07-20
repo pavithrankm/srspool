@@ -1,0 +1,2 @@
+invoiceNumber,orderNumber,shipmentNumber,customerCode,invoiceDate,invoiceSubTotal,invoiceCharges,invoiceTax,invoiceTotal,paymentStatus,PONumber,dueDate,overDue
+0007260304-001,7260304,1,MAL3320,2022-07-07T00:00:00,161.64,0,14.95,176.59,Unpaid,receptacles,2022-08-06T00:00:00,No

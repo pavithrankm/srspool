@@ -1,0 +1,4 @@
+invoiceNumber,orderNumber,shipmentNumber,customerCode,invoiceDate,invoiceSubTotal,invoiceCharges,invoiceTax,invoiceTotal,paymentStatus,PONumber,dueDate,overDue
+0006982726-002,6982726,2,3013925,2022-06-20T00:00:00,"1,314.99",35,0,1349.99,"Past Due",,2022-06-20T00:00:00,Yes
+0006960286-002,6960286,2,3013925,2022-06-20T00:00:00,624.43,0,0,624.43,"Past Due",,2022-06-20T00:00:00,Yes
+0006884139-003,6884139,3,3013925,2022-06-20T00:00:00,586.28,0,0,586.28,"Past Due",STOCK,2022-06-20T00:00:00,Yes

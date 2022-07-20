@@ -173,10 +173,12 @@ driver.navigate().back();
 		HomePage hp= new HomePage(driver);
 		hp.Locations_click();
 		slp = new StoreLocatorPage(driver);
-		Thread.sleep(5000);
+		Thread.sleep(6500);
 		slp.YourLocation_EnterLocation();
 		
-		
+		LoginPage Lp = new LoginPage(driver);
+		Lp.ValidLogin();
+		Thread.sleep(5000);
 		//slp.YourLocation_EnterZipcode();
 	String a=	slp.ChangeBranchDropDown();
 		Assert.assertEquals(a,prop.getProperty("Branch2"));

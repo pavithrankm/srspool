@@ -2,6 +2,7 @@ package Pages;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -42,6 +43,11 @@ public class BulkOrderPage extends BasePage {
     @FindBy(xpath = "(//button[text()='Add All Items To Cart'])[3]") WebElement Addallitems ;
     @FindBy(xpath = "(//span[@class='price uom'])[1]") WebElement FirstProduct_UOM;
     @FindBy(xpath = "(//span[@class='price uom'])[2]") WebElement SecondProduct_UOM;
+    
+    //100line items
+    @FindBy(xpath="//h5[@class='amqorder-header']")WebElement LineItemsCount;
+    @FindBy(xpath="//button[@class='-fill -secondary amqorder-button']")WebElement AcceptButton;
+    @FindBy(xpath="//ul[contains(@class,'amqorder-errors-list')]")WebElement ErrorList;
     
     
     
@@ -211,7 +217,91 @@ public class BulkOrderPage extends BasePage {
 		return new BulkOrderPage(driver);
 	
 }
+	
+	public BulkOrderPage HundredFileupload() throws Exception
+	
+{
+		
+		Thread.sleep(8000);
+		
+//		((JavascriptExecutor) driver)
+//	    .executeScript("window.scrollTo(0, -document.body.scrollHeight)");
+//		waitUntilElementVisibility(UploadCsv);
+		UploadCsv.click();
+		 Thread.sleep(8000);
+		 file .sendKeys(System.getProperty("user.dir") + prop.getProperty("valid_Hundredcsvfile"));
 
+//		file.sendKeys(prop.getProperty("valid_csvfile"));
+		
+		Thread.sleep(6000);
+		
+	
+		//Thread.sleep(10000);
+		
+//		try {
+//			UploadNow.click();
+//			Thread.sleep(12000);
+//			System.out.println("Uploaded all files");
+//			//driver.findElement(By.xpath("//button[@class='-fill -secondary amqorder-button']")).click();
+//			//System.out.println("Accept Button is available");
+//			} catch (Exception e) {
+//				LineItemsCount.getText();
+//				Thread.sleep(6000);
+//				System.out.println(LineItemsCount.getText());
+//				Thread.sleep(5000);
+//				ErrorList.getText();
+//				System.out.println(ErrorList.getText());
+//				
+//				//JavascriptExecutor js = (JavascriptExecutor) driver;
+//				//js.executeScript("window.scrollBy(0,700)");
+//				act.moveToElement(AcceptButton).build().perform();
+//				AcceptButton.click();
+//				Thread.sleep(5000);
+//				//driver.findElement(By.xpath("//button[@class='-fill -secondary amqorder-button']")).click();
+//				System.out.println("Accept Button is available");
+//			//System.out.println("Uploaded all files");
+//			}
+		
+		try {
+			UploadNow.click();
+			Thread.sleep(12000);
+			LineItemsCount.getText();
+			Thread.sleep(6000);
+			System.out.println(LineItemsCount.getText());
+			Thread.sleep(5000);
+			ErrorList.getText();
+			System.out.println(ErrorList.getText());
+			act.moveToElement(AcceptButton).build().perform();
+			AcceptButton.click();
+			Thread.sleep(5000);
+			
+			} catch (Exception e) {
+				System.out.println("Uploaded all files");
+				
+			}
+		
+	
+			
+		return new BulkOrderPage(driver);
+		
+		
+	
+}
+////100 line items
+	public void fileDetails() throws InterruptedException {
+		LineItemsCount.getText();
+		Thread.sleep(6000);
+		System.out.println(LineItemsCount.getText());
+		Thread.sleep(5000);
+		ErrorList.getText();
+		System.out.println(ErrorList.getText());
+		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,700)");
+		AcceptButton.click();
+		Thread.sleep(5000);
+	}
+	
 	
 	
 	public ArrayList<String> ListOfItem()
@@ -252,6 +342,8 @@ public class BulkOrderPage extends BasePage {
  String No_of_itemsimported= ItemsImported.getText();
 	Thread.sleep(8000);
 			Accept.click();
+			
+			
 			
 			return No_of_itemsimported;
 			

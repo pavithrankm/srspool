@@ -72,7 +72,7 @@ public class ReorderPadViewAccessrights extends BaseTest{
 	@Test(priority=3,description = "Verify Delete btn and search product is enabled in reorderpad and adding all items to cart from Reorderpad")
 public void View_Validation_add_ReorderpadProducts_to_cart() throws Exception 
 {
-		Thread.sleep(5000);
+		Thread.sleep(8000);
 		Rp.View_Click();
 		try {
 			
@@ -154,7 +154,7 @@ public void View_Validation_add_ReorderpadProducts_to_cart() throws Exception
 			pdp=plp.GuestUser_ClickItem();
 			Thread.sleep(3000);
 			
-    if (Rp.addreorderpadPdpenble().isDisplayed()) {
+    if (Rp.addreorderpadPdpenble().isEnabled()) {
     	 Rp.AddReorderpadpdp();
     	  Thread.sleep(5000);
 			String	text = driver.findElement(By.xpath("//div[@id='swal2-content']")).getText();

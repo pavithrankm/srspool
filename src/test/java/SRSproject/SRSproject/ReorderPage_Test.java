@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.Reporter;
@@ -208,7 +207,7 @@ public class ReorderPage_Test  extends BaseTest
 		Hp.Reorder_Hover();
 		Thread.sleep(8000);
 		Rp.Invalid_Fileupload();
-		Thread.sleep(20000);
+		Thread.sleep(1000);
 	String notification =Rp.ItemsNotAdded_Notification();
 	Thread.sleep(300);
 	//Rp.close_button_click();
@@ -231,18 +230,17 @@ public class ReorderPage_Test  extends BaseTest
 	@Test(priority=6)
 	public void CreateNew_ReorderPad_AndLegacySearch_Validation() throws Exception 
 	{
-		Thread.sleep(5000);
+		Thread.sleep(8000);
 	
 		
 		
 
 			
 			Rp.EnterProduct();
-			Thread.sleep(9000);
 			Rp.Enter_LegacyPartNo();
-			Thread.sleep(9000);
+			Thread.sleep(900);
 			Rp.ReorderNameField().sendKeys(prop.getProperty("Reorder_Name2"));
-			Thread.sleep(9000);
+			Thread.sleep(900);
 			
 			Rp.Save_button().click();
 //			Thread.sleep(2000);
@@ -257,28 +255,23 @@ public class ReorderPage_Test  extends BaseTest
 	@Test(priority=7)
 	public void View_Validation() throws Exception 
 	{
-		/*driver.navigate().refresh();
+		driver.navigate().refresh();
 		driver.navigate().refresh();
 		Thread.sleep(8000);
 		Rp= new Reorder_Page(driver);
 		HomePage Hp = new HomePage(driver);
 		Hp.MyAccount_Hover();
-		Hp.Reorder_Hover();*/
-		Thread.sleep(20000);
-		WebElement findElement = driver.findElement(By.xpath("//a[text()='Help Page']"));
-		scrollUpandDownUsingElement(findElement);
-		//waitUntilElementVisibility(Rp.View_Click());
-		Rp.View_Click();
-		Thread.sleep(1000);
-		((JavascriptExecutor) driver)
-	    .executeScript("window.scrollTo(0, -document.body.scrollHeight)");
-		Thread.sleep(2000);
+		Hp.Reorder_Hover();
+		Thread.sleep(12000);
+	
+		waitUntilElementVisibility(Rp.View_Click());
+		//Rp.View_Click();
 		Rp.Add_All_Items().click();
 		
 		Thread.sleep(8000);
 	
 		String Success_msg= Rp.Items_addtocart_msg();
-		Thread.sleep(20000);
+		Thread.sleep(8000);
 		Assert.assertEquals(Success_msg.contains("successfully added to your Cart"), true);
         System.out.println(Success_msg);
  
@@ -286,5 +279,4 @@ public class ReorderPage_Test  extends BaseTest
 		
 		
 	}
-	
 }

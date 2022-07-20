@@ -181,11 +181,11 @@ public class QuickOrderPadPage extends BasePage{
 			WebDriverWait wait= new WebDriverWait(driver, 60);
 			wait.until(ExpectedConditions.visibilityOf(ProductNotExistCount));
 			
-			Thread.sleep(4000);
+			Thread.sleep(16000);
 		
 	    String	ProductNotExistMsg=ProductNotExistCount.getText();
 
-			Thread.sleep(3000);
+			Thread.sleep(10000);
 			
 			//WebDriverWait wait= new WebDriverWait(driver, 60);
 //			wait.until(ExpectedConditions.visibilityOf(Accept));
@@ -232,7 +232,43 @@ public class QuickOrderPadPage extends BasePage{
 }
 	
 
-		
+public  List<String> ReadHunderdfileData() throws InterruptedException, CsvValidationException, IOException
+	
+	{
+//		 file .sendKeys(System.getProperty("user.dir") + prop.getProperty("Invalid_csvfile"));
+	 String file = System.getProperty("user.dir") + prop.getProperty("valid_Hundredcsvfile");
+		 
+		 
+	       String delimiter = ",";
+	     
+	       String line;
+	       List<String> lines = new ArrayList();
+	        try (BufferedReader br =  new BufferedReader(new FileReader(file)))
+	        {
+	            while((line = br.readLine()) != null)
+	            {
+	            	 while((line = br.readLine()) != null)
+	            	 {
+	            		
+	                List<String> values = Arrays.asList(line.split(delimiter));
+	               
+	                lines.add(values.get(0));
+	          
+	            }
+	            }
+	           System.out.println(lines);
+	           
+	        } 
+	     
+	        catch (Exception e)
+	        {
+	            System.out.println(e);
+	        }
+		      return (lines);
+		      
+		      
+}
+	
 
 }
 
